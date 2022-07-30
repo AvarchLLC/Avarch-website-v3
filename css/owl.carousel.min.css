@@ -1,0 +1,222 @@
+.owl-carousel .owl-wrapper:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.owl-carousel {
+  display: none;
+  position: relative;
+  width: 100%;
+  -ms-touch-action: pan-y;
+}
+.owl-carousel .owl-wrapper {
+  display: none;
+  position: relative;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+.owl-carousel .owl-wrapper-outer {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.owl-carousel .owl-wrapper-outer.autoHeight {
+  -webkit-transition: height 500ms ease-in-out;
+  -moz-transition: height 500ms ease-in-out;
+  -ms-transition: height 500ms ease-in-out;
+  -o-transition: height 500ms ease-in-out;
+  transition: height 500ms ease-in-out;
+}
+.owl-carousel .owl-item {
+  float: left;
+}
+.owl-controls .owl-page,
+.owl-controls .owl-buttons div {
+  cursor: pointer;
+}
+.owl-controls {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.grabbing {
+  cursor: url(grabbing.png) 8 8, move;
+}
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+}
+
+.post-slide{
+  background: #fff;
+  margin: 20px 15px 20px;
+  border-radius: 15px;
+  padding-top: 1px;
+  box-shadow: -2px 7px 0px 5px #141313;
+  border: 2px solid #141313;
+}
+.post-slide .post-img{
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: -12px 15px 8px 15px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.post-slide .post-img img{
+  width: 100%;
+  height: auto;
+  transform: scale(1,1);
+  transition:transform 0.2s linear;
+}
+.post-slide:hover .post-img img{
+  transform: scale(1.1,1.1);
+}
+.post-slide .over-layer{
+  width:100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left:0;
+  opacity:0;
+  background: linear-gradient(-45deg, rgb(255 255 255 / 30%) 0%, rgb(210 212 219 / 25%) 100%);
+  transition:all 0.50s linear;
+}
+.post-slide:hover .over-layer{
+  opacity:1;
+  text-decoration:none;
+}
+.post-slide .over-layer i{
+  position: relative;
+  top:45%;
+  text-align:center;
+  display: block;
+  color:#fff;
+  font-size:25px;
+}
+.post-slide .post-content{
+  background:#fff;
+  padding: 2px 20px 40px;
+  border-radius: 15px;
+}
+.post-slide .post-title a{
+  font-size:18px;
+  font-weight:bold;
+  color:#323232;
+  display: inline-block;
+  text-transform:uppercase;
+  transition: all 0.3s ease 0s;
+  
+}
+.post-slide .post-title a:hover{
+  text-decoration: none;
+  color:#323232;
+}
+
+.post-slide .post-title2 a{
+font-size: 25px;
+font-weight: 600;
+color:#000;
+display: inline-block;
+transition: all 0.3s ease 0s;
+
+}
+.post-slide .post-title2 a:hover{
+text-decoration: none;
+color: #000;
+}
+
+.post-slide .post-description{
+  line-height:24px;
+  color:#808080;
+  margin-bottom:25px;
+}
+
+.post-slide .post-digit{
+color:#323232;
+font-size: 18px;
+font-weight: 600;
+}
+.post-slide .post-digit i{
+font-size:18px;
+margin-right:8px;
+color: #bbbeba;
+}
+
+.post-slide .post-date{
+  color:#323232;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: -23px;
+}
+.post-slide .post-date i{
+  font-size:23px;
+  margin-right:0px;
+  color: #fff;
+  opacity: 0;
+  
+}
+.post-slide .read-more{
+padding: 7px 20px;
+float: right;
+font-weight: 400;
+font-size: 14px;
+border: 2px solid #222222;
+color: #222;
+border-radius: 25px;
+text-transform: uppercase;
+}
+.post-slide .read-more:hover{
+  background: #0e0e0e;
+  text-decoration:none;
+  color:#fff;
+}
+.owl-controls .owl-buttons{
+  text-align:center;
+  margin-top:20px;
+}
+.owl-controls .owl-buttons .owl-prev{
+  background: #fff;
+  position: absolute;
+  top: 45%;
+  left: -30px;
+  padding: 0 18px 0 15px;
+  border-radius: 50px;
+  box-shadow: -1px 2px 0px 3px #222222;
+  transition: background 0.5s ease 0s;
+}
+.owl-controls .owl-buttons .owl-next{
+  background: #fff;
+  position: absolute;
+  top:45%;
+  right: -30px;
+  padding: 0 15px 0 18px;
+  border-radius: 50px;
+  box-shadow: 1px 2px 0px 3px #222222;
+  transition: background 0.5s ease 0s;
+}
+.owl-controls .owl-buttons .owl-prev:after,
+.owl-controls .owl-buttons .owl-next:after{
+  content:"\2190";
+  font-family: FontAwesome;
+  color: black;
+  font-size:30px;
+}
+.owl-controls .owl-buttons .owl-next:after{
+  content:"\2192";
+}
+@media only screen and (max-width:1280px) {
+  .post-slide .post-content{
+      padding: 0px 15px 25px 15px;
+  }
+}
