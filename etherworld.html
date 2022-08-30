@@ -79,12 +79,17 @@
     </div>
 
     <!-- top bar -->
-    <div style="background-image: url('https://lh3.googleusercontent.com/SANfSg9w4W3w61O9ItyeVrl6cdF-41F0cU-G184n-MRyZWLCZiL9SH6qXYdEj8FNL4ABzPf_HQMxYJRyJFqgq_fLGa57adaDihPKNeibeYla-wFUfDdEcrvRCxxn6__u751ukatDDB-BRKR-sOpFcA');" class="top-bar">
-        <img style="width: 345px;" class="head-image" src="img/icons/project.png" alt="">
+    <div style="background-image: url('./img/backgrounds/etherback.png');" class="top-bar">
+        <img style="width: 345px;" class="head-image" src="img/icons/etherworld.png" alt="">
     </div>
     <!-- end top bar -->
 
     <!-- main container -->
+    <div class="container main-container portfolio-inner clearfix">
+        <h2 style="color: black;">About EtherWorld</h2>
+        <p>EtherWorld.co is a hub of news, upcoming project updates, technical blogs, ICO and events related to Blockchain Technology. It provides a platform for those who wants to learn about the technology and contribute to the community. To know more about us, visit http://etherworld.co or email at contact@etherworld.co . </p>
+    </div>
+    
     <div class="main-container portfolio-inner clearfix">
         <!-- portfolio div -->
         <div class="portfolio-div">
@@ -93,9 +98,13 @@
                 <div class="categories-grid wow fadeInLeft">
                     <nav class="categories text-center">
                         <ul class="portfolio_filter">
-                            <li><a href="" onclick="changeBackgroundall()" class="active" data-filter="*">All</a></li>
-                            <li><a href="" onclick="changeBackgroundeips()" data-filter=".active">Active</a></li>
-                            <li><a href="" onclick="changeBackgroundether()" data-filter=".inactive">Inactive</a></li>
+                            <li><a href="" class="active" data-filter="*">All</a></li>
+                            <li><a href="" class="ethereum" data-filter=".ethereum">Ethereum</a></li>
+                            <li><a href="" class="news" data-filter=".news">News</a></li>
+                            <li><a href="" class="news" data-filter=".news">Trading</a></li>
+                            <li><a href="" class="enigma" data-filter=".enigma">Technology</a></li>
+                            <li><a href="" class="eip" data-filter=".global">EIP</a></li>
+                            <li><a href="" class="videos" data-filter=".videos">Videos</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -104,37 +113,19 @@
                 <!-- portfolio_container -->
                 <div class="no-padding portfolio_container clearfix">
                     <!-- single work -->
-                    <!-- <div class="col-md-4 col-sm-6 active">
-                        <iframe width="500" height="273" src="https://www.youtube.com/embed/videoseries?list=PLZmWIkdMcWY4ZnMEFTcfiR83Br-rb_8nG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div> -->
+                    <div style="margin-top: 4px;" class="col-md-4 col-sm-6 videos">
+                        <iframe width="500" height="276" src="https://www.youtube.com/embed/videoseries?list=PLZmWIkdMcWY4ZnMEFTcfiR83Br-rb_8nG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                     <!-- end single work -->
 
                     <!-- single work -->
-                    <div class="col-md-4 col-sm-6 active">
-                        <a href="./etherworld.html" class="portfolio_item">
-                            <img src="img/backgrounds/etherback1.jpeg" alt="image" class="img-responsive" />
-                            <img style="position: absolute; z-index: 1; top: 0; bottom: 0; right: 0; left: 0; margin: auto;"
-                            src="img/icons/etherworld.png" alt="image" class="img-responsive" />
-                            <div style="z-index: 100;" class="portfolio_item_hover">
+                    <div class="col-md-4 col-sm-6 inactive">
+                        <a href="./blockaction.html" class="portfolio_item">
+                            <img src="https://etherworld.co/content/images/size/w600/2022/04/MEV.png" alt="image" class="img-responsive" />
+                            <div class="portfolio_item_hover">
                                 <div class="portfolio-border clearfix">
                                     <div class="item_info">
-                                        <span>EtherWorld</span>
-                                        <em>Ethereum</em>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- end single work -->
-                    <div class="col-md-4 col-sm-6 active">
-                        <a href="https://etherworld.co/2022/07/14/silkworm-ethereum-implementation/" target="_blank" class="portfolio_item">
-                            <img src="img/backgrounds/eips1.jpeg" alt="image" class="img-responsive" />
-                            <img style="position: absolute; z-index: 1; top: 0; bottom: 0; right: 0; left: 0; margin: auto;"
-                            src="img/icons/eips.gif" alt="image" class="img-responsive" />
-                            <div style="z-index: 5;" class="portfolio_item_hover">
-                                <div class="portfolio-border clearfix">
-                                    <div class="item_info">
-                                        <span>EipsInsights</span>
+                                        <span>Blockaction</span>
                                         <em>Ethereum</em>
                                     </div>
                                 </div>
@@ -156,6 +147,120 @@
                                 </div>
                             </div>
                         </a>
+                    </div>
+                    <!-- end single work -->
+
+                    <!-- single work -->
+                    <div class="col-md-4 col-sm-6 ">
+                        <a href="./blockaction.html" class="portfolio_item">
+                            <img src="https://etherworld.co/content/images/size/w600/2022/04/MEV.png" alt="image" class="img-responsive" />
+                            <div class="portfolio_item_hover">
+                                <div class="portfolio-border clearfix">
+                                    <div class="item_info">
+                                        <span>Blockaction</span>
+                                        <em>Ethereum</em>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end single work -->
+
+                    <!-- single work -->
+                    <div class="col-md-4 col-sm-6 inactive">
+                        <a href="./blockaction.html" class="portfolio_item">
+                            <img src="https://etherworld.co/content/images/size/w600/2022/04/MEV.png" alt="image" class="img-responsive" />
+                            <div class="portfolio_item_hover">
+                                <div class="portfolio-border clearfix">
+                                    <div class="item_info">
+                                        <span>Blockaction</span>
+                                        <em>Ethereum</em>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end single work -->
+
+                    <!-- single work -->
+                    <div class="col-md-4 col-sm-6 videos">
+                        <iframe width="500" height="276" src="https://www.youtube.com/embed/videoseries?list=PLZmWIkdMcWY4ZnMEFTcfiR83Br-rb_8nG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <!-- end single work -->
+            
+                    <!-- single work -->
+                    <div class="col-md-4 col-sm-6 inactive">
+                        <a href="./blockaction.html" class="portfolio_item">
+                            <img src="https://etherworld.co/content/images/size/w600/2022/04/MEV.png" alt="image" class="img-responsive" />
+                            <div class="portfolio_item_hover">
+                                <div class="portfolio-border clearfix">
+                                    <div class="item_info">
+                                        <span>Blockaction</span>
+                                        <em>Ethereum</em>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end single work -->
+                    
+                    <!-- single work -->
+                    <div class="col-md-4 col-sm-6 ">
+                        <a href="./blockaction.html" class="portfolio_item">
+                            <img src="https://etherworld.co/content/images/size/w600/2022/04/MEV.png" alt="image" class="img-responsive" />
+                            <div class="portfolio_item_hover">
+                                <div class="portfolio-border clearfix">
+                                    <div class="item_info">
+                                        <span>Blockaction</span>
+                                        <em>Ethereum</em>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end single work -->
+                    
+                    <!-- single work -->
+                    <div class="col-md-4 col-sm-6 videos">
+                        <iframe width="500" height="280" src="https://www.youtube.com/embed/videoseries?list=PLZmWIkdMcWY4ZnMEFTcfiR83Br-rb_8nG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <!-- end single work -->
+            
+                    <!-- single work -->
+                    <div class="col-md-4 col-sm-6 inactive">
+                        <a href="./blockaction.html" class="portfolio_item">
+                            <img src="https://etherworld.co/content/images/size/w600/2022/04/MEV.png" alt="image" class="img-responsive" />
+                            <div class="portfolio_item_hover">
+                                <div class="portfolio-border clearfix">
+                                    <div class="item_info">
+                                        <span>Blockaction</span>
+                                        <em>Ethereum</em>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end single work -->
+                    
+                    <!-- single work -->
+                    <div class="col-md-4 col-sm-6 ">
+                        <a href="./blockaction.html" class="portfolio_item">
+                            <img src="https://etherworld.co/content/images/size/w600/2022/04/MEV.png" alt="image" class="img-responsive" />
+                            <div class="portfolio_item_hover">
+                                <div class="portfolio-border clearfix">
+                                    <div class="item_info">
+                                        <span>Blockaction</span>
+                                        <em>Ethereum</em>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end single work -->
+                    
+                    <!-- single work -->
+                    <div class="col-md-4 col-sm-6 videos">
+                        <iframe width="500" height="276" src="https://www.youtube.com/embed/videoseries?list=PLZmWIkdMcWY4ZnMEFTcfiR83Br-rb_8nG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <!-- end single work -->
 
@@ -219,37 +324,6 @@
     <script src="js/menu.js"></script>
     <script src="js/animated-headline.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
-
-    <!-- custom script-->
-    <script type="text/javascript">
-        let topbar= document.getElementsByClassName('top-bar');
-        let myimage= document.getElementsByClassName('head-image');
-        function changeBackgroundall() {
-            topbar[0].style.background = 'url("img/backgrounds/all.png") no-repeat center';
-            topbar[0].style.padding ='70px 0px 70px' ;
-            myimage[0].src = "img/icons/project.png";
-            myimage[0].style.width = "345px";
-            topbar[0].style.backgroundSize = "cover";
-            // console.log("first");
-        }
-        function changeBackgroundeips() {
-            topbar[0].style.background = 'url("img/backgrounds/eips.png") no-repeat center';
-            topbar[0].style.padding ='70px 0px 70px' ;
-            myimage[0].src = "img/icons/eips.gif";
-            myimage[0].style.width = "350px";
-            topbar[0].style.backgroundSize = "cover";
-            // console.log("second");
-        }
-        function changeBackgroundether() {
-            topbar[0].style.background = 'url("img/backgrounds/etherback.png") no-repeat center';
-            topbar[0].style.padding ='0px' ;
-            myimage[0].src = "img/icons/etherworld.png";
-            myimage[0].style.width = "490px";
-            
-            // console.log("third");
-        }        
-    
-    </script>
 
     <!--  custom script -->
     <script src="js/custom.js"></script>
