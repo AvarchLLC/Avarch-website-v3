@@ -93,9 +93,9 @@
                 <div class="categories-grid wow fadeInLeft">
                     <nav class="categories text-center">
                         <ul class="portfolio_filter">
-                            <li><a href="" onclick="changeBackgroundall()" class="active" data-filter="*">All</a></li>
-                            <li><a href="" onclick="changeBackgroundeips()" data-filter=".active">Active</a></li>
-                            <li><a href="" onclick="changeBackgroundether()" data-filter=".inactive">Inactive</a></li>
+                            <li><a href="" class="active" data-filter="*">All</a></li>
+                            <li><a href="" data-filter=".active">Active</a></li>
+                            <li><a href="" data-filter=".inactive">Inactive</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -220,37 +220,7 @@
     <script src="js/menu.js"></script>
     <script src="js/animated-headline.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
-
-    <!-- custom script-->
-    <script type="text/javascript">
-        let topbar= document.getElementsByClassName('top-bar');
-        let myimage= document.getElementsByClassName('head-image');
-        function changeBackgroundall() {
-            topbar[0].style.background = 'url("img/backgrounds/all.png") no-repeat center';
-            topbar[0].style.padding ='70px 0px 70px' ;
-            myimage[0].src = "img/icons/project.png";
-            myimage[0].style.width = "345px";
-            topbar[0].style.backgroundSize = "cover";
-            // console.log("first");
-        }
-        function changeBackgroundeips() {
-            topbar[0].style.background = 'url("img/backgrounds/eips.png") no-repeat center';
-            topbar[0].style.padding ='70px 0px 70px' ;
-            myimage[0].src = "img/icons/eips.gif";
-            myimage[0].style.width = "350px";
-            topbar[0].style.backgroundSize = "cover";
-            // console.log("second");
-        }
-        function changeBackgroundether() {
-            topbar[0].style.background = 'url("img/backgrounds/etherback.png") no-repeat center';
-            topbar[0].style.padding ='0px' ;
-            myimage[0].src = "img/icons/etherworld.png";
-            myimage[0].style.width = "490px";
-            
-            // console.log("third");
-        }        
     
-    </script>
 
     <!--  custom script -->
     <script src="js/custom.js"></script>
