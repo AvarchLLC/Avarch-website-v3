@@ -14,7 +14,7 @@
     <link href="ionicons/css/ionicons.min.css" rel="stylesheet">
 
     <!-- main css -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css?v=20260709" rel="stylesheet">
     <link href="css/style1.css" rel="stylesheet">
 
     <!-- Carousel css -->
@@ -32,7 +32,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body class="home-page">
 
     <!-- Preloader -->
     <div id="preloader">
@@ -62,8 +62,6 @@
         <!-- nav -->
         <nav>
             <ul class="box-primary-nav">
-                <li class="box-label">About Us</li>
-
                 <li><a href="index.html">Home</a> <i class="ion-ios-circle-filled color"></i></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="associate-partner.html">Associates and Partners</a>
@@ -71,7 +69,7 @@
                 <li><a href="contact.html">contact us</a></li>
 
 
-                <li class="box-label">Follow me</li>
+                <li class="box-label">Follow Us</li>
 
                 <li class="box-social"><a href="https://twitter.com/ether_world" target="_blank"><i
                             class="ion-social-twitter"></i></a></li>
@@ -112,492 +110,923 @@
     </div>
 
 
-    <!-- Our Vision -->
-    <section style="background-color: black;color: white;padding: 220px 0px 250px;">
-        <div style="text-align: center;" class="container">
-            <h3 style="font-size: 50px;color: white;">Our Vision</h3>
-            <p style="font-size: 20px;">We envision a rising level of community growth by providing <b>t</b>ooling,
-                <b>e</b>ducation and <b>f</b>ostering developers. Implementing creative community-based strategies to
-                enhance economic opportunity, we’re building a strong foundation, and ensure a dynamic framework for the
-                growth and development of the Ethereum ecosystem.
-            </p>
+    <!-- 01 VISION - Clean White Card & Constellation Graphic -->
+    <section id="vision" class="vision-panel">
+        <div class="vision-card">
+            <!-- Editorial Split Layout with Right Constellation Graphic -->
+            <div class="vision-grid">
+                <div class="vision-left-col">
+                    <div class="vision-header-col">
+                        <div class="vision-label-mask">
+                            <span class="vision-label"><span class="vision-num">01</span> <span class="vision-text">VISION</span></span>
+                        </div>
+                        <div class="vision-heading-mask">
+                            <h2 class="vision-heading">Our Vision</h2>
+                        </div>
+                    </div>
+                    <div class="vision-content-col">
+                        <p class="vision-paragraph">We envision a rising level of community growth by providing tooling, education and fostering developers. Implementing creative community-based strategies to enhance economic opportunity, we're building a strong foundation, and ensure a dynamic framework for the growth and development of the Ethereum ecosystem.</p>
+                    </div>
+                </div>
+                <div class="vision-graphic-col">
+                    <div class="vision-constellation">
+                        <!-- SVG Constellation diagram exact match to mockup -->
+                        <svg viewBox="0 0 640 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="constellation-svg">
+                            <!-- Connecting Lines -->
+                            <g class="constellation-lines" stroke="#E4E7ED" stroke-width="1.3">
+                                <line x1="120" y1="120" x2="220" y2="80" />
+                                <line x1="220" y1="80" x2="340" y2="140" />
+                                <line x1="340" y1="140" x2="480" y2="110" />
+                                <line x1="480" y1="110" x2="580" y2="80" />
+                                <line x1="580" y1="80" x2="580" y2="190" />
+                                <line x1="480" y1="110" x2="480" y2="240" />
+                                <line x1="340" y1="140" x2="280" y2="260" />
+                                <line x1="280" y1="260" x2="160" y2="220" />
+                                <line x1="160" y1="220" x2="120" y2="120" />
+                                <line x1="220" y1="80" x2="280" y2="260" />
+                                <line x1="340" y1="140" x2="480" y2="240" />
+                                <line x1="480" y1="240" x2="560" y2="300" />
+                                <line x1="480" y1="110" x2="560" y2="300" />
+                                <line x1="280" y1="260" x2="380" y2="340" />
+                                <line x1="380" y1="340" x2="480" y2="240" />
+                                <line x1="160" y1="220" x2="80" y2="310" />
+                                <line x1="80" y1="310" x2="280" y2="260" />
+                                <line x1="580" y1="190" x2="620" y2="250" />
+                                <line x1="480" y1="240" x2="620" y2="250" />
+                                <line x1="380" y1="340" x2="560" y2="300" />
+                            </g>
+
+                            <!-- Normal Silver Nodes -->
+                            <g class="constellation-nodes" fill="#C8CDD6">
+                                <circle class="node-float" cx="120" cy="120" r="3.5" />
+                                <circle class="node-float" cx="220" cy="80" r="4" />
+                                <circle class="node-float" cx="340" cy="140" r="4.5" />
+                                <circle class="node-float" cx="580" cy="80" r="3.5" />
+                                <circle class="node-float" cx="580" cy="190" r="4" />
+                                <circle class="node-float" cx="160" cy="220" r="4" />
+                                <circle class="node-float" cx="280" cy="260" r="4.5" />
+                                <circle class="node-float" cx="480" cy="240" r="4" />
+                                <circle class="node-float" cx="560" cy="300" r="4.5" />
+                                <circle class="node-float" cx="380" cy="340" r="3.5" />
+                                <circle class="node-float" cx="80" cy="310" r="3.5" />
+                                <circle class="node-float" cx="620" cy="250" r="3.5" />
+                            </g>
+
+                            <!-- Highlight Golden Node (Mockup center-right glowing node) -->
+                            <g class="constellation-gold-node node-float" transform="translate(480, 110)">
+                                <!-- Soft pulsing outer halo -->
+                                <circle class="gold-halo-outer" r="22" fill="rgba(255, 180, 0, 0.12)" />
+                                <circle class="gold-halo-inner" r="13" fill="rgba(255, 180, 0, 0.28)" />
+                                <!-- Solid Gold Center Node -->
+                                <circle class="gold-center" r="6" fill="#FFB400" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-
-    <!-- portfolio div -->
-    <div class="portfolio-div">
-        <div class="portfolio">
-            <div class="no-padding portfolio_container">
-                <div class="outercontainer">
-                    <div class="innercontainer">
-                        <div class="imageoutercontainer">
-                            <div class="imagecontainer">
-                                <a href="https://etherworld.co/tag/enigma/" target="_blank">
-                                    <img src="img/portfolio/Technology.jpeg" alt="">
-                                    <div class="black-modal"><span class="modal-text"><b>TECHNOLOGY</b></span></div>
-                                </a>
+    <!-- Latest News Section (Clean White Card matching 01 VISION) -->
+    <section class="latest-news-section" id="latest-news">
+                    <div class="latest-news-card">
+                        <!-- Top Header Bar -->
+                        <div class="news-header-bar">
+                            <div class="news-header-left">
+                                <span class="news-label"><span class="news-num">02</span> <span class="news-text">LATEST NEWS</span></span>
+                                <h2 class="news-heading">Latest News & Ecosystem</h2>
                             </div>
-                            <div class="imagecontainer">
-                                <a href="https://etherworld.co/tag/news/" target="_blank">
-                                    <img src="img/portfolio/News.jpeg" alt="">
-                                    <div class="black-modal"><span class="modal-text"><b>NEWS</b></span></div>
-                                </a>
+                            <div class="news-header-right">
+                                <a href="https://etherworld.co" target="_blank" class="view-all-news-link">VIEW ALL NEWS <span class="arrow">→</span></a>
                             </div>
                         </div>
-                        <div class="imageoutercontainer">
-                            <div class="imagecontainer">
-                                <a href="https://etherworld.co/tag/ethereum/" target="_blank">
-                                    <img src="img/portfolio/Ethereum.jpeg" alt="">
-                                    <div class="black-modal"><span class="modal-text"><b>ETHEREUM</b></span></div>
-                                </a>
+
+                        <!-- Scroll Phase 1: Major Featured Section (EtherWorld) -->
+                        <div class="etherworld-major-section">
+                            <div class="etherworld-major-card">
+                                <!-- Left Image Column -->
+                                <div class="etherworld-image-side">
+                                    <a href="https://www.etherworld.co/" target="_blank" class="ew-image-link">
+                                        <img src="img/icons/etherworld1.jpeg" alt="EtherWorld Publication" class="ew-hero-img">
+                                        <div class="ew-badge"><span class="ew-pulse-dot"></span> MAJOR PORTAL</div>
+                                    </a>
+                                </div>
+                                <!-- Right Description Column -->
+                                <div class="etherworld-info-side">
+                                    <span class="ew-category">KNOWLEDGE HUB & PUBLICATION</span>
+                                    <h3 class="ew-title">EtherWorld: News, Technology & Projects</h3>
+                                    <p class="ew-desc">The premier knowledge hub and publication dedicated to the Ethereum ecosystem, decentralized technologies, EIPs, and blockchain innovation. Delivering deep-dive technical research, developer updates, and ecosystem insights directly to builders worldwide.</p>
+                                    <div class="ew-action">
+                                        <a href="https://www.etherworld.co/" target="_blank" class="ew-btn">
+                                            <span>Explore EtherWorld</span>
+                                            <span class="btn-arrow">→</span>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="imagecontainer">
-                                <a href="https://etherworld.co/tag/projects/" target="_blank">
-                                    <img src="img/portfolio/Projects.jpeg" alt="">
-                                    <div class="black-modal"><span class="modal-text"><b>PROJECTS</b></span></div>
-                                </a>
+                        </div>
+
+                        <!-- Scroll Phase 2: 4 Subparts Carousel (Top: Left to Right, Bottom: Right to Left) -->
+                        <div class="news-subparts-section">
+                            <div class="subparts-header-wrap">
+                                <h4 class="subparts-header"><span class="bullet"></span> EXPLORE SUBTOPICS</h4>
+                            </div>
+                            
+                            <!-- Top Marquee Row (Goes Left to Right very slowly) -->
+                            <div class="news-marquee-row row-top">
+                                <div class="marquee-track track-left-to-right">
+                                    <a href="https://etherworld.co/tag/enigma/" target="_blank" class="news-mini-card">
+                                        <div class="card-img-wrap">
+                                            <img src="img/portfolio/Technology.jpeg" alt="Technology">
+                                        </div>
+                                        <div class="mini-card-overlay"></div>
+                                        <div class="mini-card-content">
+                                            <span class="mini-tag">TOPIC</span>
+                                            <h5 class="mini-title">TECHNOLOGY</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://etherworld.co/tag/news/" target="_blank" class="news-mini-card">
+                                        <div class="card-img-wrap">
+                                            <img src="img/portfolio/News.jpeg" alt="News">
+                                        </div>
+                                        <div class="mini-card-overlay"></div>
+                                        <div class="mini-card-content">
+                                            <span class="mini-tag">TOPIC</span>
+                                            <h5 class="mini-title">NEWS</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://etherworld.co/tag/enigma/" target="_blank" class="news-mini-card">
+                                        <div class="card-img-wrap">
+                                            <img src="img/portfolio/Technology.jpeg" alt="Technology">
+                                        </div>
+                                        <div class="mini-card-overlay"></div>
+                                        <div class="mini-card-content">
+                                            <span class="mini-tag">TOPIC</span>
+                                            <h5 class="mini-title">TECHNOLOGY</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://etherworld.co/tag/news/" target="_blank" class="news-mini-card">
+                                        <div class="card-img-wrap">
+                                            <img src="img/portfolio/News.jpeg" alt="News">
+                                        </div>
+                                        <div class="mini-card-overlay"></div>
+                                        <div class="mini-card-content">
+                                            <span class="mini-tag">TOPIC</span>
+                                            <h5 class="mini-title">NEWS</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://etherworld.co/tag/enigma/" target="_blank" class="news-mini-card">
+                                        <div class="card-img-wrap">
+                                            <img src="img/portfolio/Technology.jpeg" alt="Technology">
+                                        </div>
+                                        <div class="mini-card-overlay"></div>
+                                        <div class="mini-card-content">
+                                            <span class="mini-tag">TOPIC</span>
+                                            <h5 class="mini-title">TECHNOLOGY</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://etherworld.co/tag/news/" target="_blank" class="news-mini-card">
+                                        <div class="card-img-wrap">
+                                            <img src="img/portfolio/News.jpeg" alt="News">
+                                        </div>
+                                        <div class="mini-card-overlay"></div>
+                                        <div class="mini-card-content">
+                                            <span class="mini-tag">TOPIC</span>
+                                            <h5 class="mini-title">NEWS</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://etherworld.co/tag/enigma/" target="_blank" class="news-mini-card">
+                                        <div class="card-img-wrap">
+                                            <img src="img/portfolio/Technology.jpeg" alt="Technology">
+                                        </div>
+                                        <div class="mini-card-overlay"></div>
+                                        <div class="mini-card-content">
+                                            <span class="mini-tag">TOPIC</span>
+                                            <h5 class="mini-title">TECHNOLOGY</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://etherworld.co/tag/news/" target="_blank" class="news-mini-card">
+                                        <div class="card-img-wrap">
+                                            <img src="img/portfolio/News.jpeg" alt="News">
+                                        </div>
+                                        <div class="mini-card-overlay"></div>
+                                        <div class="mini-card-content">
+                                            <span class="mini-tag">TOPIC</span>
+                                            <h5 class="mini-title">NEWS</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Marquee Row (Goes Right to Left very slowly) -->
+                            <div class="news-marquee-row row-bottom">
+                                <div class="marquee-track track-right-to-left">
+                                    <a href="https://etherworld.co/tag/ethereum/" target="_blank" class="news-mini-card">
+                                        <div class="card-img-wrap">
+                                            <img src="img/portfolio/Ethereum.jpeg" alt="Ethereum">
+                                        </div>
+                                        <div class="mini-card-overlay"></div>
+                                        <div class="mini-card-content">
+                                            <span class="mini-tag">TOPIC</span>
+                                            <h5 class="mini-title">ETHEREUM</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://etherworld.co/tag/projects/" target="_blank" class="news-mini-card">
+                                        <div class="card-img-wrap">
+                                            <img src="img/portfolio/Projects.jpeg" alt="Projects">
+                                        </div>
+                                        <div class="mini-card-overlay"></div>
+                                        <div class="mini-card-content">
+                                            <span class="mini-tag">TOPIC</span>
+                                            <h5 class="mini-title">PROJECTS</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://etherworld.co/tag/ethereum/" target="_blank" class="news-mini-card">
+                                        <div class="card-img-wrap">
+                                            <img src="img/portfolio/Ethereum.jpeg" alt="Ethereum">
+                                        </div>
+                                        <div class="mini-card-overlay"></div>
+                                        <div class="mini-card-content">
+                                            <span class="mini-tag">TOPIC</span>
+                                            <h5 class="mini-title">ETHEREUM</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://etherworld.co/tag/projects/" target="_blank" class="news-mini-card">
+                                        <div class="card-img-wrap">
+                                            <img src="img/portfolio/Projects.jpeg" alt="Projects">
+                                        </div>
+                                        <div class="mini-card-overlay"></div>
+                                        <div class="mini-card-content">
+                                            <span class="mini-tag">TOPIC</span>
+                                            <h5 class="mini-title">PROJECTS</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://etherworld.co/tag/ethereum/" target="_blank" class="news-mini-card">
+                                        <div class="card-img-wrap">
+                                            <img src="img/portfolio/Ethereum.jpeg" alt="Ethereum">
+                                        </div>
+                                        <div class="mini-card-overlay"></div>
+                                        <div class="mini-card-content">
+                                            <span class="mini-tag">TOPIC</span>
+                                            <h5 class="mini-title">ETHEREUM</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://etherworld.co/tag/projects/" target="_blank" class="news-mini-card">
+                                        <div class="card-img-wrap">
+                                            <img src="img/portfolio/Projects.jpeg" alt="Projects">
+                                        </div>
+                                        <div class="mini-card-overlay"></div>
+                                        <div class="mini-card-content">
+                                            <span class="mini-tag">TOPIC</span>
+                                            <h5 class="mini-title">PROJECTS</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://etherworld.co/tag/ethereum/" target="_blank" class="news-mini-card">
+                                        <div class="card-img-wrap">
+                                            <img src="img/portfolio/Ethereum.jpeg" alt="Ethereum">
+                                        </div>
+                                        <div class="mini-card-overlay"></div>
+                                        <div class="mini-card-content">
+                                            <span class="mini-tag">TOPIC</span>
+                                            <h5 class="mini-title">ETHEREUM</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://etherworld.co/tag/projects/" target="_blank" class="news-mini-card">
+                                        <div class="card-img-wrap">
+                                            <img src="img/portfolio/Projects.jpeg" alt="Projects">
+                                        </div>
+                                        <div class="mini-card-overlay"></div>
+                                        <div class="mini-card-content">
+                                            <span class="mini-tag">TOPIC</span>
+                                            <h5 class="mini-title">PROJECTS</h5>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="innercontainer">
-                        <div class="imagecontainer1">
-                            <a href="https://www.etherworld.co/">
-                                <img src="img/icons/etherworld1.jpeg" alt="">
-                                <div class="black-modal"><span class="modal-text"><b>ETHERWORLD</b></span></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <section class="avarch-timeline">
-                    <h3 style="font-size: 45px;">Avarch Timeline</h3>
-                    <img src="img/general/Timeline.jpg" alt="">
                 </section>
 
-                <div style="margin-top: 30px;" class="outercontainer">
-                    <div class="innercontainer">
-                        <div class="imagecontainer1">
-                            <a href="https://eipsinsight.com/" target="_blank">
-                                <img src="img/icons/eips2.gif" alt="image" class="img-responsive" />
-                                <div class="black-modal"><span class="modal-text"><b>EIPS INSIGHT</b></span></div>
-                            </a>
+                <!-- 03 TIMELINE SECTION (Architectural, Minimal, Editorial, Apple/Linear Inspired) -->
+                <section class="avarch-timeline-section" id="timeline">
+                    <div class="timeline-container">
+                        <!-- Section Header -->
+                        <div class="timeline-header-bar">
+                            <div class="timeline-header-left">
+                                <span class="timeline-label"><span class="tl-num">03</span> <span class="tl-text">TIMELINE</span></span>
+                                <h2 class="timeline-heading">Avarch Timeline</h2>
+                            </div>
+                            <div class="timeline-header-right">
+                                <p class="timeline-subtitle">From early experiments to ecosystem infrastructure, our journey is built on consistent builder focus and community impact.</p>
+                            </div>
+                        </div>
+
+                        <!-- Horizontal Timeline Area -->
+                        <div class="timeline-track-wrapper">
+                            <div class="timeline-year-endpoints">
+                                <span class="endpoint-year year-start">2017</span>
+                                <span class="endpoint-year year-end">Today</span>
+                            </div>
+
+                            <div class="timeline-track-box">
+                                <!-- Base grey horizontal line (2px height #DADADA) -->
+                                <div class="timeline-base-line">
+                                    <!-- Active yellow horizontal progress line (#FFB400) -->
+                                    <div class="timeline-active-progress" id="timeline-progress-bar"></div>
+                                </div>
+
+                                <!-- 4 Milestones along the track -->
+                                <div class="timeline-milestones-row">
+                                    <!-- Milestone 1: EtherWorld (2017) -->
+                                    <div class="timeline-milestone active" data-index="0">
+                                        <div class="milestone-node-dot"></div>
+                                        <div class="milestone-logo-circle">
+                                            <img src="img/icons/etherworld_badge.png" alt="EtherWorld Logo">
+                                        </div>
+                                        <div class="milestone-info">
+                                            <h4 class="milestone-title">EtherWorld</h4>
+                                            <span class="milestone-year">2017</span>
+                                            <div class="milestone-year-indicator"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Milestone 2: EIPsInsight (2022) -->
+                                    <div class="timeline-milestone" data-index="1">
+                                        <div class="milestone-node-dot"></div>
+                                        <div class="milestone-logo-circle">
+                                            <img src="img/icons/eipsinsight_icon.png" alt="EIPsInsight Logo">
+                                        </div>
+                                        <div class="milestone-info">
+                                            <h4 class="milestone-title">EIPsInsight</h4>
+                                            <span class="milestone-year">2022</span>
+                                            <div class="milestone-year-indicator"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Milestone 3: BlobLens (2026) -->
+                                    <div class="timeline-milestone" data-index="2">
+                                        <div class="milestone-node-dot"></div>
+                                        <div class="milestone-logo-circle">
+                                            <img src="img/icons/bloblens_logo.png" alt="BlobLens Logo">
+                                        </div>
+                                        <div class="milestone-info">
+                                            <h4 class="milestone-title">BlobLens</h4>
+                                            <span class="milestone-year">2026</span>
+                                            <div class="milestone-year-indicator"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Milestone 4: Ethshala (2026) -->
+                                    <div class="timeline-milestone" data-index="3">
+                                        <div class="milestone-node-dot"></div>
+                                        <div class="milestone-logo-circle">
+                                            <img src="img/icons/ethshala_logo.png" alt="Ethshala Logo">
+                                        </div>
+                                        <div class="milestone-info">
+                                            <h4 class="milestone-title">Ethshala</h4>
+                                            <span class="milestone-year">2026</span>
+                                            <div class="milestone-year-indicator"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Editorial Detail Panel Below -->
+                        <div class="timeline-detail-panel" id="timeline-detail-panel">
+                            <!-- Left Column: Overview -->
+                            <div class="tl-detail-left">
+                                <div class="tl-detail-header">
+                                    <div class="tl-detail-logo" id="tl-detail-logo-box">
+                                        <img src="img/icons/etherworld_badge.png" alt="EtherWorld" id="tl-detail-logo-img">
+                                    </div>
+                                    <div class="tl-detail-header-text">
+                                        <span class="tl-detail-badge" id="tl-detail-date-badge">Jan 2017 — Present</span>
+                                        <h3 class="tl-detail-title" id="tl-detail-title">EtherWorld</h3>
+                                        <div class="tl-detail-category" id="tl-detail-category">Blockchain News, Projects & Technology</div>
+                                    </div>
+                                </div>
+                                <p class="tl-detail-desc" id="tl-detail-desc">Started as a blockchain media platform helping developers stay updated through news, research and educational content.</p>
+                                <div class="tl-detail-action">
+                                    <a href="https://www.etherworld.co/" target="_blank" class="tl-detail-btn" id="tl-detail-url">Visit Website <span class="arrow-up-right">↗</span></a>
+                                </div>
+                            </div>
+
+                            <!-- Right Column: Metadata & Key Impact -->
+                            <div class="tl-detail-right">
+                                <div class="tl-meta-grid">
+                                    <div class="tl-meta-col">
+                                        <span class="meta-label">STARTED</span>
+                                        <span class="meta-val" id="tl-meta-started">Jan 2017</span>
+                                    </div>
+                                    <div class="tl-meta-col">
+                                        <span class="meta-label">STATUS</span>
+                                        <span class="meta-val status-val" id="tl-meta-status"><span class="status-dot">●</span> Active</span>
+                                    </div>
+                                    <div class="tl-meta-col">
+                                        <span class="meta-label">DURATION</span>
+                                        <span class="meta-val" id="tl-meta-duration">7+ Years</span>
+                                    </div>
+                                    <div class="tl-meta-col">
+                                        <span class="meta-label">FOCUS</span>
+                                        <span class="meta-val" id="tl-meta-focus">Education & News</span>
+                                    </div>
+                                </div>
+
+                                <div class="tl-impact-section">
+                                    <h5 class="tl-impact-header">KEY IMPACT</h5>
+                                    <ul class="tl-impact-list" id="tl-impact-list">
+                                        <li><span class="impact-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFB400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Published technical blockchain content</li>
+                                        <li><span class="impact-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFB400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Educated thousands of developers</li>
+                                        <li><span class="impact-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFB400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Fostered community participation</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="innercontainer">
-                        <div class="imageoutercontainer">
-                            <div class="imagecontainer">
-                                <a href="https://www.youtube.com/playlist?list=PLZmWIkdMcWY5q8HkaMk06AnZQFkmCVBxT"
-                                    target="_blank">
-                                    <img src="img/portfolio/Blockchain.jpeg" alt="">
-                                    <div class="black-modal"><span class="modal-text"><b>BLOCKCHAIN</b></span></div>
-                                </a>
+                <!-- 04 PLAYLISTS SECTION (Editorial, Premium, Apple/Linear Inspired Showcase) -->
+                <section class="avarch-playlists-section" id="playlists">
+                    <div class="playlists-container">
+                        <!-- Section Header Bar -->
+                        <div class="playlists-header-bar">
+                            <div class="playlists-header-left">
+                                <span class="playlists-label"><span class="pl-num">04</span> <span class="pl-text">PLAYLISTS</span></span>
+                                <h2 class="playlists-heading">Our YouTube Playlists</h2>
                             </div>
-                            <div class="imagecontainer">
-                                <a href="https://www.youtube.com/playlist?list=PLZmWIkdMcWY4ZnMEFTcfiR83Br-rb_8nG"
-                                    target="_blank">
-                                    <img src="img/portfolio/Metamask.jpeg" alt="">
-                                    <div class="black-modal"><span class="modal-text"><b>METAMASK</b></span></div>
-                                </a>
+                            <div class="playlists-header-right">
+                                <p class="playlists-header-desc">Educational content created to simplify blockchain and Web3 for developers and enthusiasts.</p>
                             </div>
                         </div>
-                        <div class="imageoutercontainer">
-                            <div class="imagecontainer">
-                                <a href="https://www.youtube.com/playlist?list=PLZmWIkdMcWY4IsrNbjEO3qfREoV-OX4zF"
-                                    target="_blank">
-                                    <img src="img/portfolio/Ethereum-video.jpeg" alt="">
-                                    <div class="black-modal"><span class="modal-text"><b>ETHEREUM</b></span></div>
-                                </a>
+
+                        <!-- Main 2-Column Showcase Layout -->
+                        <div class="playlists-showcase-grid">
+                            <!-- Left Column (60%): Featured Playlist Showcase Card -->
+                            <div class="playlists-side-left">
+                                <div class="featured-playlist-card" id="featured-playlist-card">
+                                    <div class="featured-thumb-wrap">
+                                        <img src="img/portfolio/Ethereum-video.jpeg" alt="Featured Playlist" class="featured-thumb-img" id="featured-thumb-img">
+                                        <div class="featured-thumb-branding">
+                                            <span class="branding-dot">●</span> <span class="branding-text">ETHERWORLD EDUCATION</span>
+                                        </div>
+                                        <!-- Progress Bar underneath the thumbnail -->
+                                        <div class="featured-progress-track">
+                                            <div class="featured-progress-fill" id="featured-progress-fill"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="featured-card-body">
+                                        <div class="featured-top-row">
+                                            <span class="featured-badge">FEATURED</span>
+                                            <span class="featured-video-count" id="featured-video-count"><span class="count-icon">:=</span> 42 VIDEOS</span>
+                                        </div>
+                                        <h3 class="featured-title" id="featured-title">Ethereum Explained</h3>
+                                        <p class="featured-desc" id="featured-desc">The complete Ethereum guide for beginners. Understand the architecture, accounts, transactions, gas, smart contracts and everything in between.</p>
+                                        <div class="featured-action-row">
+                                            <a href="https://www.youtube.com/playlist?list=PLZmWIkdMcWY4IsrNbjEO3qfREoV-OX4zF" target="_blank" class="featured-view-btn" id="featured-view-btn">View on YouTube <span class="arrow-up-right">↗</span></a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="imagecontainer">
-                                <a href="https://www.youtube.com/playlist?list=PLZmWIkdMcWY4Y3esuIWdVsi-s9pHtZN9F"
-                                    target="_blank">
-                                    <img src="img/portfolio/Blockipedia.jpeg" alt="">
-                                    <div class="black-modal"><span class="modal-text"><b>BLOCKIPEDIA</b></span></div>
-                                </a>
+
+                            <!-- Right Column (40%): Vertical Playlist Navigator -->
+                            <div class="playlists-side-right">
+                                <div class="playlist-navigator-list" id="playlist-navigator-list">
+                                    <div class="playlist-nav-row active" data-index="0">
+                                        <div class="nav-row-left">
+                                            <div class="nav-thumb-box">
+                                                <img src="img/portfolio/Ethereum-video.jpeg" alt="Ethereum Explained">
+                                            </div>
+                                            <div class="nav-info-box">
+                                                <h4 class="nav-row-title">Ethereum Explained</h4>
+                                                <span class="nav-row-count">42 VIDEOS</span>
+                                            </div>
+                                        </div>
+                                        <div class="nav-row-right">
+                                            <span class="nav-arrow">→</span>
+                                        </div>
+                                        <div class="nav-row-progress-track">
+                                            <div class="nav-row-progress-fill"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="playlist-nav-row" data-index="1">
+                                        <div class="nav-row-left">
+                                            <div class="nav-thumb-box">
+                                                <img src="img/portfolio/Ethereum.jpeg" alt="Ethereum Development">
+                                            </div>
+                                            <div class="nav-info-box">
+                                                <h4 class="nav-row-title">Ethereum Development</h4>
+                                                <span class="nav-row-count">28 VIDEOS</span>
+                                            </div>
+                                        </div>
+                                        <div class="nav-row-right">
+                                            <span class="nav-arrow">→</span>
+                                        </div>
+                                        <div class="nav-row-progress-track">
+                                            <div class="nav-row-progress-fill"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="playlist-nav-row" data-index="2">
+                                        <div class="nav-row-left">
+                                            <div class="nav-thumb-box">
+                                                <img src="img/portfolio/Blockchain.jpeg" alt="Web3 & Blockchain Basics">
+                                            </div>
+                                            <div class="nav-info-box">
+                                                <h4 class="nav-row-title">Web3 & Blockchain Basics</h4>
+                                                <span class="nav-row-count">31 VIDEOS</span>
+                                            </div>
+                                        </div>
+                                        <div class="nav-row-right">
+                                            <span class="nav-arrow">→</span>
+                                        </div>
+                                        <div class="nav-row-progress-track">
+                                            <div class="nav-row-progress-fill"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="playlist-nav-row" data-index="3">
+                                        <div class="nav-row-left">
+                                            <div class="nav-thumb-box">
+                                                <img src="img/portfolio/Metamask.jpeg" alt="MetaMask">
+                                            </div>
+                                            <div class="nav-info-box">
+                                                <h4 class="nav-row-title">MetaMask</h4>
+                                                <span class="nav-row-count">19 VIDEOS</span>
+                                            </div>
+                                        </div>
+                                        <div class="nav-row-right">
+                                            <span class="nav-arrow">→</span>
+                                        </div>
+                                        <div class="nav-row-progress-track">
+                                            <div class="nav-row-progress-fill"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="playlist-nav-row" data-index="4">
+                                        <div class="nav-row-left">
+                                            <div class="nav-thumb-box">
+                                                <img src="img/portfolio/Blockipedia.jpeg" alt="Blockipedia">
+                                            </div>
+                                            <div class="nav-info-box">
+                                                <h4 class="nav-row-title">Blockipedia</h4>
+                                                <span class="nav-row-count">24 VIDEOS</span>
+                                            </div>
+                                        </div>
+                                        <div class="nav-row-right">
+                                            <span class="nav-arrow">→</span>
+                                        </div>
+                                        <div class="nav-row-progress-track">
+                                            <div class="nav-row-progress-fill"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </section>
+
+    <!-- 05 TESTIMONIALS SECTION (3D Focal Coverflow Carousel, Apple & Linear Inspired) -->
+    <section class="avarch-testimonials-section" id="testimonials">
+        <div class="testimonials-container">
+            <!-- Section Header Bar -->
+            <div class="testimonials-header-bar">
+                <div class="testimonials-header-left">
+                    <span class="testimonials-label"><span class="test-num">05</span> <span class="test-text">TESTIMONIALS</span></span>
+                    <h2 class="testimonials-heading">Loved by the Community</h2>
                 </div>
-
-
+                <div class="testimonials-header-right">
+                    <p class="testimonials-header-desc">What developers, researchers, and Web3 leaders say about EtherWorld and Avarch.</p>
+                </div>
             </div>
-            <!-- end portfolio_container -->
-        </div>
-        <!-- portfolio -->
-    </div>
-    <!-- end portfolio div -->
 
-    <div style="width: 100%;display: flex;justify-content: center;align-items: center;flex-direction: column;" class="">
-
-
-        <div style="margin-top: 60px;text-align: center;" class="container">
-            <h3 style="font-size: 45px;">Testimonials</h3>
-        </div>
-
-
-        <!-- Carousel -->
-        <div style="margin-bottom: 70px;" class="container layout-pb-xl">
-            <div class="row" style="margin: 30px 0px;">
-                <div class="col-md-12">
-                    <div id="news-slider" class="owl-carousel">
-                        <div class="post-slide mt-80">
-                            <div class="post-content">
-                                <img style="width: 50%; margin-left: 25%; margin-top: 20px; border-radius: 50%;"
-                                    src="https://unavatar.io/x/EFJavaScript"
-                                    onerror="this.onerror=null; this.src='img/avatars/EFJavaScript.png';" alt="EF JavaScript Team" />
-                                <h1 style="text-align: center;" class="post-title2 aligncenter">
-                                    <a style="text-align: center;"
-                                        href="https://twitter.com/EFJavaScript/status/1584829805144395776"
-                                        target="_blank">EF JavaScript Team</a>
-                                </h1>
-                                <div class="row mt-24">
-                                    <h5 style="text-align: center; font-size: 17px; font-weight: 400;"><a
-                                            style="text-align: center; color:#323232; text-decoration: none;"
-                                            target="_blank"
-                                            href="https://twitter.com/EFJavaScript/status/1584829805144395776"
-                                            target="_blank" class="font-black-default2">Some nice and
-                                            detailed third-party (
-                                            @ether_world
-                                            🙏❤️) Shandong instructions.</a></h5>
-
-                                </div>
+            <!-- 3D Focal Carousel Stage -->
+            <div class="testimonials-focal-stage" id="testimonials-focal-stage">
+                <!-- All 9 testimonial cards -->
+                <div class="testimonial-focal-card" data-index="0">
+                    <div class="t-card-header">
+                        <div class="t-author-info">
+                            <img src="https://unavatar.io/x/EFJavaScript" onerror="this.onerror=null; this.src='img/avatars/EFJavaScript.png';" alt="EF JavaScript Team" class="t-avatar">
+                            <div>
+                                <h4 class="t-name"><a href="https://twitter.com/EFJavaScript/status/1584829805144395776" target="_blank">EF JavaScript Team</a></h4>
+                                <span class="t-handle">@EFJavaScript</span>
                             </div>
                         </div>
-
-                        <div class="post-slide mt-80">
-                            <div class="post-content">
-                                <img style="width: 50%; margin-left: 25%; margin-top: 20px; border-radius: 50%;"
-                                    src="https://unavatar.io/x/danfinlay"
-                                    onerror="this.onerror=null; this.src='img/avatars/danfinlay.jpg';" alt="Dan Finlay" />
-                                <h1 style="text-align: center;" class="post-title2 aligncenter">
-                                    <a style="text-align: center;"
-                                        href="https://twitter.com/danfinlay/status/1603040177194401793"
-                                        target="_blank">Dan Finlay</a>
-                                </h1>
-                                <div style="padding: 0px 5px;" class="row mt-24">
-                                    <h5 style="text-align: center; font-size: 17px; font-weight: 400;"><a
-                                            style="text-align: center; color:#323232; text-decoration: none;"
-                                            target="_blank"
-                                            href="https://twitter.com/danfinlay/status/1603040177194401793"
-                                            target="_blank" class="font-black-default2">Great job here.
-                                            @ether_world
-                                            explains
-                                            @MobyMask
-                                            faster than anyone yet and at a surprising depth:</a></h5>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="post-slide mt-80">
-                            <div class="post-content">
-                                <img style="width: 50%; margin-left: 25%; margin-top: 20px; border-radius: 50%;"
-                                    src="https://unavatar.io/x/vdwijden"
-                                    onerror="this.onerror=null; this.src='img/avatars/vdwijden.jpg';" alt="MariusVanDerWijden" />
-                                <h1 style="text-align: center;" class="post-title2 aligncenter">
-                                    <a style="text-align: center;"
-                                        href="https://twitter.com/vdwijden/status/1472875513622503427"
-                                        target="_blank">MariusVanDerWijden</a>
-                                </h1>
-                                <div class="row mt-24">
-                                    <h5 style="text-align: center; font-size: 17px; font-weight: 400;"><a
-                                            style="text-align: center; color:#323232; text-decoration: none;"
-                                            target="_blank"
-                                            href="https://twitter.com/vdwijden/status/1472875513622503427"
-                                            target="_blank" class="font-black-default2">@YashKamalChatu1
-                                            wrote a
-                                            really nice
-                                            explainer on how to get some testnet ether
-                                            on Kintsugi</a></h5>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="post-slide mt-80">
-                            <div class="post-content">
-                                <img style="width: 50%; margin-left: 25%; margin-top: 20px; border-radius: 50%;"
-                                    src="https://unavatar.io/x/benjaminion_xyz"
-                                    onerror="this.onerror=null; this.src='img/avatars/benjaminion_xyz.jpg';" alt="Ben Edgington" />
-                                <h1 style="text-align: center;" class="post-title2 aligncenter">
-                                    <a href="https://twitter.com/benjaminion_xyz/status/1517778040855670785"
-                                        target="_blank" style="text-decoration: none;" class="">Ben
-                                        Edgington</a>
-                                </h1>
-                                <div class="row mt-24">
-                                    <h5
-                                        style="text-align: center; font-size: 17px; color:#323232; text-decoration: none; font-weight: 400;">
-                                        <a href="https://twitter.com/benjaminion_xyz/status/1517778040855670785"
-                                            target="_blank" style="text-decoration: none;color:#323232;">
-                                            If you want to know what a shadow fork is, this article is
-                                            good<br>
-                                            &nbsp;
-                                        </a>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="post-slide mt-80">
-                            <div class="post-content">
-                                <img style="width: 50%; margin-left: 25%; margin-top: 20px; border-radius: 50%;"
-                                    src="https://unavatar.io/x/bloXrouteLabs"
-                                    onerror="this.onerror=null; this.src='img/avatars/bloXrouteLabs.png';" alt="bloXroute Labs" />
-                                <h1 style="text-align: center;" class="post-title2 aligncenter">
-                                    <a href="https://twitter.com/bloXrouteLabs/status/1513726500196990978"
-                                        target="_blank" class="">bloXroute Labs</a>
-                                </h1>
-                                <div class="row mt-24">
-                                    <h5
-                                        style="text-align: center; height: 55px; color:#323232; text-decoration: none; font-weight: 400;">
-                                        <a href="https://twitter.com/bloXrouteLabs/status/1513726500196990978"
-                                            target="_blank" style="text-decoration: none;color:#323232;">
-                                            Thanks to @ether_world for including us<br>&nbsp<br>&nbsp</a>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="post-slide mt-80">
-                            <div class="post-content">
-                                <img style="width: 50%; margin-left: 25%; margin-top: 20px; border-radius: 50%;"
-                                    src="https://unavatar.io/x/WatBug"
-                                    onerror="this.onerror=null; this.src='img/avatars/WatBug.jpg';" alt="WatBug" />
-                                <h1 style="text-align: center;" class="post-title2 aligncenter">
-                                    <a href="https://twitter.com/WatBug/status/1473029714575036419?t=TPeLNXZBHwNRAl8ZKM_OIw&s=19"
-                                        target="_blank" style="text-decoration: none;" class="">WatBug</a>
-                                </h1>
-                                <div class="row mt-24">
-                                    <h5
-                                        style="text-align: center; font-size: 17px; color:#323232; text-decoration: none; font-weight: 400;">
-                                        <a href="https://twitter.com/WatBug/status/1473029714575036419?t=TPeLNXZBHwNRAl8ZKM_OIw&s=19"
-                                            target="_blank" style="text-decoration: none;color:#323232;">
-                                            Neat! test results: faucet worked, and I succesfully sent some
-                                            ETH<br>
-                                            &nbsp;
-                                        </a>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="post-slide mt-80">
-                            <div class="post-content">
-                                <img style="width: 50%; margin-left: 25%; margin-top: 20px; border-radius: 50%;"
-                                    src="https://unavatar.io/x/Storgan_ManleyX"
-                                    onerror="this.onerror=null; this.src='img/avatars/Storgan_ManleyX.jpg';" alt="Storgan Manley" />
-                                <h1 style="text-align: center;" class="post-title2 aligncenter">
-                                    <a href="https://twitter.com/Storgan_ManleyX/status/1541242888843304960?t=QJOxaXrN1ePfDZzR_OhujQ&s=19"
-                                        target="_blank" style="text-decoration: none;" class="">Storgan
-                                        Manley</a>
-                                </h1>
-                                <div class="row mt-24">
-                                    <h5
-                                        style="text-align: center; font-size: 17px; color:#323232; text-decoration: none; font-weight: 400;">
-                                        <a href="https://twitter.com/Storgan_ManleyX/status/1541242888843304960?t=QJOxaXrN1ePfDZzR_OhujQ&s=19"
-                                            target="_blank" style="text-decoration: none;color:#323232;">
-                                            Thank you, it’s helpful. Seems I need to spend time
-                                            understanding the technical terms better
-                                        </a>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="post-slide mt-80">
-                            <div class="post-content">
-                                <img style="width: 50%; margin-left: 25%; margin-top: 20px; border-radius: 50%;"
-                                    src="https://unavatar.io/x/FrancescoCiull4"
-                                    onerror="this.onerror=null; this.src='img/avatars/FrancescoCiull4.jpg';" alt="Francesco Ciulla" />
-                                <h1 style="text-align: center;" class="post-title2 aligncenter">
-                                    <a href="https://twitter.com/FrancescoCiull4/status/1536532388574011392?t=zJEP4tZLRN1P-LSJ0JmPaQ&s=19"
-                                        target="_blank" style="text-decoration: none;" class="">Francesco
-                                        Ciulla</a>
-                                </h1>
-                                <div class="row mt-24">
-                                    <h5
-                                        style="text-align: center; font-size: 17px; color:#323232; text-decoration: none; font-weight: 400;">
-                                        <a href="https://twitter.com/FrancescoCiull4/status/1536532388574011392?t=zJEP4tZLRN1P-LSJ0JmPaQ&s=19"
-                                            target="_blank" style="text-decoration: none;color:#323232;">
-                                            "An Ethereum educational resource in the form of blogs and video
-                                            guides"<br>&nbsp;
-                                        </a>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="post-slide mt-80">
-                            <div class="post-content">
-                                <img style="width: 50%; margin-left: 25%; margin-top: 20px; border-radius: 50%;"
-                                    src="https://unavatar.io/x/christine_dkim"
-                                    onerror="this.onerror=null; this.src='img/avatars/christine_dkim.jpg';" alt="Christine Kim" />
-                                <h1 style="text-align: center;" class="post-title2 aligncenter">
-                                    <a href="https://twitter.com/christine_dkim/status/1560746596962385921?t=Y87NRaQ1f5o6JPvFjOTDUw&s=19"
-                                        target="_blank" style="text-decoration: none;" class="">Christine
-                                        Kim</a>
-                                </h1>
-                                <div class="row mt-24">
-                                    <h5
-                                        style="text-align: center; font-size: 17px; color:#323232; text-decoration: none; font-weight: 400;">
-                                        <a href="https://twitter.com/christine_dkim/status/1560746596962385921?t=Y87NRaQ1f5o6JPvFjOTDUw&s=19"
-                                            target="_blank" style="text-decoration: none;color:#323232;">
-                                            "This is a cool report and great graphics !"<br>&nbsp;
-                                        </a>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-
+                        <a href="https://twitter.com/EFJavaScript/status/1584829805144395776" target="_blank" class="t-twitter-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
                     </div>
-
+                    <p class="t-quote">"Some nice and detailed third-party (@ether_world 🙏❤️) Shandong instructions."</p>
+                    <div class="t-card-footer">
+                        <a href="https://twitter.com/EFJavaScript/status/1584829805144395776" target="_blank" class="t-link">Read post on X <span class="arrow-up-right">↗</span></a>
+                    </div>
                 </div>
+
+                <div class="testimonial-focal-card" data-index="1">
+                    <div class="t-card-header">
+                        <div class="t-author-info">
+                            <img src="https://unavatar.io/x/danfinlay" onerror="this.onerror=null; this.src='img/avatars/danfinlay.jpg';" alt="Dan Finlay" class="t-avatar">
+                            <div>
+                                <h4 class="t-name"><a href="https://twitter.com/danfinlay/status/1603040177194401793" target="_blank">Dan Finlay</a></h4>
+                                <span class="t-handle">Co-founder, MetaMask</span>
+                            </div>
+                        </div>
+                        <a href="https://twitter.com/danfinlay/status/1603040177194401793" target="_blank" class="t-twitter-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+                    </div>
+                    <p class="t-quote">"Great job here. @ether_world explains @MobyMask faster than anyone yet and at a surprising depth."</p>
+                    <div class="t-card-footer">
+                        <a href="https://twitter.com/danfinlay/status/1603040177194401793" target="_blank" class="t-link">Read post on X <span class="arrow-up-right">↗</span></a>
+                    </div>
+                </div>
+
+                <div class="testimonial-focal-card" data-index="2">
+                    <div class="t-card-header">
+                        <div class="t-author-info">
+                            <img src="https://unavatar.io/x/vdwijden" onerror="this.onerror=null; this.src='img/avatars/vdwijden.jpg';" alt="MariusVanDerWijden" class="t-avatar">
+                            <div>
+                                <h4 class="t-name"><a href="https://twitter.com/vdwijden/status/1472875513622503427" target="_blank">MariusVanDerWijden</a></h4>
+                                <span class="t-handle">Core Ethereum Developer</span>
+                            </div>
+                        </div>
+                        <a href="https://twitter.com/vdwijden/status/1472875513622503427" target="_blank" class="t-twitter-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+                    </div>
+                    <p class="t-quote">"@YashKamalChatu1 wrote a really nice explainer on how to get some testnet ether on Kintsugi."</p>
+                    <div class="t-card-footer">
+                        <a href="https://twitter.com/vdwijden/status/1472875513622503427" target="_blank" class="t-link">Read post on X <span class="arrow-up-right">↗</span></a>
+                    </div>
+                </div>
+
+                <div class="testimonial-focal-card" data-index="3">
+                    <div class="t-card-header">
+                        <div class="t-author-info">
+                            <img src="https://unavatar.io/x/benjaminion_xyz" onerror="this.onerror=null; this.src='img/avatars/benjaminion_xyz.jpg';" alt="Ben Edgington" class="t-avatar">
+                            <div>
+                                <h4 class="t-name"><a href="https://twitter.com/benjaminion_xyz/status/1517778040855670785" target="_blank">Ben Edgington</a></h4>
+                                <span class="t-handle">Author & Teku Lead</span>
+                            </div>
+                        </div>
+                        <a href="https://twitter.com/benjaminion_xyz/status/1517778040855670785" target="_blank" class="t-twitter-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+                    </div>
+                    <p class="t-quote">"If you want to know what a shadow fork is, this article is good."</p>
+                    <div class="t-card-footer">
+                        <a href="https://twitter.com/benjaminion_xyz/status/1517778040855670785" target="_blank" class="t-link">Read post on X <span class="arrow-up-right">↗</span></a>
+                    </div>
+                </div>
+
+                <div class="testimonial-focal-card" data-index="4">
+                    <div class="t-card-header">
+                        <div class="t-author-info">
+                            <img src="https://unavatar.io/x/bloXrouteLabs" onerror="this.onerror=null; this.src='img/avatars/bloXrouteLabs.png';" alt="bloXroute Labs" class="t-avatar">
+                            <div>
+                                <h4 class="t-name"><a href="https://twitter.com/bloXrouteLabs/status/1513726500196990978" target="_blank">bloXroute Labs</a></h4>
+                                <span class="t-handle">@bloXrouteLabs</span>
+                            </div>
+                        </div>
+                        <a href="https://twitter.com/bloXrouteLabs/status/1513726500196990978" target="_blank" class="t-twitter-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+                    </div>
+                    <p class="t-quote">"Thanks to @ether_world for including us in the latest research overview."</p>
+                    <div class="t-card-footer">
+                        <a href="https://twitter.com/bloXrouteLabs/status/1513726500196990978" target="_blank" class="t-link">Read post on X <span class="arrow-up-right">↗</span></a>
+                    </div>
+                </div>
+
+                <div class="testimonial-focal-card" data-index="5">
+                    <div class="t-card-header">
+                        <div class="t-author-info">
+                            <img src="https://unavatar.io/x/WatBug" onerror="this.onerror=null; this.src='img/avatars/WatBug.jpg';" alt="WatBug" class="t-avatar">
+                            <div>
+                                <h4 class="t-name"><a href="https://twitter.com/WatBug/status/1473029714575036419" target="_blank">WatBug</a></h4>
+                                <span class="t-handle">@WatBug</span>
+                            </div>
+                        </div>
+                        <a href="https://twitter.com/WatBug/status/1473029714575036419" target="_blank" class="t-twitter-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+                    </div>
+                    <p class="t-quote">"Neat! test results: faucet worked, and I successfully sent some ETH using the guide."</p>
+                    <div class="t-card-footer">
+                        <a href="https://twitter.com/WatBug/status/1473029714575036419" target="_blank" class="t-link">Read post on X <span class="arrow-up-right">↗</span></a>
+                    </div>
+                </div>
+
+                <div class="testimonial-focal-card" data-index="6">
+                    <div class="t-card-header">
+                        <div class="t-author-info">
+                            <img src="https://unavatar.io/x/Storgan_ManleyX" onerror="this.onerror=null; this.src='img/avatars/Storgan_ManleyX.jpg';" alt="Storgan Manley" class="t-avatar">
+                            <div>
+                                <h4 class="t-name"><a href="https://twitter.com/Storgan_ManleyX/status/1541242888843304960" target="_blank">Storgan Manley</a></h4>
+                                <span class="t-handle">@Storgan_ManleyX</span>
+                            </div>
+                        </div>
+                        <a href="https://twitter.com/Storgan_ManleyX/status/1541242888843304960" target="_blank" class="t-twitter-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+                    </div>
+                    <p class="t-quote">"Thank you, it’s helpful. Seems I need to spend time understanding the technical terms better."</p>
+                    <div class="t-card-footer">
+                        <a href="https://twitter.com/Storgan_ManleyX/status/1541242888843304960" target="_blank" class="t-link">Read post on X <span class="arrow-up-right">↗</span></a>
+                    </div>
+                </div>
+
+                <div class="testimonial-focal-card" data-index="7">
+                    <div class="t-card-header">
+                        <div class="t-author-info">
+                            <img src="https://unavatar.io/x/FrancescoCiull4" onerror="this.onerror=null; this.src='img/avatars/FrancescoCiull4.jpg';" alt="Francesco Ciulla" class="t-avatar">
+                            <div>
+                                <h4 class="t-name"><a href="https://twitter.com/FrancescoCiull4/status/1536532388574011392" target="_blank">Francesco Ciulla</a></h4>
+                                <span class="t-handle">Developer Advocate</span>
+                            </div>
+                        </div>
+                        <a href="https://twitter.com/FrancescoCiull4/status/1536532388574011392" target="_blank" class="t-twitter-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+                    </div>
+                    <p class="t-quote">"An Ethereum educational resource in the form of blogs and video guides."</p>
+                    <div class="t-card-footer">
+                        <a href="https://twitter.com/FrancescoCiull4/status/1536532388574011392" target="_blank" class="t-link">Read post on X <span class="arrow-up-right">↗</span></a>
+                    </div>
+                </div>
+
+                <div class="testimonial-focal-card" data-index="8">
+                    <div class="t-card-header">
+                        <div class="t-author-info">
+                            <img src="https://unavatar.io/x/christine_dkim" onerror="this.onerror=null; this.src='img/avatars/christine_dkim.jpg';" alt="Christine Kim" class="t-avatar">
+                            <div>
+                                <h4 class="t-name"><a href="https://twitter.com/christine_dkim/status/1560746596962385921" target="_blank">Christine Kim</a></h4>
+                                <span class="t-handle">VP Research, Galaxy</span>
+                            </div>
+                        </div>
+                        <a href="https://twitter.com/christine_dkim/status/1560746596962385921" target="_blank" class="t-twitter-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+                    </div>
+                    <p class="t-quote">"This is a cool report and great graphics!"</p>
+                    <div class="t-card-footer">
+                        <a href="https://twitter.com/christine_dkim/status/1560746596962385921" target="_blank" class="t-link">Read post on X <span class="arrow-up-right">↗</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Optional Subtle Navigation Indicators / Controls underneath -->
+            <div class="testimonials-controls">
+                <button class="t-nav-btn" id="t-prev-btn" aria-label="Previous Testimonial">←</button>
+                <div class="t-dots-track" id="t-dots-track"></div>
+                <button class="t-nav-btn" id="t-next-btn" aria-label="Next Testimonial">→</button>
             </div>
         </div>
-    </div>
-
-
-    <!-- Educational Associate section -->
-    <section class="container" style="text-align: center;margin: 150px auto 0px;">
-        <a href="associate-partner.html">
-            <h3 style="font-size: 27px;">Associates and Partners</h3>
-        </a>
-
-        <div class="college-tile-container">
-            <a
-                href="https://etherworld.co/2020/07/27/edcon-the-community-ethereum-development-conference-to-take-place-virtually-on-august-9-11/">
-                <div class="college-big-tile"
-                    style="height: 200px; width: 400px;border-radius: 10px;padding: 20px;background-color: rgb(248, 248, 248);box-shadow: 0px 0px 20px 0px rgb(220, 220, 220);">
-                    <img style="width: 100%; height:100%;border-radius: 10px;"
-                        src="https://miro.medium.com/max/940/1*TInz872dR8_L5_57Dkvifg.jpeg" alt="">
-                </div>
-            </a>
-            <!-- <div
-                class="college-tile">
-                <img style="width: 100%; height:100%;" src="https://www.gcoea.ac.in/media/logo-dark.png" alt="">
-            </div> -->
-            <a href="associate-partner.html">
-                <div class="college-tile">
-                    <div class="college-modal"><span class="college-modal-text">IIT Goa</span></div>
-                    <img style="width: 100%; height:100%;" loading="lazy"
-                        src="https://upload.wikimedia.org/wikipedia/en/a/a7/Indian_Institute_of_Technology_Goa_Logo.svg"
-                        alt="">
-                </div>
-            </a>
-            <a href="associate-partner.html">
-                <div class="college-tile">
-                    <div class="college-modal"><span class="college-modal-text">NIT Hamirpur</span></div>
-                    <img style="width: 100%; height:100%;" loading="lazy"
-                        src="https://upload.wikimedia.org/wikipedia/en/b/b8/National_Institute_of_Technology%2C_Hamirpur_Logo.png"
-                        alt="">
-                </div>
-            </a>
-            <a href="associate-partner.html">
-                <div class="college-tile">
-                    <div class="college-modal"><span class="college-modal-text">SRM University</span></div>
-                    <img style="width: 100%; height:100%;" loading="lazy"
-                        src="https://upload.wikimedia.org/wikipedia/en/7/7a/SRM_University%2C_Haryana_logo.png" alt="">
-                </div>
-            </a>
-        </div>
-
-        <div class="college-tile-container">
-            <div class="college-tile">
-                <div class="college-modal"><span class="college-modal-text">LIT Mainpuri</span></div>
-                <img style="width: 100%; height:100%;" loading="lazy"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeTlWvXtDJ1LgbzdeVKYb3kobSU1X7ct3DWE9KuYcg&s"
-                    alt="">
-            </div>
-            <div class="college-tile">
-                <div class="college-modal"><span class="college-modal-text">B.C Roy engineering</span></div>
-                <img style="width: 100%; height:100%;" loading="lazy"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLiiUpj6V69yzm72z07IdiQBhgNiBy1IRKoheFFFlrUZorkaRWYqFPaFouBupqMFyBhYw&usqp=CAU"
-                    alt="">
-            </div>
-            <div class="college-tile">
-                <div class="college-modal"><span class="college-modal-text">BMIIT</span></div>
-                <img style="width: 100%; height:100%;" loading="lazy"
-                    src="https://images.collegedunia.com/public/college_data/images/logos/1597148584Logo.jpg" alt="">
-            </div>
-            <div class="college-tile">
-                <div class="college-modal"><span class="college-modal-text">SREC</span></div>
-                <img style="width: 100%; height:100%;" loading="lazy"
-                    src="https://srec.ac.in/uploads/news/25x0wriwhf16052018035615srec.jpg" alt="">
-            </div>
-            <div class="college-tile">
-                <div class="college-modal"><span class="college-modal-text">IIIT Dharwad</span></div>
-                <img style="width: 100%; height:100%;" loading="lazy"
-                    src="https://upload.wikimedia.org/wikipedia/en/9/95/Indian_Institute_of_Information_Technology%2C_Dharwad_Logo.svg"
-                    alt="">
-            </div>
-        </div>
-
-        <div class="college-tile-container" style="justify-content: center; gap: 40px;">
-            <div class="college-tile">
-                <div class="college-modal"><span class="college-modal-text">Heritage Institute Of Technology</span></div>
-                <img style="width: 100%; height:100%;" loading="lazy"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmC_tFmFSpTqVHZv2sPOYMB15EqPgmM_BFKbh6whOmkQ&s"
-                    onerror="this.onerror=null; this.src='img/partners/heritage.png';"
-                    alt="Heritage Institute Of Technology">
-            </div>
-            <div class="college-tile">
-                <div class="college-modal"><span class="college-modal-text">HETC</span></div>
-                <img style="width: 100%; height:100%;" loading="lazy"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBKGRYzGkaqN-bqYWnqH6ssRKOrKHgbLUFr8ifYIVI9w&s=10"
-                    onerror="this.onerror=null; this.src='img/partners/hetc.png';"
-                    alt="HETC">
-            </div>
-            <div class="college-tile">
-                <div class="college-modal"><span class="college-modal-text">NMAMIT</span></div>
-                <img style="width: 100%; height:100%;" loading="lazy"
-                    src="https://placement.nmamit.in/images/nmamit.png"
-                    onerror="this.onerror=null; this.src='img/partners/nmamit.png';"
-                    alt="NMAMIT">
-            </div>
-        </div>
-
     </section>
 
-    <!-- footer -->
-    <footer style="margin:50px 0px;">
-        <div class="footer-section">
-            <ul style="background-color: black;list-style: none;" class="footer-box-primary">
-                <li class="box-label">About Us</li>
 
+    <!-- 06 ASSOCIATES & PARTNERS SECTION (Apple, Stripe, Vercel Inspired) -->
+    <section class="avarch-partners-section" id="partners">
+        <div class="partners-container">
+            <div class="partners-header">
+                <span class="partners-label">COLLABORATING FOR IMPACT</span>
+                <h2 class="partners-heading">Associates & Partners</h2>
+                <p class="partners-desc">We collaborate with leading institutions and organizations to drive innovation and create meaningful impact.</p>
+            </div>
 
-                <li><a href="index.html">Home</a>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="associate-partner.html">Associates and Partners</a>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">contact us</a></li>
+            <div class="partners-logo-grid">
+                <!-- Partner 1: EDCON -->
+                <a href="https://etherworld.co/2020/07/27/edcon-the-community-ethereum-development-conference-to-take-place-virtually-on-august-9-11/" target="_blank" class="partner-card">
+                    <div class="partner-logo-box">
+                        <img src="https://miro.medium.com/max/940/1*TInz872dR8_L5_57Dkvifg.jpeg" alt="EDCON" class="partner-logo-img">
+                    </div>
+                    <span class="partner-name">EDCON</span>
+                </a>
 
+                <!-- Partner 2: IIT Goa -->
+                <div class="partner-card">
+                    <div class="partner-logo-box">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Indian_Institute_of_Technology_Goa_Logo.svg" alt="IIT Goa" class="partner-logo-img">
+                    </div>
+                    <span class="partner-name">IIT Goa</span>
+                </div>
 
+                <!-- Partner 3: NIT Hamirpur -->
+                <div class="partner-card">
+                    <div class="partner-logo-box">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/b/b8/National_Institute_of_Technology%2C_Hamirpur_Logo.png" alt="NIT Hamirpur" class="partner-logo-img">
+                    </div>
+                    <span class="partner-name">NIT Hamirpur</span>
+                </div>
 
-                <li class="box-label">Follow me</li>
-                <li class="box-social"><a href="https://twitter.com/ether_world" target="_blank"><i
-                            class="ion-social-twitter"></i></a></li>
-                <li class="box-social"><a href="https://www.youtube.com/channel/UCnceAY-vAQsO8TgGAj5SGFA"
-                        target="_blank"><i class="ion-social-youtube"></i></a></li>
-                <li class="box-social"><a href="https://github.com/Avarch-org" target="_blank"><i
-                            class="ion-social-github"></i></a></li>
-                <li class="box-social"><a href="https://www.instagram.com/etherworld.co/" target="_blank"><i
-                            class="ion-social-instagram-outline"></i></a></li>
-                <li class="box-social"><a href="https://www.facebook.com/etherworld2017" target="_blank"><i
-                            class="ion-social-facebook"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
-                <li class="box-social"><a href="https://www.linkedin.com/company/etherworld/" target="_blank"><i
-                            class="ion-social-linkedin"></i></a></li>
-            </ul>
+                <!-- Partner 4: Heritage Institute of Technology -->
+                <div class="partner-card">
+                    <div class="partner-logo-box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmC_tFmFSpTqVHZv2sPOYMB15EqPgmM_BFKbh6whOmkQ&s" onerror="this.onerror=null; this.src='img/partners/heritage.png';" alt="Heritage Institute of Technology" class="partner-logo-img">
+                    </div>
+                    <span class="partner-name">Heritage Institute of Technology</span>
+                </div>
+
+                <!-- Partner 5: SRM University -->
+                <div class="partner-card">
+                    <div class="partner-logo-box">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/SRM_University%2C_Haryana_logo.png" alt="SRM University" class="partner-logo-img">
+                    </div>
+                    <span class="partner-name">SRM University</span>
+                </div>
+
+                <!-- Partner 6: LIT Mainpuri -->
+                <div class="partner-card">
+                    <div class="partner-logo-box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeTlWvXtDJ1LgbzdeVKYb3kobSU1X7ct3DWE9KuYcg&s" alt="LIT Mainpuri" class="partner-logo-img">
+                    </div>
+                    <span class="partner-name">LIT Mainpuri</span>
+                </div>
+
+                <!-- Partner 7: Dr. B.C. Roy Engineering -->
+                <div class="partner-card">
+                    <div class="partner-logo-box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLiiUpj6V69yzm72z07IdiQBhgNiBy1IRKoheFFFlrUZorkaRWYqFPaFouBupqMFyBhYw&usqp=CAU" alt="B.C. Roy Engineering" class="partner-logo-img">
+                    </div>
+                    <span class="partner-name">B.C. Roy Engineering</span>
+                </div>
+
+                <!-- Partner 8: BMIIT -->
+                <div class="partner-card">
+                    <div class="partner-logo-box">
+                        <img src="https://images.collegedunia.com/public/college_data/images/logos/1597148584Logo.jpg" alt="BMIIT" class="partner-logo-img">
+                    </div>
+                    <span class="partner-name">BMIIT</span>
+                </div>
+
+                <!-- Partner 9: SREC -->
+                <div class="partner-card">
+                    <div class="partner-logo-box">
+                        <img src="https://srec.ac.in/uploads/news/25x0wriwhf16052018035615srec.jpg" alt="SREC" class="partner-logo-img">
+                    </div>
+                    <span class="partner-name">SREC</span>
+                </div>
+
+                <!-- Partner 10: IIIT Dharwad -->
+                <div class="partner-card">
+                    <div class="partner-logo-box">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/9/95/Indian_Institute_of_Information_Technology%2C_Dharwad_Logo.svg" alt="IIIT Dharwad" class="partner-logo-img">
+                    </div>
+                    <span class="partner-name">IIIT Dharwad</span>
+                </div>
+
+                <!-- Partner 11: HETC -->
+                <div class="partner-card">
+                    <div class="partner-logo-box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBKGRYzGkaqN-bqYWnqH6ssRKOrKHgbLUFr8ifYIVI9w&s=10" onerror="this.onerror=null; this.src='img/partners/hetc.png';" alt="HETC" class="partner-logo-img">
+                    </div>
+                    <span class="partner-name">HETC</span>
+                </div>
+
+                <!-- Partner 12: NMAMIT -->
+                <div class="partner-card">
+                    <div class="partner-logo-box">
+                        <img src="https://placement.nmamit.in/images/nmamit.png" onerror="this.onerror=null; this.src='img/partners/nmamit.png';" alt="NMAMIT" class="partner-logo-img">
+                    </div>
+                    <span class="partner-name">NMAMIT</span>
+                </div>
+            </div>
         </div>
-        <div class="container-fluid">
-            <p class="copyright">© Avarch</p>
+    </section>
+
+    <!-- 07 COMPACT PREMIUM FOOTER (Apple, Vercel, Framer & Linear Inspired) -->
+    <footer class="avarch-compact-footer">
+        <div class="compact-footer-container">
+            <div class="compact-footer-top">
+                <!-- Left Column: Organization logo + short sentence -->
+                <div class="compact-footer-left">
+                    <a href="index.html" class="compact-footer-logo">
+                        <span class="compact-footer-logo-text">Avarch</span>
+                    </a>
+                </div>
+
+                <!-- Right Column: Navigation + Social Icons -->
+                <div class="compact-footer-right">
+                    <nav class="compact-footer-nav" aria-label="Footer Navigation">
+                        <a href="index.html" class="compact-nav-link">Home</a>
+                        <a href="about.html" class="compact-nav-link">About</a>
+                        <a href="projects.html" class="compact-nav-link">Projects</a>
+                        <a href="associate-partner.html" class="compact-nav-link">Associates & Partners</a>
+                        <a href="contact.html" class="compact-nav-link">Contact</a>
+                    </nav>
+
+                    <div class="compact-footer-social">
+                        <a href="https://github.com/Avarch-org" target="_blank" aria-label="GitHub" class="compact-social-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCnceAY-vAQsO8TgGAj5SGFA" target="_blank" aria-label="YouTube" class="compact-social-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/etherworld/" target="_blank" aria-label="LinkedIn" class="compact-social-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="https://www.instagram.com/etherworld.co/" target="_blank" aria-label="Instagram" class="compact-social-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://twitter.com/ether_world" target="_blank" aria-label="Twitter / X" class="compact-social-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thin Divider -->
+            <div class="compact-footer-divider"></div>
+
+            <!-- Bottom Row: Left © 2026 Organization Name, Right Back to Top ↑ -->
+            <div class="compact-footer-bottom">
+                <div class="compact-footer-copy">© 2026 Avarch</div>
+                <a href="#0" class="compact-footer-backtop" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Back to Top ↑</a>
+            </div>
         </div>
     </footer>
-    <!-- end footer -->
 
     <!-- back to top -->
     <a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
@@ -609,12 +1038,16 @@
     <script src="js/jquery-2.1.1.js"></script>
     <!--  plugins -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/vendors.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/script4.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/animated-headline.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
 
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <!--  custom script -->
     <script src="js/custom.js"></script>

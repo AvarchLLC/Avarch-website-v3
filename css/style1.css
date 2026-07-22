@@ -1,28 +1,28 @@
-.outercontainer{
+.outercontainer {
     display: flex;
     flex-direction: column;
     width: 100%;
     background-color: black;
 }
 
-.innercontainer{
+.innercontainer {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.imageoutercontainer{
+.imageoutercontainer {
     display: flex;
     flex-direction: column;
 }
 
-.imagecontainer{
+.imagecontainer {
     width: 100%;
     position: relative;
     overflow: hidden;
 }
 
-.black-modal{
+.black-modal {
     position: absolute;
     top: 0;
     left: 0;
@@ -40,8 +40,8 @@
     transform: translateX(-100px);
 }
 
-.modal-text{
-    background-color:#ffbf00;
+.modal-text {
+    background-color: #ffbf00;
     padding: 5px 15px 3px;
     color: black;
     border-radius: 20px;
@@ -50,44 +50,44 @@
     letter-spacing: 2px;
 }
 
-.imagecontainer:hover .black-modal{
+.imagecontainer:hover .black-modal {
     opacity: 1;
     transform: translateX(0px);
 }
 
-.imagecontainer1{
+.imagecontainer1 {
     position: relative;
     overflow: hidden;
 }
 
-.imagecontainer1:hover .black-modal{
+.imagecontainer1:hover .black-modal {
     opacity: 1;
     transform: translateX(0px);
 }
 
-.imagecontainer1 img{
+.imagecontainer1 img {
     width: 100%;
 }
 
-.imagecontainer img{
+.imagecontainer img {
     width: 100%;
     height: 100%;
 }
 
 
-@media only screen and (min-width: 768px){
-    .outercontainer{
+@media only screen and (min-width: 768px) {
+    .outercontainer {
         flex-direction: row;
     }
 
-    .imageoutercontainer{
+    .imageoutercontainer {
         flex-direction: row;
     }
 
 }
 
 
-.avarch-timeline{
+.avarch-timeline {
     margin: 100px 0px;
     width: 100%;
     display: flex;
@@ -96,18 +96,18 @@
     align-items: center;
 }
 
-.avarch-timeline img{
+.avarch-timeline img {
     width: 90%;
 }
 
-.college-tile-container{
+.college-tile-container {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     margin: 50px 0px;
 }
 
-.college-tile{
+.college-tile {
     position: relative;
     overflow: hidden;
     /* height: 200px; */
@@ -118,7 +118,7 @@
     box-shadow: 0px 0px 20px 0px rgb(220, 220, 220);
 }
 
-.college-modal{
+.college-modal {
     position: absolute;
     top: 0;
     left: 0;
@@ -134,13 +134,13 @@
     transition: all 0.2s linear;
 }
 
-.college-tile:hover .college-modal{
+.college-tile:hover .college-modal {
     opacity: 1;
     /* transform: translateX(0px); */
 }
 
-.college-modal-text{
-    background-color:#ffbf00;
+.college-modal-text {
+    background-color: #ffbf00;
     padding: 5px 15px 3px;
     color: black;
     border-radius: 20px;
@@ -151,11 +151,12 @@
 }
 
 
-@media only screen and (min-width: 768px){
-    .college-tile-container{
+@media only screen and (min-width: 768px) {
+    .college-tile-container {
         flex-direction: row;
     }
-    .college-tile{
+
+    .college-tile {
         width: 200px;
         height: 200px;
     }
