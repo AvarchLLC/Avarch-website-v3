@@ -6,16 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Contact US</title>
+    <title>Contact Us - Avarch</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="ionicons/css/ionicons.min.css" rel="stylesheet">
     <link rel="icon" href="img/icons/Avarch.gif" type="image/gif">
 
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- main css -->
     <link href="css/style.css" rel="stylesheet">
-
+    <link href="css/contactstyle.css" rel="stylesheet">
 
     <!-- modernizr -->
     <script src="js/modernizr.js"></script>
@@ -28,7 +33,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body class="contact-page">
 
     <!-- Preloader -->
     <div id="preloader">
@@ -58,17 +63,15 @@
         <!-- nav -->
         <nav>
             <ul class="box-primary-nav">
-                <li class="box-label">About Us</li>
+                <li class="box-label">Associates and Partners</li>
 
-                <li><a href="index.html">Home</a>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="associate-partner.html">Associates and Partners</a>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="associate-partner.html">Associates and Partners</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">contact Us</a> <i class="ion-ios-circle-filled color"></i></li>
+                <li><a href="contact.html">contact us</a> <i class="ion-ios-circle-filled color"></i></li>
 
-
-
-                <li class="box-label">Follow me</li>
+                <li class="box-label">Follow us</li>
 
                 <li class="box-social"><a href="https://twitter.com/ether_world" target="_blank"><i
                             class="ion-social-twitter"></i></a></li>
@@ -86,113 +89,137 @@
             </ul>
         </nav>
         <!-- end nav -->
-
     </div>
 
-    <!-- top bar -->
-    <div class="top-bar contactimg">
-        <h1>contact Us</h1>
-        <p><a href="#">Home</a> / Contact US</p>
-    </div>
-    <!-- end top bar -->
-
-    <!-- main-container -->
-    <div class="container main-container">
-        <div class="col-md-6">
-            <form method="post" action="mailto:contact@etherworld.co" enctype="text/plain">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="input-contact">
-                            <input type="text" name="name">
-                            <span>your name</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="input-contact">
-                            <input type="text" name="email">
-                            <span>your email</span>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="input-contact">
-                            <input type="text" name="object">
-                            <span>object</span>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="textarea-contact">
-                            <textarea name="message"></textarea>
-                            <span>message</span>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <input class="btn btn-box" type="submit" value="Send">
-                    </div>
-                </div>
-            </form>
-        </div>
-
-        <div class="col-md-6">
-            <h3 style="font-size: 33px;font-weight: 600;margin-top: 0px;" class="text-uppercase">contact us</h3>
-            <h5 style="font-size: 17px;">Project Development and Consultancy on Blockchain Technology</h5>
-            <div class="h-30"></div>
-            <p style="font-size: 17px;text-align: justify;">Avarch is a leading software company providing services to
-                the Ethereum
-                Blockchain. We engage potential developers in learning the concept of blockchain development, providing
-                them with
-                the opportunity to contribute to novice projects. We publish technical blogs, produce ELI5 videos and
-                help them with in-depth research on blockchain protocol.</p>
-            <div class="contact-info">
-                <p><i class="ion-ios-email"></i> contact@etherworld.co</p>
+    <!-- Hero Section -->
+    <header class="contact-hero-banner">
+        <div class="contact-hero-overlay">
+            <div class="contact-hero-container">
+                <h1 class="contact-hero-heading">CONTACT US</h1>
+                <p class="contact-hero-breadcrumb"><a href="index.html">Home</a> / Contact Us</p>
             </div>
         </div>
+    </header>
+    <!-- end Hero Section -->
 
+    <!-- Main Layout Section -->
+    <section class="contact-main-section">
+        <div class="contact-container">
+            <div class="contact-grid">
+                
+                <!-- Left Column (approx 60%): Elevated Contact Form Card -->
+                <div class="contact-form-card">
+                    <form method="post" action="mailto:contact@etherworld.co" enctype="text/plain">
+                        <div class="input-contact">
+                            <input type="text" name="name" required>
+                            <span>Your Name</span>
+                        </div>
+                        <div class="input-contact">
+                            <input type="text" name="email" required>
+                            <span>Your Email</span>
+                        </div>
+                        <div class="input-contact">
+                            <input type="text" name="object" required>
+                            <span>Subject</span>
+                        </div>
+                        <div class="textarea-contact">
+                            <textarea name="message" required></textarea>
+                            <span>Message</span>
+                        </div>
+                        <div>
+                            <input class="contact-submit-btn" type="submit" value="Send Message →">
+                        </div>
+                    </form>
+                </div>
 
-    </div>
-    <!-- end main-container -->
+                <!-- Right Column (approx 40%): Concise Technology-Focused Details -->
+                <div class="contact-info-column">
+                    <span class="contact-label">CONTACT</span>
+                    <h2 class="contact-heading">Project Development & Blockchain Consulting</h2>
+                    
+                    <p class="contact-body-text">
+                        Avarch develops blockchain products, conducts research, supports developer communities, and collaborates with institutions across the blockchain ecosystem.<br><br>
+                        For project inquiries, collaborations, or general questions, feel free to contact us.
+                    </p>
 
-    <!-- footer -->
-    <footer>
-        <div class="footer-section">
-            <ul style="background-color: black;list-style: none;" class="footer-box-primary">
-                <li class="box-label">About Us</li>
+                    <div class="contact-detail-box">
+                        <div class="contact-detail-label">EMAIL</div>
+                        <a href="mailto:contact@etherworld.co" class="contact-detail-value">contact@etherworld.co</a>
+                    </div>
 
-                <li><a href="index.html">Home</a>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="associate-partner.html">Associates and Partners</a>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">contact us</a></li>
+                    <!-- Social Section -->
+                    <div class="contact-social-section">
+                        <h3 class="contact-social-heading">Connect With Us</h3>
+                        <div class="contact-social-grid">
+                            <a href="https://github.com/Avarch-org" target="_blank" class="contact-social-icon" aria-label="GitHub"><i class="ion-social-github"></i></a>
+                            <a href="https://www.linkedin.com/company/etherworld/" target="_blank" class="contact-social-icon" aria-label="LinkedIn"><i class="ion-social-linkedin"></i></a>
+                            <a href="https://twitter.com/ether_world" target="_blank" class="contact-social-icon" aria-label="Twitter"><i class="ion-social-twitter"></i></a>
+                            <a href="https://www.youtube.com/channel/UCnceAY-vAQsO8TgGAj5SGFA" target="_blank" class="contact-social-icon" aria-label="YouTube"><i class="ion-social-youtube"></i></a>
+                            <a href="https://www.instagram.com/etherworld.co/" target="_blank" class="contact-social-icon" aria-label="Instagram"><i class="ion-social-instagram-outline"></i></a>
+                        </div>
+                    </div>
+                </div>
 
-
-
-                <li class="box-label">Follow me</li>
-
-                <li class="box-social"><a href="https://twitter.com/ether_world" target="_blank"><i
-                            class="ion-social-twitter"></i></a></li>
-                <li class="box-social"><a href="https://www.youtube.com/channel/UCnceAY-vAQsO8TgGAj5SGFA"
-                        target="_blank"><i class="ion-social-youtube"></i></a></li>
-                <li class="box-social"><a href="https://github.com/Avarch-org" target="_blank"><i
-                            class="ion-social-github"></i></a></li>
-                <li class="box-social"><a href="https://www.instagram.com/etherworld.co/" target="_blank"><i
-                            class="ion-social-instagram-outline"></i></a></li>
-                <li class="box-social"><a href="https://www.facebook.com/etherworld2017" target="_blank"><i
-                            class="ion-social-facebook"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
-                <li class="box-social"><a href="https://www.linkedin.com/company/etherworld/" target="_blank"><i
-                            class="ion-social-linkedin"></i></a></li>
-            </ul>
+            </div>
         </div>
-        <div class="container-fluid">
-            <p class="copyright">© Avarch</p>
+    </section>
+    <!-- end Main Layout Section -->
+
+    <!-- 07 COMPACT PREMIUM FOOTER (Apple, Vercel, Framer & Linear Inspired) -->
+    <footer class="avarch-compact-footer">
+        <div class="compact-footer-container">
+            <div class="compact-footer-top">
+                <!-- Left Column: Organization logo + short sentence -->
+                <div class="compact-footer-left">
+                    <a href="index.html" class="compact-footer-logo">
+                        <span class="compact-footer-logo-text">Avarch</span>
+                    </a>
+                </div>
+
+                <!-- Right Column: Navigation + Social Icons -->
+                <div class="compact-footer-right">
+                    <nav class="compact-footer-nav" aria-label="Footer Navigation">
+                        <a href="index.html" class="compact-nav-link">Home</a>
+                        <a href="about.html" class="compact-nav-link">About</a>
+                        <a href="projects.html" class="compact-nav-link">Projects</a>
+                        <a href="associate-partner.html" class="compact-nav-link">Associates & Partners</a>
+                        <a href="contact.html" class="compact-nav-link">Contact</a>
+                    </nav>
+
+                    <div class="compact-footer-social">
+                        <a href="https://github.com/Avarch-org" target="_blank" aria-label="GitHub" class="compact-social-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCnceAY-vAQsO8TgGAj5SGFA" target="_blank" aria-label="YouTube" class="compact-social-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/etherworld/" target="_blank" aria-label="LinkedIn" class="compact-social-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="https://www.instagram.com/etherworld.co/" target="_blank" aria-label="Instagram" class="compact-social-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://twitter.com/ether_world" target="_blank" aria-label="Twitter / X" class="compact-social-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thin Divider -->
+            <div class="compact-footer-divider"></div>
+
+            <!-- Bottom Row: Left © 2026 Organization Name, Right Back to Top ↑ -->
+            <div class="compact-footer-bottom">
+                <div class="compact-footer-copy">© 2026 Avarch</div>
+                <a href="#0" class="compact-footer-backtop" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Back to Top ↑</a>
+            </div>
         </div>
     </footer>
-    <!-- end footer -->
 
     <!-- back to top -->
     <a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
     <!-- end back to top -->
-
-
 
     <!-- jQuery -->
     <script src="js/jquery-2.1.1.js"></script>
@@ -201,7 +228,6 @@
     <script src="js/menu.js"></script>
     <script src="js/animated-headline.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
-
 
     <!--  custom script -->
     <script src="js/custom.js"></script>

@@ -1,0 +1,361 @@
+/* ==========================================================================
+   CONTACT US MODERN PREMIUM REDESIGN (Apple, Linear, Vercel, Stripe Inspired)
+   ========================================================================== */
+
+/* Ensure both 'Menu' text and three dashes are bright white and clearly visible over dark hero */
+.box-header:not(.menu-is-open) .box-primary-nav-trigger .box-menu-text {
+    color: #FFFFFF !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+}
+
+.box-header:not(.menu-is-open) .box-primary-nav-trigger .box-menu-icon,
+.box-header:not(.menu-is-open) .box-primary-nav-trigger .box-menu-icon::before,
+.box-header:not(.menu-is-open) .box-primary-nav-trigger .box-menu-icon:after {
+    background-color: #FFFFFF !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+}
+
+.box-header.menu-is-open .box-primary-nav-trigger .box-menu-text {
+    color: #111111 !important;
+    text-shadow: none !important;
+}
+
+.box-header.menu-is-open .box-primary-nav-trigger .box-menu-icon,
+.box-header.menu-is-open .box-primary-nav-trigger .box-menu-icon::before,
+.box-header.menu-is-open .box-primary-nav-trigger .box-menu-icon:after {
+    background-color: #111111 !important;
+    box-shadow: none !important;
+}
+
+/* Enforce Poppins typography across the entire contact page */
+.contact-hero-banner,
+.contact-hero-banner *,
+.contact-main-section,
+.contact-main-section * {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* 1. Hero Section */
+.contact-hero-banner {
+    position: relative;
+    width: 100%;
+    background: url("../img/backgrounds/contactback.png") no-repeat center / cover;
+    margin: 0;
+}
+
+.contact-hero-overlay {
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.78) 0%, rgba(20, 20, 20, 0.88) 100%);
+    padding: 150px 0 130px 0;
+    text-align: center;
+}
+
+.contact-hero-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 clamp(24px, 4vw, 48px);
+    box-sizing: border-box;
+}
+
+.contact-hero-heading {
+    font-size: clamp(52px, 6.5vw, 72px) !important;
+    font-weight: 800 !important;
+    color: #FFFFFF !important;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin: 0 0 20px 0 !important;
+    text-transform: uppercase;
+}
+
+.contact-hero-breadcrumb {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    margin: 0 !important;
+    letter-spacing: 0.5px;
+}
+
+.contact-hero-breadcrumb a {
+    color: #F5B400;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.contact-hero-breadcrumb a:hover {
+    color: #FFFFFF;
+}
+
+/* 2. Main Layout Section (100px top spacing after hero) */
+.contact-main-section {
+    padding: 100px 0 120px 0;
+    background-color: #FAFAFA;
+    width: 100%;
+}
+
+.contact-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 clamp(24px, 4vw, 48px);
+    box-sizing: border-box;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* 3. Left Column: Contact Form Card (White, 20px radius, soft shadow, 32px+ padding) */
+.contact-form-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.06);
+    padding: 40px 36px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.contact-form-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.09);
+    border-color: rgba(245, 180, 0, 0.25);
+}
+
+/* Form Inputs (56px height, 14px radius, light gray border) */
+.contact-form-card .input-contact {
+    height: 56px;
+    width: 100%;
+    border: 1px solid #E5E5E5;
+    border-radius: 14px;
+    background: #FFFFFF;
+    position: relative;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-card .textarea-contact {
+    height: 220px;
+    width: 100%;
+    border: 1px solid #E5E5E5;
+    border-radius: 14px;
+    background: #FFFFFF;
+    position: relative;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-card .input-contact:focus-within,
+.contact-form-card .textarea-contact:focus-within {
+    border-color: #F5B400 !important;
+    box-shadow: 0 0 0 3px rgba(245, 180, 0, 0.18) !important;
+}
+
+.contact-form-card .input-contact input[type="text"] {
+    height: 100%;
+    width: 100%;
+    border: 0 !important;
+    padding: 0 20px;
+    float: none;
+    position: relative;
+    background: transparent !important;
+    z-index: 2;
+    font-size: 16px;
+    color: #111111;
+    font-weight: 500;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+.contact-form-card .textarea-contact textarea {
+    height: 100%;
+    width: 100%;
+    border: 0 !important;
+    padding: 20px;
+    float: none;
+    position: relative;
+    background: transparent !important;
+    z-index: 2;
+    font-size: 16px;
+    color: #111111;
+    font-weight: 500;
+    border-radius: 14px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.contact-form-card .input-contact input[type="text"]:focus,
+.contact-form-card .textarea-contact textarea:focus {
+    outline: none !important;
+}
+
+/* Floating Spans / Labels (14px uppercase -> active floating badge) */
+.contact-form-card .input-contact > span,
+.contact-form-card .textarea-contact > span {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #888888;
+    font-weight: 500;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    letter-spacing: 0.8px;
+    pointer-events: none;
+}
+
+.contact-form-card .textarea-contact > span {
+    top: 24px;
+    transform: none;
+}
+
+.contact-form-card .input-contact > span.active,
+.contact-form-card .textarea-contact > span.active {
+    top: -10px !important;
+    left: 14px !important;
+    transform: none !important;
+    color: #F5B400 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    background-color: #FFFFFF !important;
+    padding: 1px 8px !important;
+    border: 1px solid #F5B400;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+/* Primary Submit Button (Gold accent, rounded corners, hover lift) */
+.contact-submit-btn {
+    display: inline-block;
+    padding: 18px 48px;
+    background-color: #F5B400;
+    color: #111111;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(245, 180, 0, 0.25);
+}
+
+.contact-submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(245, 180, 0, 0.4);
+    background-color: #ffbe1a;
+}
+
+/* 4. Right Column: Contact Information */
+.contact-info-column {
+    padding-top: 8px;
+}
+
+.contact-label {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    color: #F5B400;
+    margin-bottom: 14px;
+    display: inline-block;
+}
+
+.contact-heading {
+    font-size: clamp(30px, 3.5vw, 40px) !important;
+    font-weight: 800 !important;
+    color: #111111;
+    line-height: 1.25;
+    margin: 0 0 24px 0;
+    letter-spacing: -0.6px;
+}
+
+.contact-body-text {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    color: #666666;
+    line-height: 1.75;
+    margin: 0 0 36px 0;
+}
+
+.contact-detail-box {
+    margin-bottom: 40px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.contact-detail-label {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    color: #888888;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.contact-detail-value {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    color: #111111;
+    text-decoration: none !important;
+    display: inline-block;
+    transition: color 0.25s ease;
+}
+
+.contact-detail-value:hover {
+    color: #F5B400;
+}
+
+/* 5. Social Icons Section */
+.contact-social-heading {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #111111;
+    margin: 0 0 18px 0;
+}
+
+.contact-social-grid {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.contact-social-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    border: 1.5px solid #E5E5E5;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #111111;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.contact-social-icon:hover {
+    border-color: #F5B400;
+    background-color: #F5B400;
+    color: #111111;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(245, 180, 0, 0.25);
+}
+
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .contact-form-card {
+        padding: 32px 24px;
+    }
+}
