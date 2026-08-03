@@ -17,6 +17,18 @@
    <link href="css/style.css" rel="stylesheet">
    <!-- <link href="css/main.css" rel="stylesheet"> -->
 
+   <style>
+       .animate-fade-up {
+           opacity: 0;
+           transform: translateY(30px);
+           transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+       }
+       .animate-fade-up.is-visible {
+           opacity: 1;
+           transform: translateY(0);
+       }
+   </style>
+
 
    <!-- modernizr -->
    <script src="js/modernizr.js"></script>
@@ -87,72 +99,73 @@
       <!-- end nav -->
    </div>
 
-   <!-- Top bar -->
-   <div class="top-bar aboutusimg">
-      <h1>about us</h1>
-      <p><a href="#">Home</a> / about us</p>
+   <!-- Top Header Image -->
+   <div class="top-bar aboutusimg animate-fade-up" style="padding: 40px 0px; min-height: 180px; display: flex; flex-direction: column; justify-content: center; border-bottom: 1px solid #eaeaea;">
+      <h1 style="margin: 0; font-size: clamp(36px, 5vw, 48px); text-transform: uppercase;">About Us</h1>
+      <p style="margin: 5px 0 0;"><a href="index.html">Home</a> / About Us</p>
    </div>
-   <!-- end Top bar -->
+   <!-- end Top Header Image -->
 
    <!-- Main container -->
-   <div class="container main-container clearfix" style="margin-bottom: 40px;padding: 0px;">
-      <!-- <div class="col-md-6">
-            <img src="img/02.jpg" class="img-responsive" alt="" />
-        </div> -->
-      <div class="col-md-17">
+   <section class="container animate-fade-up delay-1" style="padding: 60px 15px 40px; display: flex; flex-direction: column; gap: 24px; text-align: left;">
+       <div style="margin-bottom: -10px;">
+           <span class="vision-label" style="font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;"><span class="vision-num" style="color: #FFB400;">01</span> <span class="vision-text" style="color: #111;">ABOUT US</span></span>
+       </div>
+       <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(32px, 5vw, 42px); font-weight: 700; color: #111; margin-bottom: 10px;">Blockchain Products & Services</h2>
+       <p class="vision-paragraph" style="font-weight: 500 !important; color: #111; font-size: 24px; max-width: none;">
+           Avarch is a software consultancy company providing blockchain products and services.
+       </p>
+       <p class="vision-paragraph" style="font-size: 20px; color: #444; max-width: none;">
+           From blockchain media publishing to blockchain explorer services. Avarch is fostering the next generation developers to learn, contribute and expand the horizon of the blockchain ecosystem.
+       </p>
+       <p class="vision-paragraph" style="font-size: 20px; color: #444; max-width: none;">
+           Our projects include <a href="https://etherworld.co/" style="color: #FFB400; font-weight: 600; text-decoration: none;">EtherWorld</a>, a website helping thousands of mainstream users to follow the latest changes of the blockchain and enables them to contribute to the growing ecosystem, and <a href="https://eipsinsight.com/" style="color: #FFB400; font-weight: 600; text-decoration: none;">EIPsInsight</a> an EIP focused data analytics website.
+       </p>
+       <p class="vision-paragraph" style="font-size: 20px; color: #444; max-width: none;">
+           Avarch is a leading software company providing services to the Ethereum Blockchain. We engage potential developers in learning the concept of blockchain development, providing the opportunity to contribute to novice projects. We publish <a href="https://etherworld.co/tag/enigma/" style="color: #FFB400; font-weight: 600; text-decoration: none;">technical blogs</a>, produce <a href="https://www.youtube.com/channel/UCnceAY-vAQsO8TgGAj5SGFA/playlists" style="color: #FFB400; font-weight: 600; text-decoration: none;">ELI5 videos</a> and share in-depth <a href="https://etherworld.co/tag/research/" style="color: #FFB400; font-weight: 600; text-decoration: none;">research reports</a> on blockchain protocols.
+       </p>
+   </section>
 
-         <h3 style="font-size: 27px;" class="uppercase">About Us </h3>
-         <h5 style="text-align: justify;font-size: 17px;">Blockchain Products & Services</h5>
-         <div class="h-30"></div>
-         <p style="text-align: justify;font-size: 17px;"><b>Avarch is a software consultancy company providing
-               blockchain products and services.</b></p>
+   <!-- Premium Quote Section -->
+   <section class="vision-panel animate-fade-up delay-2" style="background-color: #FAFAFA;">
+       <div class="vision-card">
+           <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+               <h3 style="font-size: clamp(28px, 4vw, 42px); font-family: 'Poppins', sans-serif; font-weight: 600; color: #111; line-height: 1.4; margin-bottom: 30px; text-transform: none;">
+                   "Blockchain is a very deep subject. Keep building and maintain consistency in learning the process. Everyone can make a difference."
+               </h3>
+               <p style="font-family: 'Poppins', sans-serif; font-size: 18px; color: #666; font-weight: 500;">
+                   &mdash; Pooja Ranjan
+               </p>
+           </div>
+       </div>
+   </section>
 
-         <p style="text-align: justify;font-size: 17px;"> <i>From blockchain media publishing to blockchain explorer
-               services. Avarch is
-               fostering the next generation developers to learn, contribute and expand the horizon of the blockchain
-               ecosystem </i>.</p>
-         <p style="text-align: justify;font-size: 17px;"> Our projects include <a
-               href="https://etherworld.co/">EtherWorld</a>, a website
-            helping thousands of mainstream users to follow the latest changes of the blockchain and enables them to
-            contribute to the growing ecosystem, and <a href="https://eipsinsight.com/">EIPsInsight</a> an EIP focused
-            data analytics website.</p>
-
-         <p style="text-align: justify;font-size: 17px;">Avarch is a leading software company providing services to the
-            Ethereum
-            Blockchain. We engage potential developers in learning the concept of blockchain development, providing the
-            opportunity to contribute to novice projects. We publish <a
-               href="https://etherworld.co/tag/enigma/">technical blogs</a>, produce <a
-               href="https://www.youtube.com/channel/UCnceAY-vAQsO8TgGAj5SGFA/playlists"> ELI5 videos </a> and share
-            in-depth <a href="https://etherworld.co/tag/research/"> research report </a> on blockchain protocols.</p>
-
-         <!-- Quote Section -->
-         <section
-            style="margin: 100px 0px 140px;border-radius: 8px;box-shadow: 0px 0px 30px grey;padding: 70px 20px 50px;">
-            <h3 style="text-align: center;font-size: 35px;margin: 0px;">"Blockchain is a very deep subject. Keep
-               building and maintain consistency in learning the process. Everyone can make a difference."</h3>
-            <p style="text-align: right;color: black;margin: 20px 50px 0px;font-size: 17px;">- <i>Pooja Ranjan</i></p>
-         </section>
-
-         <!-- About The Founder -->
-         <section style="margin: 100px 0px 0px;">
-            <h3 style="margin-bottom: 20px;">Our Founder</h3>
-            <div style="display: flex; justify-content: space-between;">
-               <div style=" width: 70%;">
-                  <p style="text-align: justify; font-size: 17px;">Pooja Ranjan, is Herder in chief of Ethereum Cat
-                     Herders and Founder of Avarch LLC. She became part of the blockchain community in 2016 by learning
-                     about the Ethereum blockchain. Founded Avarch LLC in 2017 with <a
-                        href="https://www.etherworld.co/">EtherWorld</a> as her first project to
-                     create awareness about blockchain technology. Publishing technical content, project updates and
-                     latest news, EtherWorld is one of the leading blockchain publishing websites...<a
-                        href="aboutfounder.html"><i>Read More</i></a>
-                  </p>
+   <!-- About The Founder using Premium Grid -->
+   <section class="vision-panel animate-fade-up delay-3">
+       <div class="vision-card" style="max-width: 1000px; margin: 0 auto; padding: 0 20px;">
+           <div class="vision-grid" style="grid-template-columns: 1fr 1fr; align-items: center; gap: 60px;">
+               <div class="vision-left-col">
+                   <div class="vision-header-col" style="margin-bottom: 20px;">
+                       <div class="vision-label-mask">
+                           <span class="vision-label"><span class="vision-num">02</span> <span class="vision-text">LEADERSHIP</span></span>
+                       </div>
+                       <div class="vision-heading-mask">
+                           <h2 class="vision-heading" style="font-size: 36px; margin-top: 10px;">Our Founder</h2>
+                       </div>
+                   </div>
+                   <div class="vision-content-col">
+                       <p class="vision-paragraph" style="font-size: 17px; color: #444; margin-bottom: 20px;">
+                           Pooja Ranjan is Herder in chief of Ethereum Cat Herders and Founder of Avarch LLC. She became part of the blockchain community in 2016 by learning about the Ethereum blockchain. Founded Avarch LLC in 2017 with <a href="https://www.etherworld.co/" style="color: #FFB400; font-weight: 600; text-decoration: none;">EtherWorld</a> as her first project to create awareness about blockchain technology. Publishing technical content, project updates and latest news, EtherWorld is one of the leading blockchain publishing websites...
+                       </p>
+                       <a href="aboutfounder.html" style="display: inline-block; font-family: 'Poppins', sans-serif; font-weight: 600; color: #111; text-decoration: underline; text-underline-offset: 4px;">Read More</a>
+                   </div>
                </div>
-               <div style="display: flex; justify-content: center; align-items: center; width: 50%;">
-                  <img style="width: 50%;margin: 0px 0px 80px 50px;" src="./img/about_pooja_ranjan.png"
-                     alt="Founder image">
+               <div class="vision-graphic-col" style="display: flex; justify-content: center; align-items: center;">
+                   <img src="./img/about_pooja_ranjan.png" alt="Founder image" style="width: 100%; max-width: 320px; border-radius: 50%; object-fit: cover; aspect-ratio: 1/1; box-shadow: 0 20px 40px rgba(0,0,0,0.08);">
                </div>
-            </div>
-         </section>
+           </div>
+       </div>
+   </section>
 
          <!-- About team -->
          <!-- <h3>Meet our Team</h3>
@@ -597,27 +610,21 @@
 
 
 
-         <div class="h-10"></div>
-         <ul class="social-ul">
-            <li class="box-social"><a href="https://twitter.com/ether_world" target="_blank"><i
-                     class="ion-social-twitter"></i></a></li>
-            <li class="box-social"><a href="https://www.youtube.com/channel/UCnceAY-vAQsO8TgGAj5SGFA" target="_blank"><i
-                     class="ion-social-youtube"></i></a></li>
-            <li class="box-social"><a href="https://github.com/Avarch-org" target="_blank"><i
-                     class="ion-social-github"></i></a></li>
-            <li class="box-social"><a href="https://www.instagram.com/etherworld.co/" target="_blank"><i
-                     class="ion-social-instagram-outline"></i></a></li>
-            <li class="box-social"><a href="https://www.facebook.com/etherworld2017" target="_blank"><i
-                     class="ion-social-facebook"></i></a></li>
-            <li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
-            <li class="box-social"><a href="https://www.linkedin.com/company/etherworld/" target="_blank"><i
-                     class="ion-social-linkedin"></i></a></li>
+   <!-- Social Links -->
+   <section class="vision-panel" style="padding-top: 0; border-top: none;">
+       <div class="vision-card" style="display: flex; justify-content: center;">
+         <ul class="social-ul" style="display: flex; gap: 20px; list-style: none; padding: 0; margin: 0;">
+            <li class="box-social"><a href="https://twitter.com/ether_world" target="_blank" style="color: #111; font-size: 24px;"><i class="ion-social-twitter"></i></a></li>
+            <li class="box-social"><a href="https://www.youtube.com/channel/UCnceAY-vAQsO8TgGAj5SGFA" target="_blank" style="color: #111; font-size: 24px;"><i class="ion-social-youtube"></i></a></li>
+            <li class="box-social"><a href="https://github.com/Avarch-org" target="_blank" style="color: #111; font-size: 24px;"><i class="ion-social-github"></i></a></li>
+            <li class="box-social"><a href="https://www.instagram.com/etherworld.co/" target="_blank" style="color: #111; font-size: 24px;"><i class="ion-social-instagram-outline"></i></a></li>
+            <li class="box-social"><a href="https://www.facebook.com/etherworld2017" target="_blank" style="color: #111; font-size: 24px;"><i class="ion-social-facebook"></i></a></li>
+            <li class="box-social"><a href="#0" style="color: #111; font-size: 24px;"><i class="ion-social-dribbble"></i></a></li>
+            <li class="box-social"><a href="https://www.linkedin.com/company/etherworld/" target="_blank" style="color: #111; font-size: 24px;"><i class="ion-social-linkedin"></i></a></li>
          </ul>
-
-
-      </div>
-   </div>
-   <!-- end Main container -->
+       </div>
+   </section>
+   <!-- end Social Links -->
 
    <!-- 07 COMPACT PREMIUM FOOTER (Apple, Vercel, Framer & Linear Inspired) -->
    <footer class="avarch-compact-footer">
@@ -709,6 +716,26 @@
       ga('send', 'pageview');
    </script>
 
+   <!-- scroll animation script -->
+   <script>
+      document.addEventListener("DOMContentLoaded", function() {
+         var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+               if (entry.isIntersecting) {
+                  // Small delay to ensure it waits for preloader on initial elements if needed
+                  setTimeout(function() {
+                      entry.target.classList.add('is-visible');
+                  }, 100);
+                  observer.unobserve(entry.target);
+               }
+            });
+         }, { threshold: 0.15 });
+         
+         document.querySelectorAll('.animate-fade-up').forEach(function(el) {
+            observer.observe(el);
+         });
+      });
+   </script>
 </body>
 
 </html>
