@@ -12,9 +12,13 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="ionicons/css/ionicons.min.css" rel="stylesheet">
-
-    <!-- main css -->
-    <link href="css/style.css?v=20260709" rel="stylesheet">
+    <style>
+        body.home-page { 
+            overflow-x: clip !important;
+            max-width: 100vw;
+        }
+    </style>
+    <link href="css/style.css?v=3" rel="stylesheet">
     <link href="css/style1.css" rel="stylesheet">
 
     <!-- Carousel css -->
@@ -64,7 +68,7 @@
             <ul class="box-primary-nav">
                 <li><a href="index.html">Home</a> <i class="ion-ios-circle-filled color"></i></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="associate-partner.html">Associates and Partners</a>
+                <li><a href="associate-partner.html">Associates & Partners</a>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">contact us</a></li>
 
@@ -544,6 +548,7 @@
                             </div>
                         </div>
                     </div>
+                </section>
                 <!-- 04 PLAYLISTS SECTION (Editorial, Premium, Apple/Linear Inspired Showcase) -->
                 <section class="avarch-playlists-section" id="playlists">
                     <div class="playlists-container">
@@ -876,15 +881,45 @@
                 <p class="partners-desc">We collaborate with leading institutions and organizations to drive innovation and create meaningful impact.</p>
             </div>
 
-            <div class="partners-logo-grid">
-                <!-- Partner 1: EDCON -->
+            <!-- Ecosystem Partners Subheading -->
+            <h3 class="partners-subheading">Ecosystem Partners</h3>
+            <div class="partners-logo-grid" id="ecosystem-grid">
+                <!-- Partner 1: Devcon -->
+                <a href="https://devcon.org/" target="_blank" class="partner-card">
+                    <div class="partner-logo-box">
+                        <img src="img/partners/devcon_new.png" alt="Devcon" class="partner-logo-img">
+                    </div>
+                    <span class="partner-name">Devcon</span>
+                </a>
+                
+                <!-- Partner 2: Giveth -->
+                <a href="https://giveth.io/" target="_blank" class="partner-card">
+                    <div class="partner-logo-box">
+                        <img src="img/partners/giveth_new.png" alt="Giveth" class="partner-logo-img">
+                    </div>
+                    <span class="partner-name">Giveth</span>
+                </a>
+                
+                <!-- Partner 3: Mempool -->
+                <a href="https://mempool.space/" target="_blank" class="partner-card">
+                    <div class="partner-logo-box">
+                        <img src="img/partners/mempool_new.png" alt="Mempool" class="partner-logo-img">
+                    </div>
+                    <span class="partner-name">Mempool</span>
+                </a>
+
+                <!-- Partner 4: EDCON -->
                 <a href="https://etherworld.co/2020/07/27/edcon-the-community-ethereum-development-conference-to-take-place-virtually-on-august-9-11/" target="_blank" class="partner-card">
                     <div class="partner-logo-box">
                         <img src="https://miro.medium.com/max/940/1*TInz872dR8_L5_57Dkvifg.jpeg" alt="EDCON" class="partner-logo-img">
                     </div>
                     <span class="partner-name">EDCON</span>
                 </a>
+            </div>
 
+            <!-- Internship Partners Subheading -->
+            <h3 class="partners-subheading">Academic & Internship Partners</h3>
+            <div class="partners-logo-grid">
                 <!-- Partner 2: IIT Goa -->
                 <div class="partner-card">
                     <div class="partner-logo-box">
@@ -930,7 +965,7 @@
                     <div class="partner-logo-box">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLiiUpj6V69yzm72z07IdiQBhgNiBy1IRKoheFFFlrUZorkaRWYqFPaFouBupqMFyBhYw&usqp=CAU" alt="B.C. Roy Engineering" class="partner-logo-img">
                     </div>
-                    <span class="partner-name">B.C. Roy Engineering</span>
+                    <span class="partner-name">Dr. B.C. Roy Engineering College</span>
                 </div>
 
                 <!-- Partner 8: BMIIT -->
