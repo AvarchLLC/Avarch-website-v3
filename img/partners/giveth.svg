@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="next-head-count" content="2"/><link rel="shortcut icon" href="/favicon.svg"/><script type="text/javascript">if (
+								window?.location &&
+								(window.location.pathname.toLowerCase().startsWith('/giv') || window.location.pathname.toLowerCase().startsWith('/nft'))
+							) {
+								const r = document.querySelector(':root');
+								r.style.setProperty('--bgColor', '#090446');
+								r.style.setProperty('--color', '#FFFFFF');
+								r.style.setProperty('--scrollColor', '#754CFF');
+								r.style.setProperty('--scrollHoverColor', '#211985');
+							}</script><link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous"/><link rel="preload" href="/_next/static/css/4e765ad283c37e04.css" as="style"/><link rel="stylesheet" href="/_next/static/css/4e765ad283c37e04.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-42372ed130431b0a.js"></script><script src="/_next/static/chunks/webpack-7d46dfc18e76a69b.js" defer=""></script><script src="/_next/static/chunks/framework-40725c375d079aeb.js" defer=""></script><script src="/_next/static/chunks/main-8303ef19bb184f19.js" defer=""></script><script src="/_next/static/chunks/pages/_app-c21208a85d0bff18.js" defer=""></script><script src="/_next/static/chunks/pages/404-b361833f67478894.js" defer=""></script><script src="/_next/static/zV7FCAoLQnYXRuu25Dept/_buildManifest.js" defer=""></script><script src="/_next/static/zV7FCAoLQnYXRuu25Dept/_ssgManifest.js" defer=""></script><style data-styled="" data-styled-version="6.1.13">.fPtAeA{font-family:Red Hat Text,sans-serif;font-style:normal;font-weight:normal;display:inline-block;color:inherit;font-size:0.875rem;line-height:157%;}/*!sc*/
+data-styled.g1[id="sc-blHHSb"]{content:"fPtAeA,"}/*!sc*/
+.edTbuN{font-family:TeX Gyre Adventor,sans-serif;font-style:normal;font-weight:700;letter-spacing:-0.04em;color:inherit;}/*!sc*/
+data-styled.g12[id="sc-keTIit"]{content:"edTbuN,"}/*!sc*/
+.iCMvIT{font-size:4.25rem;line-height:120%;}/*!sc*/
+@media (min-width: 768px){.iCMvIT{font-size:5.5rem;}}/*!sc*/
+data-styled.g15[id="sc-cHqXqK"]{content:"iCMvIT,"}/*!sc*/
+.jRpmon{font-family:TeX Gyre Adventor,sans-serif;font-style:normal;font-weight:500;font-size:1.75rem;line-height:normal;letter-spacing:-0.01em;margin-top:0;margin-bottom:0;color:inherit;}/*!sc*/
+@media (min-width: 768px){.jRpmon{font-size:2rem;}}/*!sc*/
+data-styled.g19[id="sc-eOzmre"]{content:"jRpmon,"}/*!sc*/
+.eKTtCV{display:flex;align-items:center;}/*!sc*/
+.OucFZ{display:flex;align-items:center;gap:24px;}/*!sc*/
+.hUPYiQ{display:flex;}/*!sc*/
+data-styled.g33[id="sc-uYFMi"]{content:"eKTtCV,OucFZ,hUPYiQ,"}/*!sc*/
+.WLPAY{position:absolute;border-radius:50%;border-style:solid;z-index:-1;}/*!sc*/
+data-styled.g60[id="sc-d2f6f6c6-0"]{content:"WLPAY,"}/*!sc*/
+.dQvbMH{position:fixed;left:0;right:0;top:0;z-index:100;transition:top 0.3s ease;padding:16px 24px;background:#FFFFFF;box-shadow:0px 3px 20px rgba(212, 218, 238, 0.4);}/*!sc*/
+@media (min-width: 768px){.dQvbMH{padding:16px 32px;top:0;}}/*!sc*/
+data-styled.g73[id="sc-1a8f418a-0"]{content:"dQvbMH,"}/*!sc*/
+.euuECZ{display:flex;justify-content:center;align-items:center;background:#FFFFFF;box-shadow:0 3px 20px rgba(212, 218, 238, 0.4);border-radius:99px;padding:8px;width:60px;height:60px;cursor:pointer;}/*!sc*/
+data-styled.g74[id="sc-1a8f418a-1"]{content:"euuECZ,"}/*!sc*/
+.czeAJl{margin-left:48px;gap:8px;}/*!sc*/
+data-styled.g87[id="sc-1a8f418a-14"]{content:"czeAJl,"}/*!sc*/
+.gFqFCc{padding:10px 16px 10px;border-radius:72px;}/*!sc*/
+.gFqFCc:hover{background-color:#F6F3FF;}/*!sc*/
+data-styled.g88[id="sc-1a8f418a-15"]{content:"gFqFCc,"}/*!sc*/
+.heBqxm{height:92px;}/*!sc*/
+data-styled.g98[id="sc-1a8f418a-25"]{content:"heBqxm,"}/*!sc*/
+.ejSYua{display:flex;text-align:center;gap:16px;justify-content:center;position:absolute;bottom:16px;left:50%;transform:translateX(-50%);}/*!sc*/
+@media (min-width: 768px){.ejSYua{position:static;bottom:0;left:0;transform:translateX(0);}}/*!sc*/
+data-styled.g152[id="sc-3edae661-0"]{content:"ejSYua,"}/*!sc*/
+.iDoJxq{opacity:0.3;position:absolute;top:100px;left:-70px;display:none;user-select:none;}/*!sc*/
+@media (min-width: 1024px){.iDoJxq{display:unset;}}/*!sc*/
+data-styled.g153[id="sc-3edae661-1"]{content:"iDoJxq,"}/*!sc*/
+.fFbaXj{opacity:0.3;position:absolute;bottom:100px;right:70px;display:none;user-select:none;}/*!sc*/
+@media (min-width: 1024px){.fFbaXj{display:unset;}}/*!sc*/
+data-styled.g154[id="sc-3edae661-2"]{content:"fFbaXj,"}/*!sc*/
+.cFzBEg{border-width:50px;border-color:transparent #FED670 #FED670 transparent;transform:rotate(135deg);top:100px;right:-130px;width:260px;height:260px;z-index:0;display:none;}/*!sc*/
+@media (min-width: 768px){.cFzBEg{display:unset;}}/*!sc*/
+data-styled.g157[id="sc-3edae661-5"]{content:"cFzBEg,"}/*!sc*/
+.dheXDn{color:#FED670;}/*!sc*/
+data-styled.g158[id="sc-3edae661-6"]{content:"dheXDn,"}/*!sc*/
+.fmTDZW{border-width:50px;border-color:transparent #FED670 #FED670 transparent;transform:rotate(315deg);bottom:100px;left:-130px;width:260px;height:260px;z-index:0;display:none;}/*!sc*/
+@media (min-width: 768px){.fmTDZW{display:unset;}}/*!sc*/
+data-styled.g160[id="sc-3edae661-8"]{content:"fmTDZW,"}/*!sc*/
+.hrZjVQ{max-width:900px;margin:auto;display:flex;flex-direction:column;text-align:center;justify-content:center;height:100%;gap:20px;padding:0;}/*!sc*/
+.hrZjVQ *{z-index:2;}/*!sc*/
+.hrZjVQ img{margin:0 auto;}/*!sc*/
+data-styled.g161[id="sc-3edae661-9"]{content:"hrZjVQ,"}/*!sc*/
+.fiyZKn{background:#5326EC;background-image:url('/images/GIV_homepage.svg');height:100vh;color:white;overflow:hidden;position:relative;padding:18px;}/*!sc*/
+@media (min-width: 768px){.fiyZKn{padding:150px 130px;}}/*!sc*/
+data-styled.g162[id="sc-3edae661-10"]{content:"fiyZKn,"}/*!sc*/
+.dYoDGr{margin-top:25px;}/*!sc*/
+data-styled.g163[id="sc-3edae661-11"]{content:"dYoDGr,"}/*!sc*/
+.cNCQrq{cursor:pointer;}/*!sc*/
+data-styled.g164[id="sc-3edae661-12"]{content:"cNCQrq,"}/*!sc*/
+</style></head><body><div id="__next"><div class="sc-1a8f418a-25 heBqxm"></div><div class="sc-uYFMi sc-1a8f418a-0 eKTtCV dQvbMH"><div gap="24px" class="sc-uYFMi OucFZ"><a href="/"><span class="sc-1a8f418a-1 euuECZ"><img alt="Giveth logo" loading="lazy" width="50" height="50" decoding="async" data-nimg="1" style="color:transparent" src="/images/logo/logo.svg"/></span></a></div><div class="sc-uYFMi sc-1a8f418a-14 hUPYiQ czeAJl"><a href="/projects/all"><span class="sc-blHHSb sc-1a8f418a-15 fPtAeA gFqFCc">Projects</span></a><a href="/giveconomy"><span class="sc-blHHSb sc-1a8f418a-15 fPtAeA gFqFCc">GIVeconomy</span></a></div></div><div class="sc-3edae661-10 fiyZKn"><div class="sc-d2f6f6c6-0 sc-3edae661-5 WLPAY cFzBEg"></div><div class="sc-d2f6f6c6-0 sc-3edae661-8 WLPAY fmTDZW"></div><img alt="big warning image" loading="lazy" width="220" height="220" decoding="async" data-nimg="1" class="sc-3edae661-1 iDoJxq" style="color:transparent" src="/images/icons/warning.svg"/><img alt="small warning image" loading="lazy" width="120" height="120" decoding="async" data-nimg="1" class="sc-3edae661-2 fFbaXj" style="color:transparent" src="/images/icons/warning.svg"/><div class="sc-3edae661-9 hrZjVQ"><img alt="error icon" loading="lazy" width="100" height="100" decoding="async" data-nimg="1" style="color:transparent" src="/_next/static/media/404.f65f8115.svg"/><div class="sc-keTIit sc-cHqXqK edTbuN iCMvIT">404</div><h4 class="sc-eOzmre sc-3edae661-6 jRpmon dheXDn"><b>Oops!</b> <!-- -->Page Not Found...</h4><div class="sc-3edae661-11 dYoDGr"><a href="/"><img alt="giveth logo" loading="lazy" width="150" height="50" decoding="async" data-nimg="1" class="sc-3edae661-12 cNCQrq" style="color:transparent" src="/_next/static/media/giv_font_logo.d253831c.svg"/></a></div></div><div class="sc-3edae661-0 ejSYua"><a href="https://discord.giveth.io" target="_blank" rel="noreferrer noopener"><img alt="giveth discord" loading="lazy" width="20" height="20" decoding="async" data-nimg="1" style="color:transparent" src="/_next/static/media/discord.de1c2f63.svg"/></a><a href="https://blog.giveth.io" target="_blank" rel="noreferrer noopener"><img alt="giveth medium" loading="lazy" width="20" height="20" decoding="async" data-nimg="1" style="color:transparent" src="/_next/static/media/medium.6abbbb23.svg"/></a><a href="https://twitter.com/giveth" target="_blank" rel="noreferrer noopener"> <img alt="giveth twitter" loading="lazy" width="20" height="20" decoding="async" data-nimg="1" style="color:transparent" src="/_next/static/media/twitter.e49a88fb.svg"/></a></div></div><div style="position:fixed;z-index:9999;top:80px;left:16px;right:16px;bottom:16px;pointer-events:none"></div><!--$--><!--/$--></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/404","query":{},"buildId":"zV7FCAoLQnYXRuu25Dept","nextExport":true,"autoExport":true,"isFallback":false,"locale":"en","locales":["en","ct","es"],"defaultLocale":"en","scriptLoader":[{"id":"gtm-script","strategy":"afterInteractive","dangerouslySetInnerHTML":{"__html":"\n\t\t\t\t\t\t\t\t(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n\t\t\t\t\t\t\t\tnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n\t\t\t\t\t\t\t\tj=d.createElement(s),dl=l!='dataLayer'?'\u0026l='+l:'';j.async=true;j.src=\n\t\t\t\t\t\t\t\t'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n\t\t\t\t\t\t\t\t})(window,document,'script','dataLayer','GTM-K99CFQ7');\n\t\t\t\t\t\t\t"}}]}</script></body></html>
