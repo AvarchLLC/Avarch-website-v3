@@ -999,10 +999,19 @@ footer img {
 }
 
 .aboutusimg {
-    background: -webkit-linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, .8)), url("../img/backgrounds/aboutus.png");
-    background: rgba(255, 255, 255, 0.2), rgba(255, 255, 255, .8), url("../img/backgrounds/aboutus.png");
-    background-size: cover;
-    background-position: bottom;
+    background: url("../img/backgrounds/aboutus.png") no-repeat center center / cover;
+    aspect-ratio: 4 / 1;
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    border-bottom: none !important;
+}
+
+.projectsimg {
+    background: url("../img/backgrounds/all.png") no-repeat center center / cover;
+    aspect-ratio: 4 / 1;
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    border-bottom: none !important;
 }
 
 .contactimg {
