@@ -3804,6 +3804,18 @@ footer.avarch-premium-footer,
 .editorial-project {
     display: flex;
     flex-direction: column;
+    padding: 32px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+    transition: box-shadow 0.4s ease, transform 0.4s ease, border-color 0.4s ease;
+}
+
+.editorial-project:hover {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+    transform: translateY(-4px);
+    border-color: rgba(0, 0, 0, 0.08);
 }
 
 /* Specific Project Spans (Creating Masonry/Staggered Rhythm) */
@@ -3829,16 +3841,20 @@ footer.avarch-premium-footer,
     width: 100%;
     overflow: hidden;
     margin-bottom: 32px;
-    background-color: #F4F4F5;
+    background-color: #FFFFFF;
     border-radius: 8px;
     border: 1px solid rgba(0,0,0,0.03);
+    aspect-ratio: 16 / 10;
 }
 
 .editorial-image-link img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center top;
+    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 80%);
+    mask-image: linear-gradient(to bottom, black 40%, transparent 80%);
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
