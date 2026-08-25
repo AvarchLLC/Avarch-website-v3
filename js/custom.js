@@ -73,6 +73,11 @@ $(window).load(function () {
         }
     });
 
+    // prevent empty links from adding hash to URL
+    $('a[href="#"], a[href="#0"]').on('click', function (event) {
+        event.preventDefault();
+    });
+
     // GSAP Editorial Animations for Vision Panel
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
