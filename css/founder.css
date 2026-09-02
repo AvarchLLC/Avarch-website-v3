@@ -2,6 +2,7 @@
 @import url('https://api.fontshare.com/v2/css?f[]=general-sans@600,700&display=swap');
 
 :root {
+  --color-bg: #FFFFFF;
   --color-bg-white: #FFFFFF;
   --color-bg-offwhite: #FAFAFA;
   --color-ink: #1A1A1A;
@@ -18,6 +19,12 @@
 }
 
 /* Base resets for the founder page */
+/* Override the global html { background: #0B0B0B } from style.css */
+.founder-page,
+html:has(body.founder-page) {
+  background-color: var(--color-bg-white) !important;
+}
+
 body.founder-page {
   background-color: var(--color-bg-white);
   color: var(--color-ink);
@@ -107,7 +114,7 @@ body.founder-page {
 .f-bg-glow {
   position: absolute;
   top: 50%;
-  right: -5%; /* Centers the glow box precisely behind the image's bounding box */
+  right: 0; /* Keep within viewport */
   width: 60vw;
   height: 60vw;
   transform: translateY(-50%);
@@ -1272,8 +1279,8 @@ body.founder-page {
   content: '';
   position: absolute;
   bottom: 0;
-  left: -5%;
-  width: 110%;
+  left: 0;
+  width: 100%;
   height: 80px;
   background: var(--color-bg);
   border-radius: 0 0 50% 50%;
@@ -1968,16 +1975,14 @@ body.founder-page {
   overflow: hidden;
 }
 
-.f-impact-layout {
-  display: grid;
-  grid-template-columns: 35% 60%;
-  gap: 5%;
-  margin-bottom: 60px;
+.f-impact-container {
+  display: flex;
+  gap: 60px;
 }
 
 @media (max-width: 1024px) {
-  .f-impact-layout {
-    grid-template-columns: 1fr;
+  .f-impact-container {
+    flex-direction: column;
     gap: 40px;
   }
 }
@@ -2551,4 +2556,411 @@ body.founder-page {
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.4;
+}
+
+/* ==========================================================================
+   GLOBAL RESPONSIVE FIXES FOR ABOUT FOUNDER PAGE
+   ========================================================================== */
+
+/* Prevent any horizontal overflow on the entire page */
+body.founder-page {
+  overflow-x: hidden !important;
+}
+
+/* Base image safety */
+body.founder-page img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── TABLET (max-width: 1024px) ── */
+@media (max-width: 1024px) {
+
+  /* SECTION 01: HERO */
+  .f-editorial-hero {
+    height: auto !important;
+    min-height: 100vh;
+    padding-bottom: 60px;
+  }
+  .f-hero-container {
+    flex-direction: column !important;
+    padding: 0 5% !important;
+    height: auto !important;
+    min-height: auto;
+    padding-top: 40px !important;
+  }
+  .f-hero-left {
+    width: 100% !important;
+    height: auto !important;
+    justify-content: flex-start !important;
+    padding-right: 0 !important;
+  }
+  .f-hero-quote {
+    white-space: normal !important;
+    word-wrap: break-word;
+  }
+  .f-hero-portrait {
+    position: relative !important;
+    width: 70% !important;
+    height: auto !important;
+    bottom: auto !important;
+    right: auto !important;
+    margin: 40px auto 0 auto;
+  }
+  .f-hero-portrait img {
+    object-position: center bottom !important;
+  }
+  .f-hero-nav {
+    position: relative !important;
+    bottom: auto !important;
+    margin-top: 30px;
+  }
+  .f-hero-bottom-divider {
+    display: none;
+  }
+  .f-hero-scroll {
+    display: none;
+  }
+  .f-bg-glow {
+    width: 80vw !important;
+    height: 80vw !important;
+    right: -20% !important;
+    top: 60% !important;
+  }
+  .f-bg-dots {
+    display: none;
+  }
+
+  /* SECTION 02: STORY */
+  .f-story-section {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    padding: 80px 0 !important;
+  }
+  .f-story-container {
+    flex-direction: column !important;
+    height: auto !important;
+    padding-top: 0 !important;
+  }
+  .f-story-left {
+    flex: none !important;
+    width: 100% !important;
+    margin-bottom: 40px !important;
+    padding-right: 0 !important;
+  }
+  .f-story-right {
+    flex: none !important;
+    width: 100% !important;
+  }
+  .f-story-headline {
+    font-size: clamp(3rem, 6vw, 5rem) !important;
+  }
+  .f-story-text {
+    font-size: 1.2rem !important;
+  }
+  .f-story-section::after {
+    display: none;
+  }
+  .f-story-bottom-transition {
+    display: none;
+  }
+
+  /* SECTION 03: BUILD ETHEREUM */
+  .f-build-right {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .f-build-headline {
+    font-size: clamp(3rem, 6vw, 5rem) !important;
+  }
+  .f-build-text {
+    font-size: 1.4rem !important;
+  }
+
+  /* SECTION 04: VOICE (SPEAKING) */
+  .f-voice-container {
+    flex-direction: column !important;
+    gap: 40px !important;
+  }
+  .f-voice-left {
+    flex: none !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+  }
+  .f-voice-right {
+    flex: none !important;
+    width: 100% !important;
+  }
+  .f-voice-headline {
+    font-size: clamp(3rem, 6vw, 5rem) !important;
+  }
+  .f-voice-events {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* SECTION 05: CONVERSATION */
+  .f-conv-container {
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+  .f-conv-left {
+    flex: none !important;
+    width: 100% !important;
+  }
+  .f-conv-playlist {
+    flex: none !important;
+    width: 100% !important;
+    padding-right: 0 !important;
+    border-right: none !important;
+  }
+  .f-conv-player {
+    flex: none !important;
+    width: 100% !important;
+  }
+
+  /* SECTION 06: ARCHIVE */
+  .f-archive-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* IMPACT (if any still in page) */
+  .f-impact-container {
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+  .f-impact-left, .f-impact-right {
+    flex: none !important;
+    width: 100% !important;
+  }
+  .f-impact-brands-section {
+    flex-direction: column !important;
+    gap: 32px !important;
+    padding: 30px !important;
+  }
+}
+
+/* ── MOBILE (max-width: 767px) ── */
+@media (max-width: 767px) {
+
+  /* SECTION 01: HERO — typography */
+  .f-headline-outline {
+    font-size: clamp(2.2rem, 9vw, 3.5rem) !important;
+    margin-bottom: -0.3rem !important;
+  }
+  .f-headline-solid {
+    font-size: clamp(3rem, 13vw, 5rem) !important;
+  }
+  .f-hero-quote {
+    font-size: clamp(1.2rem, 4.5vw, 1.6rem) !important;
+    white-space: normal !important;
+    word-wrap: break-word;
+  }
+  .f-hero-author {
+    font-size: 1.2rem !important;
+  }
+  .f-headline-accent-line {
+    width: 60px;
+    margin-bottom: 1.5rem !important;
+  }
+  .f-hero-portrait {
+    width: 85% !important;
+  }
+
+  /* SECTION 02: STORY */
+  .f-story-headline {
+    font-size: clamp(2.5rem, 8vw, 4rem) !important;
+  }
+  .f-story-text {
+    font-size: 1.1rem !important;
+  }
+  .f-story-year {
+    font-size: 2.4rem !important;
+    min-width: 100px !important;
+  }
+  .f-story-desc {
+    font-size: 1.2rem !important;
+  }
+  .f-story-node-content {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  .f-story-nodes {
+    padding-left: 28px !important;
+  }
+  .f-story-node-dot {
+    left: -38px !important;
+  }
+  .f-story-project-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+
+  /* SECTION 03: BUILD ETHEREUM */
+  .f-build-right {
+    grid-template-columns: 1fr !important;
+  }
+  .f-build-headline {
+    font-size: clamp(2.2rem, 7vw, 3.5rem) !important;
+  }
+  .f-build-text {
+    font-size: 1.2rem !important;
+  }
+  .f-build-card-title {
+    font-size: 1.6rem !important;
+  }
+  .f-build-card-desc {
+    font-size: 1.1rem !important;
+  }
+
+  /* SECTION 04: VOICE */
+  .f-voice-headline {
+    font-size: clamp(2.2rem, 7vw, 3.5rem) !important;
+  }
+  .f-voice-text {
+    font-size: 1.2rem !important;
+  }
+  .f-voice-year-marker h3 {
+    font-size: 1.4rem !important;
+    padding-left: 20px !important;
+  }
+  .f-voice-event-content h4 {
+    font-size: 1.1rem !important;
+  }
+  .f-voice-event-thumb {
+    width: 80px !important;
+    height: 50px !important;
+  }
+  .f-voice-timeline::before {
+    left: 12px !important;
+  }
+  .f-voice-year-dot {
+    left: -10px !important;
+  }
+  .f-voice-filters {
+    gap: 8px !important;
+  }
+  .f-voice-filter {
+    font-size: 0.75rem !important;
+    padding: 8px 14px !important;
+  }
+
+  /* SECTION 05: CONVERSATION */
+  .f-conv-item {
+    padding: 16px 12px !important;
+    gap: 12px !important;
+  }
+  .f-conv-item-card {
+    gap: 12px !important;
+  }
+  .f-conv-thumb {
+    width: 80px !important;
+    height: 50px !important;
+  }
+  .f-conv-info h4 {
+    font-size: 1.1rem !important;
+  }
+  .f-conv-meta h3 {
+    font-size: 1.6rem !important;
+  }
+  .f-conv-meta p {
+    font-size: 1.05rem !important;
+    max-width: 100% !important;
+  }
+
+  /* SECTION 06: ARCHIVE */
+  .f-archive-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .f-archive-modal-content-wrapper {
+    width: 95% !important;
+    border-radius: 16px !important;
+  }
+  .f-archive-modal-header {
+    padding: 20px !important;
+  }
+  .f-archive-modal-body {
+    padding: 20px !important;
+  }
+
+  /* IMPACT VIDEO */
+  .f-impact-video-wrapper {
+    border-radius: 12px !important;
+  }
+  .f-impact-video-centerpiece {
+    margin: 30px 0 !important;
+  }
+  .f-impact-title {
+    font-size: 2.5rem !important;
+  }
+  .f-stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .f-impact-brands-section {
+    padding: 20px !important;
+    border-radius: 12px !important;
+  }
+  .f-brand-logos {
+    gap: 12px !important;
+  }
+
+  /* FOOTER */
+  .f-impact-banner-content {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 0 20px !important;
+  }
+  .f-banner-text h3 {
+    font-size: 1.4rem !important;
+  }
+  .f-banner-text p {
+    font-size: 1rem !important;
+  }
+}
+
+/* ── SMALL PHONE (max-width: 480px) ── */
+@media (max-width: 480px) {
+  .f-headline-outline {
+    font-size: clamp(1.8rem, 10vw, 2.8rem) !important;
+    -webkit-text-stroke: 1px var(--color-ink) !important;
+  }
+  .f-headline-solid {
+    font-size: clamp(2.5rem, 14vw, 4rem) !important;
+  }
+  .f-hero-quote {
+    font-size: 1.1rem !important;
+  }
+  .f-hero-author {
+    font-size: 1rem !important;
+  }
+  .f-hero-portrait {
+    width: 90% !important;
+  }
+  .f-story-headline {
+    font-size: 2.2rem !important;
+  }
+  .f-story-year {
+    font-size: 2rem !important;
+    min-width: 80px !important;
+  }
+  .f-story-desc {
+    font-size: 1rem !important;
+  }
+  .f-build-section {
+    padding: 60px 0 50px !important;
+  }
+  .f-build-card {
+    padding: 20px 16px !important;
+  }
+  .f-build-card-icon {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .f-conv-video-wrapper {
+    border-radius: 12px !important;
+  }
+  .f-archive-thumb {
+    height: 180px !important;
+  }
 }
