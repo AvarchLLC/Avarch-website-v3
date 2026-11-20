@@ -1,0 +1,94 @@
+---
+import { nav } from "../data/site";
+import Logo from "./Logo.astro";
+import Icon from "./Icon.astro";
+
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isActive = (href: string) => {
+  const target = href.replace(/\/$/, "");
+  return path === target || path.startsWith(target + "/");
+};
+---
+<header class="sticky top-0 z-50 border-b border-ink/10 bg-paper/85 backdrop-blur-md supports-[backdrop-filter]:bg-paper/75">
+  <a
+    href="#main"
+    class="sr-only rounded-md bg-ink px-3 py-2 text-sm text-paper focus:not-sr-only focus:absolute focus:left-4 focus:top-3"
+    >Skip to content</a
+  >
+  <div class="container-page flex h-[4.25rem] items-center justify-between gap-6">
+    <a href="/" class="rounded-lg" aria-label="Avarch home"><Logo /></a>
+
+    <nav aria-label="Primary" class="hidden md:block">
+      <ul class="flex items-center gap-1 rounded-full border border-ink/10 bg-surface/70 p-1">
+        {nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              aria-current={isActive(item.href) ? "page" : undefined}
+              class="block rounded-full px-4 py-1.5 text-sm text-ink-2 transition-colors hover:bg-lagoon-100 hover:text-ink aria-[current=page]:bg-ink aria-[current=page]:text-paper"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <a href="/contact/" class="btn btn-primary hidden !px-4 !py-2 text-sm md:inline-flex">
+      Work with us <Icon name="arrow-right" size={16} />
+    </a>
+
+    <button
+      type="button"
+      class="-mr-2 grid size-11 place-items-center rounded-full text-ink hover:bg-paper-2 md:hidden"
+      aria-controls="mobile-nav"
+      aria-expanded="false"
+      data-menu-toggle
+    >
+      <span class="sr-only">Open menu</span>
+      <Icon name="menu" size={22} class="menu-open" />
+      <Icon name="close" size={22} class="menu-close hidden" />
+    </button>
+  </div>
+
+  <nav id="mobile-nav" aria-label="Mobile" class="hidden border-t border-ink/10 bg-paper md:hidden" data-menu>
+    <ul class="container-page flex flex-col py-3">
+      {nav.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            aria-current={isActive(item.href) ? "page" : undefined}
+            class="flex items-center justify-between border-b border-line py-3.5 font-serif text-2xl font-medium aria-[current=page]:underline aria-[current=page]:decoration-lagoon-400 aria-[current=page]:decoration-4 aria-[current=page]:underline-offset-4"
+          >
+            {item.label}
+            <Icon name="arrow-right" size={18} class="text-muted" />
+          </a>
+        </li>
+      ))}
+      <li class="pt-5">
+        <a href="/contact/" class="btn btn-primary w-full">Work with us <Icon name="arrow-right" size={18} /></a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
+  const menu = document.querySelector<HTMLElement>("[data-menu]");
+  if (toggle && menu) {
+    const set = (open: boolean) => {
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.querySelector(".sr-only")!.textContent = open ? "Close menu" : "Open menu";
+      toggle.querySelector(".menu-open")?.classList.toggle("hidden", open);
+      toggle.querySelector(".menu-close")?.classList.toggle("hidden", !open);
+      menu.classList.toggle("hidden", !open);
+    };
+    toggle.addEventListener("click", () => set(toggle.getAttribute("aria-expanded") !== "true"));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+        set(false);
+        toggle.focus();
+      }
+    });
+  }
+</script>

@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/PageHero.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import CtaBand from "../../components/CtaBand.astro";
+import Icon from "../../components/Icon.astro";
+import Img from "../../components/Img.astro";
+import { projects } from "../../data/site";
+
+const live = projects.filter((p) => p.status !== "Archived");
+const archived = projects.filter((p) => p.status === "Archived");
+---
+<Layout title="Projects" description="EtherWorld, EIPsInsight, BlobLens and EthShala: open-source platforms and publications built by Avarch for Ethereum.">
+  <PageHero
+    eyebrow="Portfolio"
+    title="Advancing the <em>Ethereum</em> ecosystem"
+    lead="Open-source tools, data platforms and education projects, each built to make part of Ethereum easier to understand."
+  />
+
+  <h2 class="sr-only">Active projects</h2>
+  <section data-reveal-group class="container-page mt-16 grid gap-5 md:grid-cols-2">
+    {live.map((p, i) => <ProjectCard project={p} eager={i < 2} />)}
+  </section>
+
+  <section class="container-page mt-20">
+    <h2 class="eyebrow !text-muted">Archive</h2>
+    {archived.map((p) => (
+      <a href={p.internal} class="card group mt-4 flex flex-col gap-5 p-6 transition-colors hover:border-line-strong sm:flex-row sm:items-center">
+        <Img src={p.logo} alt="" w={64} class="size-16 rounded-2xl border border-line object-cover" />
+        <div class="flex-1">
+          <h3 class="font-serif text-2xl">{p.name} <span class="ml-2 align-middle font-mono text-xs text-muted">{p.year}</span></h3>
+          <p class="mt-1 text-ink-2">{p.summary}</p>
+        </div>
+        <span class="inline-flex items-center gap-1.5 text-sm font-medium text-lagoon-800">
+          Read the case study <Icon name="arrow-right" size={16} class="transition-transform group-hover:translate-x-0.5" />
+        </span>
+      </a>
+    ))}
+  </section>
+
+  <CtaBand title="Have an idea for the ecosystem?" body="We collaborate on research, tooling and education. If you're building something that makes Ethereum easier to understand, get in touch." />
+</Layout>

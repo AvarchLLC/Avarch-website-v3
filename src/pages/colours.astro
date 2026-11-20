@@ -1,0 +1,394 @@
+---
+import { Font, getImage } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import Img from "../components/Img.astro";
+import { resolveImage } from "../lib/images";
+
+// Temporary page for choosing the brand colour. Not linked from the site. Delete this
+// file and its entry in the sitemap filter once a colour is picked.
+const mark = await getImage({ src: resolveImage("/img/brand/mark-lagoon.png") as ImageMetadata, width: 420, format: "webp" });
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Colour Chooser | Avarch</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <Font cssVariable="--font-fraunces" />
+    <Font cssVariable="--font-fraunces-display" />
+    <Font cssVariable="--font-geist" preload />
+    <Font cssVariable="--font-geist-mono" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <h1>Pick Avarch's new colour</h1>
+        <p>Nine pastel directions, all shown on a real slice of the home page. Click one to repaint the site, then copy your choice and send it to Dhanush.</p>
+      </header>
+
+      <div class="layout">
+        <fieldset class="rail" id="rail" style="border:0;margin:0;min-width:0">
+          <legend style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">Colour direction</legend>
+        </fieldset>
+
+        <section class="decide" aria-labelledby="decide-title">
+          <h2 id="decide-title">Your choice: <span id="choice-name"></span></h2>
+          <label for="note">Anything to change? (optional)
+            <textarea id="note" placeholder="For example: a little softer, or use the Lilac accent"></textarea>
+          </label>
+          <button class="primary" id="copy" type="button">Copy my choice</button>
+          <p class="status" id="status" role="status"></p>
+        </section>
+
+        <div class="stage">
+          <section class="site" id="site" style={`--mark: url(${mark.src})`} aria-label="Preview of the Avarch home page">
+            <div class="s-banner">We'll be at Devcon 8 in Mumbai, November 3 to 6. <a>Meet us there</a></div>
+            <div class="s-pad s-head">
+              <span class="mark" style="width:44px;color:#000" role="img" aria-label="Avarch"></span>
+              <div class="s-nav"><span>About</span><span>Projects</span><span class="on">Team</span><span>Founder</span><span>Partners</span><span>Contact</span></div>
+              <span class="s-btn pri">Work with us →</span>
+            </div>
+            <div class="s-pad s-hero">
+              <div>
+                <span class="s-new"><b>New</b> BlobLens &amp; EthShala are live</span>
+                <h2 class="s-display s-h1">Tools, media &amp; education for <em>Ethereum.</em></h2>
+                <p class="s-lede">Avarch is a blockchain software studio. Since 2017 we've run EtherWorld, built open analytics for EIPs and blob data, and paid students to make their first contributions to Ethereum.</p>
+                <div class="s-actions"><span class="s-btn pri">Explore our projects →</span><span class="s-btn ghost">About Avarch</span></div>
+              </div>
+              <div class="s-panel"><span class="mark"></span></div>
+            </div>
+            <div class="s-pad">
+              <dl class="s-stats" style="margin-block:0 28px">
+                <div><dt>Founded</dt><dd>2017</dd></div>
+                <div><dt>Student contributors</dt><dd>50+</dd></div>
+                <div><dt>Partners</dt><dd>15+</dd></div>
+                <div><dt>Products shipped</dt><dd>5</dd></div>
+              </dl>
+            </div>
+            <div class="s-strip" aria-hidden="true">Network upgrades<span>✦</span>Blob space<span>✦</span>Testnets<span>✦</span>Protocol governance<span>✦</span>Network upgrades<span>✦</span>Blob space<span>✦</span>Testnets</div>
+            <div class="s-pad s-body">
+              <div>
+                <p class="s-eyebrow">What we do</p>
+                <h2 class="s-display s-h2">Four areas of <em>work</em></h2>
+              </div>
+              <div class="s-cards">
+                <article class="s-card"><span class="s-tile">EW</span><h3>EtherWorld</h3><p>News, explainers and network-upgrade coverage for Ethereum.</p><a>Visit site ↗</a></article>
+                <article class="s-card"><span class="s-tile">EI</span><h3>EIPsInsight</h3><p>Open analytics that track every Ethereum proposal's status.</p><a>Visit site ↗</a></article>
+                <article class="s-card"><span class="s-tile">BL</span><h3>BlobLens</h3><p>Blob data analytics for rollups and the people who run them.</p><a>Visit site ↗</a></article>
+              </div>
+              <div class="s-quote">
+                <div class="s-quote-photo"><Img src="/img/pooja-transparent.png" alt="Portrait of Pooja Ranjan" w={420} /></div>
+                <div class="s-quote-text">
+                  <p class="s-eyebrow">Leadership</p>
+                  <blockquote class="s-display"><i>“</i>Blockchain is a very deep subject. Keep building and maintain consistency in learning the process.<i>”</i></blockquote>
+                  <p class="who"><b>Pooja Ranjan</b>Founder, Avarch</p>
+                </div>
+              </div>
+              <div class="s-cta">
+                <span class="mark"></span>
+                <div>
+                  <h2 class="s-display s-h2">Building something for Ethereum?</h2>
+                  <p>We partner with teams, universities and communities on products, research and education.</p>
+                  <div class="s-actions"><span class="s-btn dark">Start a conversation →</span><span class="s-btn ghost">Email us</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="s-pad s-foot">
+              <small>Building tools, media and education for the Ethereum ecosystem.</small>
+              <div class="s-word"><span class="mark"></span>varch</div>
+            </div>
+          </section>
+
+          <section aria-labelledby="sw-title">
+            <div class="section-head">
+              <h2 id="sw-title">Colours in <span id="sw-name"></span></h2>
+              <p>Click a colour to copy its code.</p>
+            </div>
+            <div class="swatches" id="swatches"></div>
+            <dl class="contrast" id="contrast"></dl>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <script is:inline>
+const PALETTES = [
+  { id: "lagoon", name: "Lagoon", note: "Soft teal with peach", current: true,
+    paper:"#f6f8f5", paper2:"#e8f0ec", line:"#dbe6e1", ink:"#0f2324", ink2:"#31474a", fill:"#b5e8dc", strong:"#8bdccb", deep:"#0c5650", large:"#147f72", second:"#ffdccd" },
+  { id: "seaglass", name: "Sea Glass", note: "Cooler teal with lilac",
+    paper:"#f5f9f8", paper2:"#e5f1ef", line:"#d6e6e3", ink:"#10272b", ink2:"#2f4a4e", fill:"#bfe9e3", strong:"#97dcd4", deep:"#0e5a5c", large:"#13807f", second:"#dfd5f8" },
+  { id: "mint", name: "Mint", note: "Fresh green with violet",
+    paper:"#f5faf6", paper2:"#e5f3ea", line:"#d5e8dc", ink:"#0e2419", ink2:"#2c4638", fill:"#c4f0d8", strong:"#97e4bd", deep:"#0f5b3e", large:"#157d57", second:"#d9d6fb" },
+  { id: "sage", name: "Sage", note: "Calm, earthy green with clay",
+    paper:"#f7f8f2", paper2:"#ebf0e2", line:"#dfe6d3", ink:"#1a2216", ink2:"#3a4634", fill:"#d3e6c7", strong:"#b7d7a6", deep:"#38592a", large:"#4a7838", second:"#f7d8c8" },
+  { id: "sky", name: "Sky", note: "Clear blue with soft orange",
+    paper:"#f5f8fb", paper2:"#e6eff6", line:"#d6e3ec", ink:"#0f2130", ink2:"#2f4556", fill:"#c4e5fa", strong:"#9dd4f5", deep:"#0d4f78", large:"#1a78ad", second:"#ffe0c7" },
+  { id: "periwinkle", name: "Periwinkle", note: "Blue-violet with pink",
+    paper:"#f6f7fc", paper2:"#e9ebf8", line:"#dcdff0", ink:"#15182e", ink2:"#363a56", fill:"#cfd6ff", strong:"#aab7fb", deep:"#2f3a8f", large:"#4453c4", second:"#ffd9e2" },
+  { id: "lilac", name: "Lilac", note: "Gentle purple with mint",
+    paper:"#f8f6fc", paper2:"#efe9f8", line:"#e4dcf0", ink:"#1e1630", ink2:"#40365a", fill:"#e0d3fa", strong:"#c8b2f4", deep:"#55309a", large:"#7245c2", second:"#c9efdf" },
+  { id: "blush", name: "Blush", note: "Warm pink with sea green",
+    paper:"#fcf6f7", paper2:"#f7e9ec", line:"#f0dce1", ink:"#2a141b", ink2:"#50333d", fill:"#fbd3dc", strong:"#f7b3c4", deep:"#8f2647", large:"#b83460", second:"#cfe8e0" },
+  { id: "apricot", name: "Apricot", note: "Soft orange with aqua",
+    paper:"#fcf7f3", paper2:"#f8ebe1", line:"#f0dfd2", ink:"#28170f", ink2:"#4f3a2e", fill:"#ffd8c6", strong:"#ffbfa2", deep:"#8a3814", large:"#b44e1e", second:"#bfe3e0" },
+];
+const ROLES = [
+  ["strong", "Buttons"], ["fill", "Big panels"], ["second", "Accent"], ["deep", "Links"],
+  ["ink", "Text & dark areas"], ["paper", "Background"],
+];
+
+const lum = (h) => {
+  const c = [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255).map((v) => (v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4));
+  return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+};
+const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
+
+const $ = (id) => document.getElementById(id);
+const site = $("site");
+const statusEl = $("status");
+let current = PALETTES[0];
+
+const say = (text, ok) => { statusEl.textContent = text; statusEl.classList.toggle("ok", !!ok); };
+
+function buildRail() {
+  const rail = $("rail");
+  for (const p of PALETTES) {
+    const label = document.createElement("label");
+    label.className = "chip";
+    label.innerHTML = `<input type="radio" name="palette" id="p-${p.id}" value="${p.id}"><span class="chip-body">
+      <span class="chip-name">${p.name}${p.current ? '<span class="tag">on site now</span>' : ""}</span>
+      <span class="chip-note">${p.note}</span>
+      <span class="chip-dots"><i style="background:${p.strong}"></i><i style="background:${p.second}"></i><i style="background:${p.ink}"></i></span>
+    </span>`;
+    label.querySelector("input").addEventListener("change", () => apply(p));
+    rail.append(label);
+  }
+}
+
+function apply(p) {
+  current = p;
+  const map = { paper: p.paper, paper2: p.paper2, line: p.line, ink: p.ink, "ink-2": p.ink2, fill: p.fill, strong: p.strong, deep: p.deep, large: p.large, second: p.second };
+  for (const [k, v] of Object.entries(map)) site.style.setProperty("--s-" + k, v);
+  $("p-" + p.id).checked = true;
+  $("choice-name").textContent = p.name;
+  $("sw-name").textContent = p.name;
+  const sw = $("swatches");
+  sw.replaceChildren();
+  for (const [key, role] of ROLES) {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "swatch";
+    b.innerHTML = `<span class="swatch-fill" style="background:${p[key]}"></span><b>${role}</b><code>${p[key]}</code>`;
+    b.addEventListener("click", () => copy(p[key], `Copied ${p[key]}`));
+    sw.append(b);
+  }
+  const checks = [["Text on big panels", p.ink, p.fill], ["Text on buttons", p.ink, p.strong], ["Text on accent", p.ink, p.second], ["Links on background", p.deep, p.paper], ["Light text on dark areas", p.strong, p.ink]];
+  $("contrast").innerHTML = checks.map(([l, f, b]) => `<div><dt>${l}</dt><dd>${ratio(f, b).toFixed(1)}:1 ${ratio(f, b) >= 4.5 ? "readable" : "low"}</dd></div>`).join("");
+}
+
+async function copy(text, done) {
+  try {
+    await navigator.clipboard.writeText(text);
+    say(done, true);
+  } catch {
+    say(text);
+  }
+}
+
+const choiceText = () => {
+  const note = $("note").value.trim();
+  return `Avarch colour: ${current.name}${note ? ` (${note})` : ""}`;
+};
+
+$("copy").addEventListener("click", () => copy(choiceText(), "Copied. Paste it in a message to Dhanush."));
+
+buildRail();
+apply(PALETTES[0]);
+    </script>
+  </body>
+</html>
+
+<style is:global>
+/* Layout: a colour rail on the left, a live slice of the Avarch home page on the right.
+   The rail is tool chrome and follows the viewer's theme. The preview is the light-only website. */
+:root {
+  --bg: #f4f5f3;
+  --panel: #ffffff;
+  --fg: #171b1a;
+  --fg-2: #4b5552;
+  --edge: #dce0dd;
+  --edge-strong: #171b1a;
+  --good: #1c6b40;
+  --serif: var(--font-fraunces-display), Georgia, serif;
+  --sans: var(--font-geist), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: var(--font-geist-mono), ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131615; --panel: #1c201f; --fg: #eef1ef; --fg-2: #a9b3af; --edge: #313735; --edge-strong: #eef1ef; --good: #7fd6a4;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131615; --panel: #1c201f; --fg: #eef1ef; --fg-2: #a9b3af; --edge: #313735; --edge-strong: #eef1ef; --good: #7fd6a4;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+button, input, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--edge-strong); outline-offset: 2px; }
+
+.wrap {
+  max-width: 88rem; margin-inline: auto;
+  padding-block: 28px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.top { display: grid; gap: 6px; max-width: 44rem; }
+.top h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(1.9rem, 4vw, 2.7rem); line-height: 1.08; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+.top p { margin: 0; color: var(--fg-2); text-wrap: pretty; }
+
+.layout {
+  display: grid; gap: 24px; margin-top: 24px; align-items: start;
+  grid-template-columns: minmax(0, 18.5rem) minmax(0, 1fr);
+  grid-template-areas: "rail stage" "decide stage" ". stage";
+}
+.rail { grid-area: rail; display: grid; gap: 6px; }
+.stage { grid-area: stage; display: grid; gap: 24px; min-width: 0; }
+.decide { grid-area: decide; display: grid; gap: 12px; padding: 16px; background: var(--panel); border: 1px solid var(--edge); border-radius: 14px; }
+
+.chip { position: relative; display: block; cursor: pointer; }
+.chip input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.chip-body {
+  display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; align-items: center;
+  padding: 10px 12px; border-radius: 12px; border: 1.5px solid transparent;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+.chip:hover .chip-body { background: var(--panel); }
+.chip input:checked + .chip-body { background: var(--panel); border-color: var(--edge-strong); }
+.chip input:focus-visible + .chip-body { outline: 2px solid var(--edge-strong); outline-offset: 2px; }
+.chip-name { font-weight: 600; }
+.chip-note { grid-column: 1; font-size: 13px; color: var(--fg-2); }
+.chip-dots { grid-row: 1 / span 2; grid-column: 2; display: flex; }
+.chip-dots i { width: 22px; height: 22px; border-radius: 50%; margin-left: -6px; box-shadow: 0 0 0 2px var(--panel); }
+.tag { display: inline-block; margin-left: 6px; font: 500 10px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--fg-2); }
+
+.decide h2 { font-size: 15px; font-weight: 600; margin: 0; }
+.decide label { display: grid; gap: 4px; font-size: 13px; color: var(--fg-2); }
+.decide textarea { width: 100%; min-height: 64px; resize: vertical; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--edge); background: var(--bg); }
+.primary, .plain { width: 100%; padding: 10px 14px; border-radius: 10px; cursor: pointer; font-weight: 500; }
+.primary { background: var(--fg); color: var(--bg); border: 1.5px solid var(--fg); }
+.plain { background: transparent; border: 1.5px solid var(--edge); }
+.primary:disabled { opacity: .55; cursor: default; }
+.status { margin: 0; min-height: 1.5em; font-size: 13px; color: var(--fg-2); overflow-wrap: anywhere; }
+.status.ok { color: var(--good); font-weight: 500; }
+
+/* Swatches */
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); gap: 10px; }
+.swatch { display: grid; gap: 6px; padding: 0 0 8px; border: 1px solid var(--edge); border-radius: 12px; background: var(--panel); overflow: hidden; cursor: pointer; text-align: left; }
+.swatch-fill { height: 58px; border-bottom: 1px solid var(--edge); }
+.swatch b, .swatch code { padding-inline: 10px; }
+.swatch b { font-size: 13px; font-weight: 600; }
+.swatch code { font: 400 12px var(--mono); color: var(--fg-2); text-transform: uppercase; font-variant-numeric: tabular-nums; }
+.section-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; margin-bottom: 10px; }
+.section-head h2 { font-size: 15px; font-weight: 600; margin: 0; }
+.section-head p { font-size: 13px; color: var(--fg-2); margin: 0; }
+.contrast { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0 20px; margin: 12px 0 0; font-size: 13px; }
+.contrast div { display: flex; justify-content: space-between; gap: 12px; padding-block: 6px; border-bottom: 1px solid var(--edge); }
+.contrast dt { color: var(--fg-2); }
+.contrast dd { margin: 0; font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ---- Preview: mirrors the real site. Colours come only from the --s-* set by script. ---- */
+.site {
+  container-type: inline-size;
+  --s-shadow: 6px 6px 0 0 var(--s-ink);
+  background: var(--s-paper); color: var(--s-ink); font-family: var(--sans);
+  border: 1px solid var(--edge); border-radius: 16px; overflow: hidden;
+  transition: background-color 220ms ease;
+}
+.s-banner { background: var(--s-ink); color: var(--s-paper); text-align: center; font-size: 13px; padding: 8px 14px; }
+.s-banner a { color: var(--s-strong); text-decoration: underline; text-underline-offset: 3px; }
+.s-pad { padding-inline: clamp(16px, 5cqi, 44px); }
+.s-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 12px; border-bottom: 1px solid var(--s-line); }
+.s-nav { display: flex; gap: 2px; padding: 3px; border: 1px solid var(--s-line); border-radius: 999px; background: #fff; font-size: 13px; color: var(--s-ink-2); }
+.s-nav span { padding: 3px 11px; border-radius: 999px; }
+.s-nav .on { background: var(--s-ink); color: var(--s-paper); }
+.mark {
+  flex: none;
+  display: block; aspect-ratio: 960 / 832; background: currentColor;
+  -webkit-mask: var(--mark) center / contain no-repeat; mask: var(--mark) center / contain no-repeat;
+}
+.s-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px; border-radius: 999px; border: 1.5px solid var(--s-ink); font-size: 14px; font-weight: 500; white-space: nowrap; }
+.s-btn.pri { background: var(--s-strong); color: var(--s-ink); box-shadow: 2px 2px 0 0 var(--s-ink); }
+.s-btn.dark { background: var(--s-ink); color: var(--s-paper); }
+.s-btn.ghost { background: #fff; color: var(--s-ink); }
+.s-hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(24px, 5cqi, 56px); align-items: center; padding-block: clamp(28px, 6cqi, 64px); }
+.s-new { display: inline-flex; align-items: center; gap: 8px; padding: 3px 12px 3px 3px; border: 1px solid var(--s-line); border-radius: 999px; background: #fff; font-size: 13px; color: var(--s-ink-2); }
+.s-new b { padding: 1px 8px; border-radius: 999px; border: 1px solid var(--s-ink); background: var(--s-second); color: var(--s-ink); font-size: 12px; font-weight: 500; }
+.s-display { font-family: var(--serif); font-weight: 600; letter-spacing: -0.025em; line-height: 1.02; margin: 0; text-wrap: balance; }
+.s-display em { font-style: italic; font-weight: 500; padding-inline: .06em; background: linear-gradient(transparent 58%, var(--s-fill) 58%, var(--s-fill) 92%, transparent 92%); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.s-h1 { font-size: clamp(2.3rem, 7.2cqi, 4.3rem); margin-top: 18px; }
+.s-lede { margin: 16px 0 0; max-width: 34rem; color: var(--s-ink-2); font-size: 16px; text-wrap: pretty; }
+.s-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.s-panel { display: grid; place-items: center; aspect-ratio: 1; max-width: 100%; border: 1.5px solid var(--s-ink); border-radius: 2rem; background: var(--s-fill); box-shadow: var(--s-shadow); color: #000; }
+.s-panel .mark { width: 62%; transform: rotate(-3deg); }
+.s-stats { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--s-ink); color: var(--s-paper); border-radius: 1.4rem; margin-bottom: 28px; }
+.s-stats div { padding: 18px clamp(12px, 3cqi, 26px); }
+.s-stats div + div { border-left: 1px solid color-mix(in srgb, var(--s-paper) 14%, transparent); }
+.s-stats dt { font-size: 13px; opacity: .75; }
+.s-stats dd { margin: 2px 0 0; font-family: var(--serif); font-size: clamp(1.8rem, 5cqi, 2.9rem); font-weight: 600; color: var(--s-strong); line-height: 1.1; }
+.s-strip { background: var(--s-ink); color: var(--s-paper); transform: rotate(-1deg) scale(1.02); padding-block: 10px; white-space: nowrap; overflow: hidden; font-family: var(--serif); font-size: 19px; font-weight: 500; }
+.s-strip span { color: var(--s-strong); margin-inline: 16px; }
+.s-body { padding-block: 40px 44px; background: var(--s-paper); display: grid; gap: 28px; }
+.s-eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0; font: 500 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--s-ink-2); }
+.s-eyebrow::before { content: ""; width: 9px; height: 9px; border-radius: 2px; background: var(--s-strong); box-shadow: 0 0 0 1px var(--s-ink); }
+.s-h2 { font-size: clamp(1.7rem, 4.6cqi, 2.6rem); margin-top: 8px; }
+.s-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.s-card { display: grid; align-content: start; gap: 8px; padding: 18px; background: #fff; border: 1px solid var(--s-line); border-radius: 1.1rem; }
+.s-card h3 { font-family: var(--serif); font-size: 20px; font-weight: 600; margin: 0; }
+.s-card p { margin: 0; font-size: 14px; color: var(--s-ink-2); }
+.s-card a { font-size: 14px; font-weight: 500; color: var(--s-deep); }
+.s-tile { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 11px; border: 1.5px solid var(--s-ink); background: var(--s-fill); font: 500 13px var(--mono); }
+.s-quote { display: grid; grid-template-columns: .8fr 1.2fr; overflow: hidden; border: 1.5px solid var(--s-ink); border-radius: 2rem; background: var(--s-second); box-shadow: var(--s-shadow); }
+.s-quote-photo { position: relative; min-height: 15rem; }
+.s-quote-photo img { position: absolute; left: 50%; bottom: 0; height: 96%; width: auto; max-width: none; transform: translateX(-50%); }
+.s-quote-text { padding: clamp(18px, 4cqi, 36px); }
+.s-quote blockquote { font-size: clamp(1.25rem, 3.4cqi, 1.9rem); margin: 10px 0 0; line-height: 1.12; }
+.s-quote blockquote i { font-style: normal; color: var(--s-large); }
+.s-quote p.who { margin: 12px 0 0; font-size: 14px; color: var(--s-ink-2); }
+.s-quote p.who b { display: block; color: var(--s-ink); font-weight: 500; }
+.s-cta { position: relative; overflow: hidden; padding: clamp(22px, 5cqi, 44px); border: 1.5px solid var(--s-ink); border-radius: 2rem; background: var(--s-fill); box-shadow: var(--s-shadow); }
+.s-cta .mark { position: absolute; right: -24px; bottom: -40px; width: clamp(150px, 30cqi, 260px); opacity: .12; color: #000; transform: rotate(-8deg); }
+.s-cta > div { position: relative; max-width: 30rem; }
+.s-cta p { margin: 10px 0 0; color: var(--s-ink-2); }
+.s-foot { background: var(--s-ink); color: var(--s-strong); padding-block: 18px 22px; overflow: hidden; }
+.s-foot small { display: block; color: var(--s-paper); opacity: .75; margin-bottom: 8px; font-size: 13px; }
+.s-word { display: flex; align-items: baseline; gap: .02em; font-family: var(--serif); font-weight: 600; font-size: clamp(3.8rem, 27cqi, 15rem); letter-spacing: -0.045em; line-height: .9; }
+.s-word .mark { height: .74em; width: auto; }
+
+@container (max-width: 620px) {
+  .s-nav { display: none; }
+  .s-hero, .s-cards, .s-quote { grid-template-columns: 1fr; }
+  .s-panel { max-width: 18rem; }
+  .s-stats { grid-template-columns: repeat(2, 1fr); }
+  .s-stats div:nth-child(3) { border-left: 0; }
+}
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: minmax(0, 1fr); grid-template-areas: "rail" "stage" "decide"; }
+  .rail {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg);
+    display: flex; gap: 6px; overflow-x: auto; padding-block: 8px; scrollbar-width: none;
+  }
+  .chip { flex: none; }
+  .chip-body { grid-template-columns: auto auto; padding: 7px 10px; background: var(--panel); border-color: var(--edge); }
+  .chip-note, .tag { display: none; }
+  .chip-dots { grid-row: 1; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>

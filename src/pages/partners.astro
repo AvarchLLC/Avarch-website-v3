@@ -1,0 +1,115 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import CtaBand from "../components/CtaBand.astro";
+import Icon from "../components/Icon.astro";
+import Img from "../components/Img.astro";
+import { academicPartners, ecosystemPartners, grants, collaborations } from "../data/site";
+
+const initials = (name: string) =>
+  name
+    .replace(/[^A-Za-z .]/g, "")
+    .split(/\s+/)
+    .filter((w) => w.length > 2 && /^[A-Z]/.test(w))
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join("") || name.slice(0, 2);
+---
+<Layout title="Associates & Partners" description="Avarch collaborates with universities, developer communities and ecosystem organisations, and is supported by the Ethereum Foundation ESP and Gitcoin Grants.">
+  <PageHero
+    eyebrow="Collaborating for impact"
+    title="Associates <em>&amp;</em> partners"
+    lead="We work with universities, developer communities and ecosystem organisations on blockchain education, research and open-source tools."
+  />
+
+  <!-- Ecosystem -->
+  <section class="container-page mt-20">
+    <SectionHeader eyebrow="Ecosystem" title="Ecosystem partners" />
+    <ul data-reveal-group class="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+      {ecosystemPartners.map((p) => (
+        <li>
+          <a href={p.href} target="_blank" rel="noopener" class="card group flex h-32 items-center justify-center p-6 transition-colors hover:border-ink" aria-label={p.name}>
+            {p.logo ? (
+              <Img src={p.logo} alt={p.name} w={200} class:list={["w-auto max-w-full object-contain grayscale transition group-hover:grayscale-0", p.logoClass ?? "max-h-12"]} />
+            ) : (
+              <span class="font-serif text-3xl tracking-wide">{p.name}</span>
+            )}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Academic -->
+  <section class="mt-24 border-y border-line bg-surface py-20">
+    <div class="container-page grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+      <div class="lg:sticky lg:top-28 lg:self-start">
+        <SectionHeader
+          eyebrow="Academic"
+          title="Academic & internship partners"
+          lead="Avarch offers paid internships to students. Since 2020, more than 50 students from these institutions have worked with us on development, writing and video."
+        />
+      </div>
+      <ul data-reveal-group class="grid gap-3 sm:grid-cols-2">
+        {academicPartners.map((p) => (
+          <li class="flex items-center gap-4 rounded-2xl border border-line bg-paper/60 p-4">
+            {p.logo ? (
+              <Img src={p.logo} alt="" w={44} class="size-11 shrink-0 rounded-xl border border-line bg-white object-contain p-1" />
+            ) : (
+              <span class="grid size-11 shrink-0 place-items-center rounded-xl bg-lagoon-100 font-mono text-sm font-medium text-lagoon-800" aria-hidden="true">{initials(p.name)}</span>
+            )}
+            <div class="min-w-0">
+              <p class="font-medium leading-tight">{p.name}</p>
+              <p class="mt-0.5 flex items-center gap-1 text-sm text-muted"><Icon name="pin" size={13} />{p.place}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Grants -->
+  <section class="container-page mt-24">
+    <SectionHeader eyebrow="Support" title="Backed by the community" lead="Grants and community funding keep our tools open-source and free to use." />
+    <div data-reveal-group class="mt-10 grid gap-5 md:grid-cols-2">
+      {grants.map((g, i) => (
+        <article class:list={["card flex gap-5 p-6", i === 0 && "md:col-span-2 md:p-8 bg-gradient-to-br from-lagoon-100 to-surface border-lagoon-300"]}>
+          <span class="grid size-14 shrink-0 place-items-center rounded-2xl border border-line bg-white p-3">
+            <Img src={g.logo} alt="" w={32} class="max-h-full" />
+          </span>
+          <div>
+            <p class="font-mono text-xs text-muted">{g.period}</p>
+            <h3 class:list={["mt-1 font-semibold", i === 0 ? "text-xl" : "text-lg"]}>{g.name}</h3>
+            <p class="mt-2 text-ink-2">{g.body}</p>
+            <ul class="mt-4 flex flex-wrap gap-2">
+              {g.tags.map((t) => <li class="rounded-full border border-line px-2.5 py-0.5 text-xs text-ink-2">{t}</li>)}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- Collaborations -->
+  <section class="container-page mt-24">
+    <SectionHeader eyebrow="Highlights" title="Featured collaborations" />
+    <div data-reveal-group class="mt-10 grid gap-5 md:grid-cols-2">
+      {collaborations.map((c) => (
+        <a href={c.href} target="_blank" rel="noopener" class="card group overflow-hidden transition-colors hover:border-line-strong">
+          <div class="aspect-[16/8] overflow-hidden border-b border-line bg-paper-2">
+            <Img src={c.image} alt="" w={600} sizes="(min-width: 768px) 50vw, 100vw" class="size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+          </div>
+          <div class="p-6">
+            <p class="font-mono text-xs text-muted">{c.date}</p>
+            <h3 class="display mt-2 text-3xl">{c.title}</h3>
+            <p class="mt-2 text-ink-2">{c.body}</p>
+            <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-lagoon-800">Read on EtherWorld <Icon name="arrow-up-right" size={16} /></span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <CtaBand title="Interested in collaborating?" body="We welcome partnerships with universities, developer communities and organisations working on blockchain education and research." />
+</Layout>

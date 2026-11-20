@@ -1,0 +1,152 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import CtaBand from "../components/CtaBand.astro";
+import Icon from "../components/Icon.astro";
+import Img from "../components/Img.astro";
+import { services, stats } from "../data/site";
+import { founder } from "../data/founder";
+
+const principles = [
+  {
+    title: "Open by default",
+    body: "Our tools are open-source and our articles are free to read.",
+  },
+  {
+    title: "Write for everyone",
+    body: "Network upgrades affect every Ethereum user, so we write for newcomers as well as core developers.",
+  },
+  {
+    title: "Learn by contributing",
+    body: "Students learn faster on real projects, so our interns work on products people use.",
+  },
+  {
+    title: "Consistency over hype",
+    body: "We've documented Ethereum's network upgrades since 2017, in bull and bear markets.",
+  },
+];
+---
+<Layout title="About" description="Avarch is a blockchain software studio building products, media and education for the Ethereum ecosystem since 2017.">
+  <PageHero
+    eyebrow="About Avarch"
+    title="A software studio for the <em>Ethereum</em> ecosystem."
+    lead="Avarch runs a blockchain publication, builds data tools for Ethereum and pays students to work on both."
+  />
+
+  <!-- Story -->
+  <section class="container-page mt-20 grid gap-12 lg:grid-cols-[1fr_1.3fr]">
+    <SectionHeader eyebrow="Our story" title="Started with a publication. Grew into a studio." />
+    <div class="space-y-5 text-lg leading-relaxed text-ink-2">
+      <p>
+        Avarch LLC was founded in 2017 by <a href="/founder" class="font-medium text-ink underline decoration-lagoon-400 underline-offset-4 hover:decoration-ink">Pooja Ranjan</a>.
+        Its first project, <a href="https://etherworld.co" target="_blank" rel="noopener" class="font-medium text-ink underline decoration-lagoon-400 underline-offset-4 hover:decoration-ink">EtherWorld</a>,
+        set out to explain blockchain to mainstream readers. It now covers Ethereum network upgrades, testnets and research in depth.
+      </p>
+      <p>
+        Covering the protocol closely revealed gaps in the tooling around it. That led to
+        <a href="https://eipsinsight.com" target="_blank" rel="noopener" class="font-medium text-ink underline decoration-lagoon-400 underline-offset-4 hover:decoration-ink">EIPsInsight</a>,
+        an analytics platform for Ethereum Improvement Proposals, and more recently to
+        <a href="https://bloblens.com" target="_blank" rel="noopener" class="font-medium text-ink underline decoration-lagoon-400 underline-offset-4 hover:decoration-ink">BlobLens</a>
+        for blob-space data and EthShala for structured learning.
+      </p>
+      <p>
+        Alongside the products, we publish
+        <a href="https://etherworld.co/tag/enigma/" target="_blank" rel="noopener" class="underline decoration-line-strong underline-offset-4 hover:decoration-ink">technical blogs</a>,
+        produce <a href="https://www.youtube.com/channel/UCnceAY-vAQsO8TgGAj5SGFA/playlists" target="_blank" rel="noopener" class="underline decoration-line-strong underline-offset-4 hover:decoration-ink">ELI5 videos</a>
+        and share in-depth <a href="https://etherworld.co/tag/research/" target="_blank" rel="noopener" class="underline decoration-line-strong underline-offset-4 hover:decoration-ink">research reports</a>
+        on blockchain protocols.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="container-page mt-20">
+    <dl data-reveal-group class="grid grid-cols-2 gap-4 md:grid-cols-4">
+      {stats.map((s) => (
+        <div class="card p-6">
+          <dd class="display text-5xl text-lagoon-800">{s.value}</dd>
+          <dt class="mt-2 text-sm text-ink-2">{s.label}</dt>
+        </div>
+      ))}
+    </dl>
+  </section>
+
+  <!-- What we do -->
+  <section class="mt-28 border-y border-line bg-surface py-20">
+    <div class="container-page">
+      <SectionHeader eyebrow="What we do" title="Four areas of work" />
+      <div data-reveal-group class="mt-12 grid gap-px overflow-hidden rounded-[1.5rem] border border-line bg-line sm:grid-cols-2">
+        {services.map((s, i) => (
+          <div class="bg-surface p-8">
+            <div class="flex items-center justify-between">
+              <span class="grid size-11 place-items-center rounded-xl border-[1.5px] border-ink bg-lagoon-200 text-ink"><Icon name={s.icon} size={22} /></span>
+              <span class="font-mono text-sm text-muted">0{i + 1}</span>
+            </div>
+            <h3 class="display mt-6 text-3xl">{s.title}</h3>
+            <p class="mt-3 text-ink-2">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section class="container-page mt-28">
+    <SectionHeader eyebrow="How we work" title="What we believe" />
+    <ol data-reveal-group class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2">
+      {principles.map((p, i) => (
+        <li class="flex gap-5 border-t border-line pt-6">
+          <span class="display text-4xl text-lagoon-600">{i + 1}</span>
+          <div>
+            <h3 class="text-xl font-semibold">{p.title}</h3>
+            <p class="mt-2 text-ink-2">{p.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <!-- Internship -->
+  <section class="container-page mt-28">
+    <div data-reveal class="grid overflow-hidden rounded-[2rem] border border-line bg-surface md:grid-cols-2">
+      <Img src="/img/community_banner.jpg" alt="A community gathering at sunset" w={600} sizes="(min-width: 768px) 50vw, 100vw" class="h-full min-h-64 w-full object-cover" />
+      <div class="p-8 sm:p-12">
+        <p class="eyebrow">Internships</p>
+        <h2 class="display mt-3 text-4xl">Paid internships for students</h2>
+        <p class="mt-4 text-ink-2">
+          Since 2020, more than 50 students from universities in India and abroad have worked with us on app development, technical writing and educational videos.
+        </p>
+        <ul class="mt-6 space-y-3 text-ink-2">
+          {["Work on products people use", "Mentoring from people involved in Ethereum's upgrade process", "Published work for your portfolio"].map((t) => (
+            <li class="flex gap-3"><Icon name="check" size={20} class="mt-0.5 shrink-0 text-moss-500" />{t}</li>
+          ))}
+        </ul>
+        <a href="/partners" class="mt-8 inline-flex items-center gap-2 font-medium text-lagoon-800 hover:text-ink">
+          See our academic partners <Icon name="arrow-right" size={18} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder -->
+  <section data-reveal class="container-page mt-28 grid items-center gap-10 md:grid-cols-[auto_1fr]">
+    <div class="size-52 overflow-hidden rounded-[2rem] border-[1.5px] border-ink bg-peach-200 shadow-[var(--shadow-hard)] sm:size-64">
+      <Img src={founder.photo} alt="Pooja Ranjan" w={256} class="size-full object-cover object-top" />
+    </div>
+    <div>
+      <p class="eyebrow">Leadership</p>
+      <h2 class="display mt-3 text-4xl sm:text-5xl">{founder.name}</h2>
+      <p class="mt-1 text-muted">{founder.role}</p>
+      <p class="mt-5 max-w-2xl text-lg text-ink-2">
+        Pooja joined the blockchain community in 2016 and founded Avarch a year later. She led Ethereum Cat Herders for five years and now serves as President of ECH Institute. Through EIPsInsight and PEEPanEIP she makes the EIP process easier to follow.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="/founder" class="btn btn-dark">Read the full story <Icon name="arrow-right" size={18} /></a>
+        <a href="/team" class="btn btn-ghost">Meet the team</a>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Layout>

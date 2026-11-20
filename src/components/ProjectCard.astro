@@ -1,0 +1,66 @@
+---
+import type { Project } from "../data/site";
+import Icon from "./Icon.astro";
+import Img from "./Img.astro";
+
+interface Props {
+  project: Project;
+  featured?: boolean;
+  /** Set for cards visible on load, so the browser fetches the cover straight away. */
+  eager?: boolean;
+}
+const { project: p, featured = false, eager = false } = Astro.props;
+const href = p.internal ?? p.href;
+const external = !p.internal;
+
+const statusStyle = {
+  Active: "bg-moss-500/10 text-moss-700 ring-1 ring-moss-500/30",
+  New: "bg-peach-200 text-ink ring-1 ring-ink",
+  Archived: "bg-paper-2 text-muted",
+}[p.status];
+---
+<article
+  class:list={[
+    "card lift group relative flex flex-col overflow-hidden",
+    featured && "md:flex-row",
+  ]}
+>
+  <div class:list={["relative overflow-hidden border-b border-line bg-paper-2", featured ? "aspect-[16/10] md:aspect-auto md:w-3/5 md:border-b-0 md:border-r" : "aspect-[16/9]"]}>
+    <Img
+      src={p.cover}
+      alt=""
+      w={featured ? 760 : 600}
+      loading={eager ? "eager" : "lazy"}
+      sizes={featured ? "(min-width: 768px) 60vw, 100vw" : "(min-width: 768px) 50vw, 100vw"}
+      class="size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+    />
+  </div>
+  <div class:list={["flex flex-1 flex-col p-6", featured && "md:p-10"]}>
+    <div class="flex items-center gap-3">
+      <Img src={p.logo} alt="" w={40} class="size-10 rounded-xl border border-line bg-white object-contain p-1" />
+      <div class="min-w-0">
+        <p class="eyebrow !text-[0.68rem] !text-muted">{p.category} · {p.year}</p>
+      </div>
+      <span class:list={["ml-auto rounded-full px-2.5 py-1 text-xs font-medium", statusStyle]}>{p.status}</span>
+    </div>
+    <h3 class:list={["display mt-5", featured ? "text-4xl sm:text-5xl" : "text-3xl"]}>
+      <a href={href} target={external ? "_blank" : undefined} rel={external ? "noopener" : undefined} class="after:absolute after:inset-0 focus-visible:outline-none">
+        {p.name}
+      </a>
+    </h3>
+    <p class="mt-3 text-ink-2">{featured ? p.description : p.summary}</p>
+    <div class="mt-auto flex items-center justify-between gap-4 pt-6">
+      <span class="inline-flex items-center gap-1.5 text-sm font-medium text-lagoon-800">
+        {p.internal ? "Read more" : "Visit site"}
+        <Icon name={external ? "arrow-up-right" : "arrow-right"} size={16} class="transition-transform group-hover:translate-x-0.5" />
+      </span>
+      {p.links.length > 0 && (
+        <ul class="relative z-10 flex gap-3 text-xs text-muted">
+          {p.links.map((l) => (
+            <li><a href={l.href} target="_blank" rel="noopener" class="hover:text-ink">{l.label}</a></li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </div>
+</article>

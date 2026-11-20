@@ -1,0 +1,147 @@
+---
+import { Font } from "astro:assets";
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import EventBanner from "../components/EventBanner.astro";
+import Footer from "../components/Footer.astro";
+import { event, site, socials } from "../data/site";
+import { imageUrl } from "../lib/images";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  /** Extra schema.org objects for this page. */
+  schema?: Record<string, unknown>[];
+}
+
+const { title, description = site.description, image = "/img/community_banner.jpg", schema = [] } = Astro.props;
+const fullTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.tagline}`;
+const canonical = new URL(Astro.url.pathname, site.url);
+const ogImage = new URL(await imageUrl(image), site.url);
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: site.name,
+    legalName: site.legalName,
+    url: site.url,
+    logo: new URL(await imageUrl("/img/brand/bg.png", 512), site.url).href,
+    description: site.description,
+    foundingDate: String(site.founded),
+    founder: { "@type": "Person", name: "Pooja Ranjan" },
+    email: site.email,
+    sameAs: socials.map((s) => s.href),
+  },
+  ...schema,
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>document.documentElement.classList.add("js");</script>
+    <script is:inline define:vars={{ eventEnd: event.end, eventKey: event.storageKey }}>
+      // Runs before paint so an expired or dismissed banner never flashes.
+      let hideBanner = Date.now() >= Date.parse(eventEnd);
+      try {
+        hideBanner ||= localStorage.getItem(eventKey) === "1";
+      } catch {}
+      if (hideBanner) document.documentElement.classList.add("event-banner-hidden");
+    </script>
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#f6f8f5" />
+    <meta name="color-scheme" content="light" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ether_world" />
+
+    <Font cssVariable="--font-fraunces-display" />
+    <Font cssVariable="--font-fraunces" />
+    <Font cssVariable="--font-geist" preload />
+    <Font cssVariable="--font-geist-mono" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body class="min-h-dvh">
+    <EventBanner />
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<script>
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Scroll reveal: [data-reveal] animates itself, [data-reveal-group] staggers its children.
+  for (const group of document.querySelectorAll<HTMLElement>("[data-reveal-group]")) {
+    [...group.children].forEach((child, i) => (child as HTMLElement).style.setProperty("--i", String(i)));
+  }
+  const targets = document.querySelectorAll<HTMLElement>("[data-reveal], [data-reveal-group]");
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    targets.forEach((el) => el.classList.add("is-visible"));
+  } else {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
+    );
+    targets.forEach((el) => io.observe(el));
+  }
+
+  // Count-up for numbers like "50+" (years are left alone).
+  const counters = document.querySelectorAll<HTMLElement>("[data-count]");
+  const countUp = (el: HTMLElement) => {
+    const match = el.textContent?.trim().match(/^(\d+)(\D*)$/);
+    if (!match || reduceMotion) return;
+    const end = Number(match[1]);
+    const suffix = match[2];
+    if (end >= 1000) return;
+    const start = performance.now();
+    const duration = 1200;
+    const tick = (now: number) => {
+      const t = Math.min((now - start) / duration, 1);
+      el.textContent = Math.round(end * (1 - Math.pow(1 - t, 3))) + suffix;
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  if (counters.length && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        countUp(entry.target as HTMLElement);
+        io.unobserve(entry.target);
+      }
+    });
+    counters.forEach((el) => io.observe(el));
+  }
+
+  // Header shadow once the page scrolls.
+  const header = document.querySelector("header");
+  const onScroll = () => header?.toggleAttribute("data-scrolled", window.scrollY > 8);
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+</script>

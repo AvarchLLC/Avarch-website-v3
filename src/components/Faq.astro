@@ -1,0 +1,32 @@
+---
+import SectionHeader from "./SectionHeader.astro";
+import Icon from "./Icon.astro";
+import { faqs } from "../data/faq";
+
+interface Props {
+  class?: string;
+}
+const { class: className = "" } = Astro.props;
+---
+<section class:list={["container-page mt-28 grid gap-12 lg:grid-cols-[1fr_1.6fr]", className]}>
+  <div class="lg:sticky lg:top-28 lg:self-start">
+    <SectionHeader eyebrow="FAQ" title="Questions people ask us" lead="If your question isn't here, send it to us." />
+    <a href="/contact/" class="btn btn-ghost mt-6">Ask a question <Icon name="arrow-right" size={18} /></a>
+  </div>
+  <div data-reveal-group class="divide-y divide-line border-y border-line">
+    {faqs.map((f, i) => (
+      <details class="faq group" open={i === 0}>
+        <summary class="flex cursor-pointer list-none items-start justify-between gap-6 py-6 [&::-webkit-details-marker]:hidden">
+          <h3 class="font-serif text-xl font-semibold leading-snug sm:text-2xl">{f.q}</h3>
+          <span class="mt-1 grid size-8 shrink-0 place-items-center rounded-full border-[1.5px] border-ink transition-[transform,background-color] duration-300 group-open:rotate-45 group-open:bg-lagoon-200">
+            <Icon name="plus" size={16} />
+          </span>
+        </summary>
+        <p
+          class="max-w-2xl pb-7 pr-12 text-ink-2 [&_a]:font-medium [&_a]:text-ink [&_a]:underline [&_a]:decoration-lagoon-400 [&_a]:decoration-2 [&_a]:underline-offset-4 hover:[&_a]:decoration-ink"
+          set:html={f.a}
+        />
+      </details>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,26 @@
+---
+import Img from "./Img.astro";
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  lead?: string;
+}
+const { eyebrow, title, lead } = Astro.props;
+---
+<section class="relative overflow-hidden border-b border-ink/10">
+  <div class="grain pointer-events-none absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent)]" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -top-48 right-[-8%] size-[36rem] rounded-full bg-lagoon-200/50 blur-3xl" aria-hidden="true"></div>
+  <Img
+    src="/img/brand/mark.png"
+    alt=""
+    w={360}
+    class="pointer-events-none absolute -right-16 top-10 hidden w-[22rem] rotate-[8deg] opacity-[0.06] lg:block"
+  />
+  <div class="container-page relative pb-16 pt-16 sm:pb-24 sm:pt-24">
+    <p class="eyebrow enter">{eyebrow}</p>
+    <h1 style="--d: 1" class="enter display mt-5 max-w-4xl text-5xl sm:text-7xl lg:text-[5.25rem]" set:html={title} />
+    {lead && <p style="--d: 2" class="enter mt-7 max-w-2xl text-lg text-ink-2 sm:text-xl">{lead}</p>}
+    <slot />
+  </div>
+</section>

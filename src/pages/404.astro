@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+---
+<Layout title="Page not found">
+  <section class="container-page grid min-h-[60vh] place-items-center py-24 text-center">
+    <div>
+      <p class="eyebrow">Error 404</p>
+      <h1 class="display mt-4 text-6xl sm:text-8xl">Block not found.</h1>
+      <p class="mx-auto mt-5 max-w-md text-lg text-ink-2">This page may have moved when we redesigned the site. Try one of these instead.</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="/" class="btn btn-dark">Go home <Icon name="arrow-right" size={18} /></a>
+        <a href="/projects/" class="btn btn-ghost">Projects</a>
+      </div>
+    </div>
+  </section>
+</Layout>

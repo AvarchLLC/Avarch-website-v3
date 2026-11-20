@@ -1,0 +1,309 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+import Img from "../components/Img.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import CtaBand from "../components/CtaBand.astro";
+import {
+  projects,
+  services,
+  stats,
+  testimonials,
+  playlists,
+  youtubePlaylists,
+  academicPartners,
+  logoCloud,
+} from "../data/site";
+import { founder } from "../data/founder";
+import { team } from "../data/team";
+import Faq from "../components/Faq.astro";
+
+const [featured, ...rest] = projects.filter((p) => p.status !== "Archived");
+const milestones = [...projects].sort((a, b) => Number(a.year) - Number(b.year));
+const marquee = [
+  "EIPs",
+  "Network upgrades",
+  "Blob space",
+  "Testnets",
+  "Protocol governance",
+  "Rollups",
+  "MEV research",
+  "Account abstraction",
+  "Smart contracts",
+  "Developer education",
+];
+const moreUniversities = academicPartners.length - logoCloud.filter((c) => c.kind === "Academic").length;
+---
+<Layout>
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="grain pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_top_left,black_25%,transparent_65%)]" aria-hidden="true"></div>
+
+    <div class="container-page relative grid items-center gap-16 pb-20 pt-14 sm:pt-20 lg:grid-cols-[1.1fr_1fr] lg:gap-20 lg:pb-28">
+      <div>
+        <p class="enter inline-flex items-center gap-2 rounded-full border border-ink/15 bg-surface py-1 pl-1 pr-3 text-sm text-ink-2">
+          <span class="rounded-full border border-ink bg-peach-200 px-2 py-0.5 text-xs font-medium text-ink">New</span>
+          BlobLens &amp; EthShala are live
+        </p>
+        <h1 style="--d: 1" class="enter display mt-7 text-[3.3rem] sm:text-7xl lg:text-[5.6rem]">
+          Tools, media &amp; education for <em>Ethereum.</em>
+        </h1>
+        <p style="--d: 2" class="enter mt-7 max-w-xl text-lg text-ink-2 sm:text-xl">
+          Avarch is a blockchain software studio. Since 2017 we've built open analytics, run EtherWorld, built open analytics for EIPs and
+          blob data, and paid students to make their first contributions to Ethereum.
+        </p>
+        <div style="--d: 3" class="enter mt-9 flex flex-wrap gap-3">
+          <a href="/projects/" class="btn btn-primary">
+            Explore our projects <Icon name="arrow-right" size={18} />
+          </a>
+          <a href="/about/" class="btn btn-ghost">About Avarch</a>
+        </div>
+      </div>
+
+      <!-- Brand panel with floating product chips -->
+      <div class="relative mx-auto w-full max-w-[30rem]">
+        <div style="--d: 2" class="enter-pop relative grid aspect-square place-items-center overflow-hidden rounded-[2.5rem] border-[1.5px] border-ink bg-lagoon-200 shadow-[8px_8px_0_0_var(--color-ink)]">
+          <div class="grain absolute inset-0 opacity-60" aria-hidden="true"></div>
+          <span class="absolute left-6 top-5 font-mono text-xs tracking-[0.14em]">EST. 2017</span>
+          <span class="absolute bottom-5 left-6 font-mono text-xs tracking-[0.14em]">AVARCH LLC</span>
+          <Img src="/img/brand/mark.png" alt="Avarch logo" w={340} loading="eager" fetchpriority="high" class="relative w-[68%] -rotate-3" />
+        </div>
+        <ul class="mt-5 grid grid-cols-2 gap-3 lg:mt-0 lg:block">
+          {projects.filter((p) => p.status !== "Archived").map((p, i) => (
+            <li style={`--d: ${i}`} class:list={["float lg:absolute", ["lg:-left-12 lg:top-10", "lg:-right-10 lg:top-[38%]", "lg:-left-8 lg:bottom-16", "lg:-bottom-7 lg:right-12"][i]]}>
+              <a
+                href={p.internal ?? p.href}
+                target={p.internal ? undefined : "_blank"}
+                rel={p.internal ? undefined : "noopener"}
+                style={`--d: ${i + 4}`}
+                class="enter lift flex items-center gap-3 rounded-2xl border-[1.5px] border-ink bg-surface py-2.5 pl-2.5 pr-4 shadow-[var(--shadow-hard-sm)]"
+              >
+                <Img src={p.logo} alt="" w={36} loading="eager" class="size-9 shrink-0 rounded-xl border border-line bg-white object-contain p-0.5" />
+                <span class="min-w-0">
+                  <span class="block font-serif text-lg font-semibold leading-tight">{p.name}</span>
+                  <span class="block truncate text-xs text-muted">{p.category}</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="container-page relative">
+      <dl style="--d: 5" class="enter grid grid-cols-2 overflow-hidden rounded-[1.75rem] bg-ink text-paper md:grid-cols-4">
+        {stats.map((s, i) => (
+          <div class:list={["p-6 sm:p-8", i < 2 && "border-b border-paper/10 md:border-b-0", i % 2 === 0 && "border-r border-paper/10", i === 1 && "md:border-r"]}>
+            <dt class="text-sm text-paper/60">{s.label}</dt>
+            <dd data-count class="display mt-2 text-5xl tabular-nums text-lagoon-300 sm:text-6xl">{s.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- Partner marquee -->
+  <section aria-label="Topics we cover" class="mt-20 -rotate-1 overflow-hidden border-y-[1.5px] border-ink bg-ink py-4 text-paper">
+    <div class="flex w-max animate-marquee gap-10 whitespace-nowrap hover:[animation-play-state:paused]">
+      {[...marquee, ...marquee].map((name, i) => (
+        <span class="flex items-center gap-10 font-serif text-2xl font-medium" aria-hidden={i >= marquee.length ? "true" : undefined}>
+          {name}<span class="text-lg text-lagoon-300" aria-hidden="true">✦</span>
+        </span>
+      ))}
+    </div>
+  </section>
+
+  <!-- Logo cloud -->
+  <section class="container-page mt-24" aria-labelledby="partners-heading">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div class="max-w-2xl">
+        <p class="eyebrow">Partners &amp; supporters</p>
+        <h2 id="partners-heading" class="display mt-3 text-4xl sm:text-5xl">Who we work with</h2>
+        <p class="mt-4 text-lg text-ink-2">
+          Grants from the Ethereum Foundation and Gitcoin, media partnerships with Devcon and EDCON, and internships with
+          universities across India.
+        </p>
+      </div>
+      <a href="/partners" class="inline-flex items-center gap-1.5 font-medium text-lagoon-800 hover:text-ink">
+        All partners <Icon name="arrow-right" size={18} />
+      </a>
+    </div>
+
+    <ul data-reveal-group class="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-[1.5rem] border-[1.5px] border-ink bg-line md:grid-cols-5">
+      {logoCloud.map((c) => (
+        <li class="bg-surface">
+          <a
+            href={c.href ?? "/partners"}
+            target={c.href ? "_blank" : undefined}
+            rel={c.href ? "noopener" : undefined}
+            class="group relative flex h-32 items-center justify-center px-5 transition-colors hover:bg-lagoon-50 sm:h-36"
+          >
+            <span class="flex items-center gap-2.5 opacity-75 grayscale transition duration-300 group-hover:opacity-100 group-hover:grayscale-0">
+              <Img
+                src={c.logo}
+                alt={c.label ? "" : c.name}
+                w={c.label ? 40 : 150}
+                class:list={[c.label ? "h-9 w-auto shrink-0" : "w-auto max-w-[8.5rem] object-contain", !c.label && (c.logoClass ?? "h-8 sm:h-9")]}
+              />
+              {c.label && <span class="text-[0.95rem] font-semibold leading-tight tracking-tight text-ink">{c.label}</span>}
+            </span>
+            <span class="absolute bottom-3 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-muted opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+              {c.kind}
+            </span>
+          </a>
+        </li>
+      ))}
+      <li class="bg-lagoon-200">
+        <a href="/partners" class="group flex h-32 flex-col items-center justify-center transition-colors hover:bg-lagoon-300 sm:h-36">
+          <span class="display text-4xl">+{moreUniversities}</span>
+          <span class="mt-1 inline-flex items-center gap-1 text-sm font-medium">
+            more universities <Icon name="arrow-right" size={14} class="transition-transform group-hover:translate-x-0.5" />
+          </span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- What we do -->
+  <section class="container-page mt-28">
+    <div class="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+      <SectionHeader
+        eyebrow="What we do"
+        title="Making Ethereum <em>easier</em> to follow."
+        lead="Ethereum changes fast. We build tools and write explainers so developers, researchers and newcomers can keep up, and we train students to contribute."
+      />
+      <div data-reveal-group class="grid gap-4 sm:grid-cols-2">
+        {services.map((s) => (
+          <div class="card p-6">
+            <span class="grid size-11 place-items-center rounded-xl border-[1.5px] border-ink bg-lagoon-200 text-ink">
+              <Icon name={s.icon} size={22} />
+            </span>
+            <h3 class="mt-5 text-lg font-semibold">{s.title}</h3>
+            <p class="mt-2 text-[0.95rem] text-ink-2">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="container-page mt-28">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <SectionHeader eyebrow="Portfolio" title="What we've built" lead="Open-source platforms and publications used across the Ethereum ecosystem." />
+      <a href="/projects/" class="inline-flex items-center gap-1.5 font-medium text-lagoon-800 hover:text-ink">
+        All projects <Icon name="arrow-right" size={18} />
+      </a>
+    </div>
+    <div class="mt-12 grid gap-5">
+      <div data-reveal><ProjectCard project={featured} featured /></div>
+      <div data-reveal-group class="grid gap-5 md:grid-cols-3">
+        {rest.map((p) => <ProjectCard project={p} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="mt-28 border-y border-line bg-surface py-20">
+    <div class="container-page">
+      <SectionHeader
+        eyebrow="Timeline"
+        title="Since 2017"
+        lead="Avarch started with one publication. Each project since then came from a gap we ran into while covering Ethereum."
+      />
+      <ol data-reveal-group class="relative mt-14 grid gap-8 before:absolute before:left-[1.2rem] before:top-0 before:h-full before:w-px before:bg-line md:grid-cols-5 md:gap-4 md:before:left-0 md:before:top-[1.2rem] md:before:h-px md:before:w-full">
+        {milestones.map((p) => (
+          <li class="relative pl-14 md:pl-0 md:pt-16">
+            <Img src={p.logo} alt="" w={40} class="absolute left-0 top-0 size-10 rounded-full border-2 border-surface bg-white object-contain p-0.5 shadow-[0_0_0_1px_var(--color-line)]" />
+            <p class="font-mono text-sm text-lagoon-800">{p.year}</p>
+            <h3 class="mt-1 font-serif text-2xl">{p.name}</h3>
+            <p class="mt-1.5 text-sm text-ink-2">{p.summary}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Founder -->
+  <section class="container-page mt-28">
+    <div data-reveal class="grid items-center gap-10 overflow-hidden rounded-[2rem] border-[1.5px] border-ink bg-peach-200 shadow-[6px_6px_0_0_var(--color-ink)] md:grid-cols-[0.9fr_1.1fr]">
+      <div class="relative h-full min-h-80 self-stretch">
+        <Img src={founder.cutout} alt="Portrait of Pooja Ranjan" w={480} class="absolute bottom-0 left-1/2 h-[95%] w-auto max-w-none -translate-x-1/2 object-contain object-bottom" />
+      </div>
+      <div class="px-6 pb-12 md:py-14 md:pr-14">
+        <p class="eyebrow">Leadership</p>
+        <blockquote class="display mt-5 text-3xl sm:text-4xl">
+          <span class="text-lagoon-600">“</span>{founder.quote}<span class="text-lagoon-600">”</span>
+        </blockquote>
+        <p class="mt-6 font-medium">{founder.name}</p>
+        <p class="text-sm text-ink-2">{founder.role}</p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="/founder" class="btn btn-dark">
+            Read Pooja's story <Icon name="arrow-right" size={18} />
+          </a>
+          <a href="/team" class="btn btn-ghost group">
+            <span class="flex -space-x-2">
+              {team.slice(1, 4).map((m) => (
+                <Img src={m.photo} alt="" w={28} class="size-7 rounded-full border-2 border-surface object-cover" />
+              ))}
+            </span>
+            Meet the team
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learn -->
+  <section class="container-page mt-28">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <SectionHeader eyebrow="Learn" title="Free courses on YouTube" lead="Free video series on Ethereum, Web3 and wallets." />
+      <a href={youtubePlaylists} target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-medium text-lagoon-800 hover:text-ink">
+        <Icon name="youtube" size={18} /> All playlists
+      </a>
+    </div>
+    <ul data-reveal-group class="mt-12 -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 [scrollbar-width:thin] md:mx-0 md:grid md:grid-cols-5 md:overflow-visible md:px-0">
+      {playlists.map((pl) => (
+        <li class="w-64 shrink-0 snap-start md:w-auto">
+          <a href={youtubePlaylists} target="_blank" rel="noopener" class="group block">
+            <div class="relative aspect-square overflow-hidden rounded-2xl border border-line">
+              <Img src={pl.image} alt="" w={256} class="size-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <span class="absolute bottom-3 right-3 grid size-10 place-items-center rounded-full bg-white/90 text-ink shadow-sm transition-colors group-hover:bg-lagoon-300">
+                <Icon name="play" size={16} />
+              </span>
+            </div>
+            <h3 class="mt-4 font-semibold">{pl.title}</h3>
+            <p class="mt-1 text-sm text-ink-2">{pl.body}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="container-page mt-28">
+    <SectionHeader eyebrow="Community" title="What readers say about EtherWorld" align="center" />
+    <div data-reveal-group class="mt-14 gap-5 sm:columns-2 lg:columns-3">
+      {testimonials.map((t) => (
+        <figure class="card mb-5 break-inside-avoid p-6">
+          <blockquote class="text-[1.05rem] leading-relaxed text-ink">“{t.quote}”</blockquote>
+          <figcaption class="mt-5 flex items-center gap-3">
+            <Img src={t.avatar} alt="" w={40} class="size-10 rounded-full border border-line object-cover" />
+            <div class="min-w-0">
+              <p class="text-sm font-semibold">{t.name}</p>
+              <p class="text-xs text-muted">{t.role}</p>
+            </div>
+            <a href={t.href} target="_blank" rel="noopener" class="ml-auto grid size-9 place-items-center rounded-full text-muted hover:bg-paper-2 hover:text-ink" aria-label={`View ${t.name}'s post on X`}>
+              <Icon name="x" size={15} />
+            </a>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <Faq />
+
+  <CtaBand />
+</Layout>

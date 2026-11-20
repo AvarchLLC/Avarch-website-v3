@@ -1,0 +1,36 @@
+---
+import Icon from "./Icon.astro";
+import Img from "./Img.astro";
+import { site } from "../data/site";
+
+interface Props {
+  title?: string;
+  body?: string;
+}
+const {
+  title = "Building something for Ethereum?",
+  body = "We partner with teams, universities and communities on products, research and education. Send us a note about your project.",
+} = Astro.props;
+---
+<section class="container-page mt-28">
+  <div data-reveal class="relative overflow-hidden rounded-[2rem] border-[1.5px] border-ink bg-lagoon-200 px-6 py-14 shadow-[6px_6px_0_0_var(--color-ink)] sm:px-14 sm:py-16">
+    <Img
+      src="/img/brand/mark.png"
+      alt=""
+      w={420}
+      class="pointer-events-none absolute -bottom-16 -right-10 w-[19rem] rotate-[-8deg] opacity-[0.12] sm:w-[26rem]"
+    />
+    <div class="relative max-w-2xl">
+      <h2 class="display text-4xl sm:text-6xl">{title}</h2>
+      <p class="mt-5 max-w-xl text-lg text-ink-2">{body}</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/contact/" class="btn btn-dark">
+          Start a conversation <Icon name="arrow-right" size={18} />
+        </a>
+        <a href={`mailto:${site.email}`} class="btn btn-ghost">
+          <Icon name="mail" size={18} /> Email us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

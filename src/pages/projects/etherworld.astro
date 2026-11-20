@@ -1,0 +1,125 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import CtaBand from "../../components/CtaBand.astro";
+import Icon from "../../components/Icon.astro";
+import Img from "../../components/Img.astro";
+import { testimonials } from "../../data/site";
+
+const collections = [
+  {
+    title: "Network upgrades & testnets",
+    items: [
+      { title: "Ethereum mainnet shadow forking: an overview", href: "https://etherworld.co/2022/04/20/ethereum-mainnet-shadow-forking-an-overview/", image: "/img/thumbs/ew-shadow-fork.jpg" },
+      { title: "Ethereum testnets after The Merge", href: "https://etherworld.co/2022/05/04/ethereum-testnets-after-the-merge/", image: "/img/thumbs/ew-testnets.png" },
+    ],
+  },
+  {
+    title: "Roadmap & research",
+    items: [
+      { title: "Ethereum's latest roadmap", href: "https://etherworld.co/2021/12/02/ethereums-latest-roadmap/", image: "/img/thumbs/ew-roadmap.jpg" },
+      { title: "An overview of account abstraction", href: "https://etherworld.co/2021/10/06/an-overview-of-account-abstraction-in-ethereum-blockchain/", image: "/img/thumbs/ew-account-abstraction.jpg" },
+      { title: "MEV research report", href: "https://etherworld.co/2022/04/05/mev-research-report/", image: "/img/thumbs/ew-mev.png" },
+    ],
+  },
+  {
+    title: "Fundamentals",
+    items: [
+      { title: "Private keys, public keys and addresses", href: "https://etherworld.co/2017/11/17/understanding-the-concept-of-private-key-public-key-and-address-in-ethereum-blockchain/", image: "/img/thumbs/ew-keys.png" },
+      { title: "Reading the Geth database (LevelDB)", href: "https://etherworld.co/2019/02/06/reading-ethereum-geth-database-leveldb/", image: "/img/thumbs/ew-geth-db.png" },
+      { title: "Smart contracts: an introduction", href: "https://etherworld.co/2017/09/18/smart-contract-an-introduction/", image: "/img/thumbs/ew-smart-contracts.png" },
+      { title: "A complete guide to Ethereum for beginners", href: "https://etherworld.co/2017/08/13/a-complete-guide-to-understand-ethereum-for-beginners/", image: "/img/thumbs/ew-guide-ethereum.png" },
+      { title: "A beginner's guide to cryptocurrency", href: "https://etherworld.co/2017/07/20/a-beginners-guide-for-cryptocurrency/", image: "/img/thumbs/ew-guide-crypto.png" },
+    ],
+  },
+];
+
+const topics = [
+  { label: "Technology", href: "https://etherworld.co/tag/enigma/", image: "/img/portfolio/Technology.jpeg" },
+  { label: "News", href: "https://etherworld.co/tag/news/", image: "/img/portfolio/News.jpeg" },
+  { label: "Ethereum", href: "https://etherworld.co/tag/ethereum/", image: "/img/portfolio/Ethereum.jpeg" },
+  { label: "Projects", href: "https://etherworld.co/tag/projects/", image: "/img/portfolio/Projects.jpeg" },
+];
+---
+<Layout title="EtherWorld" description="EtherWorld is Avarch's Ethereum publication, covering news, network upgrades and research in articles and videos since 2017." image="/img/portfolio/etherworld.png">
+  <section class="border-b border-line">
+    <div class="container-page grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-2">
+      <div class="enter">
+        <a href="/projects/" class="inline-flex items-center gap-1.5 text-sm text-muted hover:text-ink">
+          <Icon name="arrow-right" size={14} class="rotate-180" /> All projects
+        </a>
+        <div class="mt-6 flex items-center gap-3">
+          <Img src="/img/icons/etherworld_badge.png" alt="" w={48} loading="eager" class="size-12 rounded-full" />
+          <p class="eyebrow">Media & Research · Since 2017</p>
+        </div>
+        <h1 class="display mt-5 text-6xl sm:text-7xl">EtherWorld</h1>
+        <p class="mt-5 max-w-xl text-lg text-ink-2">
+          EtherWorld publishes Ethereum news, project updates, technical articles and event coverage, and welcomes guest contributors.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="https://etherworld.co" target="_blank" rel="noopener" class="btn btn-dark">
+            Read EtherWorld <Icon name="arrow-up-right" size={18} />
+          </a>
+          <a href="https://www.youtube.com/channel/UCnceAY-vAQsO8TgGAj5SGFA" target="_blank" rel="noopener" class="btn btn-ghost">
+            <Icon name="youtube" size={18} /> Watch on YouTube
+          </a>
+        </div>
+      </div>
+      <Img src="/img/portfolio/etherworld.png" alt="EtherWorld website preview" style="--d: 2" w={600} sizes="(min-width: 1024px) 50vw, 100vw" loading="eager" fetchpriority="high" class="enter-pop w-full rounded-[1.5rem] border border-line shadow-[0_30px_60px_-40px_rgb(15_35_36/0.5)]" />
+    </div>
+  </section>
+
+  <section class="container-page mt-20">
+    <SectionHeader eyebrow="Browse by topic" title="What we cover" />
+    <ul data-reveal-group class="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+      {topics.map((t) => (
+        <li>
+          <a href={t.href} target="_blank" rel="noopener" class="group relative block aspect-[4/3] overflow-hidden rounded-2xl">
+            <Img src={t.image} alt="" w={300} sizes="(min-width: 768px) 25vw, 50vw" class="size-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <span class="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent"></span>
+            <span class="absolute bottom-4 left-4 flex items-center gap-1.5 font-serif text-2xl text-white">
+              {t.label} <Icon name="arrow-up-right" size={16} />
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  {collections.map((c) => (
+    <section class="container-page mt-20">
+      <h2 class="display text-3xl sm:text-4xl">{c.title}</h2>
+      <ul data-reveal-group class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {c.items.map((a) => (
+          <li>
+            <a href={a.href} target="_blank" rel="noopener" class="card group block overflow-hidden transition-colors hover:border-line-strong">
+              <div class="aspect-video overflow-hidden border-b border-line bg-paper-2">
+                <Img src={a.image} alt="" w={400} class="size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+              </div>
+              <div class="flex items-start justify-between gap-4 p-5">
+                <h3 class="font-semibold leading-snug group-hover:text-lagoon-800">{a.title}</h3>
+                <Icon name="arrow-up-right" size={18} class="mt-0.5 shrink-0 text-muted" />
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+
+  <section class="container-page mt-24">
+    <div data-reveal-group class="grid gap-5 md:grid-cols-3">
+      {testimonials.slice(0, 3).map((t) => (
+        <figure class="card p-6">
+          <blockquote class="font-serif text-xl leading-snug">“{t.quote}”</blockquote>
+          <figcaption class="mt-5 flex items-center gap-3 text-sm">
+            <Img src={t.avatar} alt="" w={36} class="size-9 rounded-full object-cover" />
+            <span><span class="font-semibold">{t.name}</span><br /><span class="text-muted">{t.role}</span></span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <CtaBand title="Write or partner with EtherWorld" body="Media partnerships, research collaborations and guest contributions are welcome." />
+</Layout>

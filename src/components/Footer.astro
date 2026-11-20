@@ -1,0 +1,83 @@
+---
+import { nav, projects, site, socials } from "../data/site";
+import Logo from "./Logo.astro";
+import Icon from "./Icon.astro";
+import Img from "./Img.astro";
+
+const year = new Date().getFullYear();
+const live = projects.filter((p) => p.status !== "Archived");
+---
+<footer class="mt-28 overflow-hidden bg-ink text-paper">
+  <div class="container-page grid gap-12 pb-12 pt-16 md:grid-cols-12">
+    <div class="md:col-span-5">
+      <a href="/" class="inline-block rounded-lg" aria-label="Avarch home"><Logo tone="dark" /></a>
+      <p class="mt-5 max-w-sm text-paper/70">{site.tagline}</p>
+      <a
+        href={`mailto:${site.email}`}
+        class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-lagoon-300 underline decoration-lagoon-300/40 underline-offset-4 hover:decoration-lagoon-300"
+      >
+        <Icon name="mail" size={16} />
+        {site.email}
+      </a>
+    </div>
+
+    <div class="md:col-span-2">
+      <h2 class="font-mono text-xs uppercase tracking-[0.12em] text-paper/50">Company</h2>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        <li><a class="text-paper/80 hover:text-lagoon-300" href="/">Home</a></li>
+        {nav.map((n) => <li><a class="text-paper/80 hover:text-lagoon-300" href={n.href}>{n.label}</a></li>)}
+      </ul>
+    </div>
+
+    <div class="md:col-span-2">
+      <h2 class="font-mono text-xs uppercase tracking-[0.12em] text-paper/50">Projects</h2>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        {live.map((p) => (
+          <li><a class="text-paper/80 hover:text-lagoon-300" href={p.href} target="_blank" rel="noopener">{p.name}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="md:col-span-3">
+      <h2 class="font-mono text-xs uppercase tracking-[0.12em] text-paper/50">Follow</h2>
+      <ul class="mt-4 flex flex-wrap gap-2">
+        {socials.map((s) => (
+          <li>
+            <a
+              href={s.href}
+              target="_blank"
+              rel="noopener"
+              aria-label={s.label}
+              class="grid size-10 place-items-center rounded-full border border-paper/20 text-paper/80 transition-colors hover:border-lagoon-300 hover:bg-lagoon-300 hover:text-ink"
+            >
+              <Icon name={s.icon} size={17} />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Masthead wordmark: the logo mark stands in for the "A". Decorative. -->
+  <div class="container-page" aria-hidden="true">
+    <div class="flex items-center justify-between gap-4 border-t border-paper/15 pt-4 font-mono text-[0.68rem] uppercase tracking-[0.16em] text-paper/60">
+      <span>Est. 2017</span>
+      <span class="hidden sm:inline">Tools · Media · Education</span>
+      <span>Built for Ethereum</span>
+    </div>
+    <p
+      data-reveal-group
+      class="wordmark mt-3 select-none overflow-y-clip whitespace-nowrap pb-[0.04em] pt-[0.12em] font-serif text-[min(calc((100vw_-_2.5rem)/3.02),25rem)] font-semibold leading-[0.82] tracking-[-0.045em] text-lagoon-300 md:text-[min(calc((100vw_-_4rem)/2.92),25rem)]"
+    >
+      <span class="wordmark-letter mr-[0.01em]"><Img src="/img/brand/mark-lagoon.png" alt="" w={320} class="inline-block h-[0.74em] w-auto align-baseline" /></span>
+      {"varch".split("").map((ch) => <span class="wordmark-letter">{ch}</span>)}
+    </p>
+  </div>
+
+  <div class="border-t border-paper/10">
+    <div class="container-page flex flex-col gap-2 py-6 text-xs text-paper/50 sm:flex-row sm:items-center sm:justify-between">
+      <p>© {year} {site.legalName}. All rights reserved.</p>
+      <p>Building for Ethereum since {site.founded}.</p>
+    </div>
+  </div>
+</footer>

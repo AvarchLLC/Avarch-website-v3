@@ -1,0 +1,262 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import Icon from "../components/Icon.astro";
+import Img from "../components/Img.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { founder, journey, contributions, talks, conversations, archive, earlierCareer, education, peepanEip } from "../data/founder";
+
+const years = [...new Set(talks.map((t) => t.year))];
+const profiles = [
+  { label: "@poojaranjan19", href: founder.twitter, icon: "x" },
+  { label: "poojaranjan", href: founder.github, icon: "github" },
+  { label: "LinkedIn", href: founder.linkedin, icon: "linkedin" },
+  { label: "Farcaster", href: founder.farcaster, icon: "link" },
+];
+---
+<Layout
+  title="Pooja Ranjan, Founder"
+  description="Pooja Ranjan is the founder of Avarch and President of ECH Institute. Her path from learning Ethereum in 2016 to coordinating its network upgrades."
+  image="/img/pooja-pfp.png"
+  schema={[
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: founder.name,
+      url: "https://avarch.org/founder",
+      jobTitle: "Founder",
+      worksFor: { "@type": "Organization", name: "Avarch LLC", url: "https://avarch.org" },
+      sameAs: [founder.twitter, founder.github, founder.linkedin, founder.farcaster],
+    },
+  ]}
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-line">
+    <div class="grain pointer-events-none absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute -right-32 top-10 size-[36rem] rounded-full bg-lagoon-200/60 blur-3xl" aria-hidden="true"></div>
+    <div class="container-page relative grid items-end gap-6 pt-16 md:grid-cols-[1.2fr_1fr] md:pt-20">
+      <div class="pb-16 md:pb-24">
+        <p class="eyebrow enter">Meet the founder</p>
+        <h1 style="--d: 1" class="enter display mt-4 text-6xl sm:text-8xl">Pooja <em>Ranjan</em></h1>
+        <p style="--d: 2" class="enter mt-4 text-lg text-ink-2">{founder.role}</p>
+        <blockquote style="--d: 3" class="enter mt-10 max-w-xl border-l-2 border-lagoon-400 pl-6 font-serif text-2xl leading-snug sm:text-3xl">
+          {founder.quote}
+        </blockquote>
+        <div style="--d: 4" class="enter mt-10 flex flex-wrap gap-3">
+          {profiles.map((p) => (
+            <a href={p.href} target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-line-strong bg-surface px-4 py-2.5 text-sm font-medium transition-colors hover:border-ink hover:bg-lagoon-100">
+              <Icon name={p.icon} size={15} /> {p.label}
+            </a>
+          ))}
+        </div>
+      </div>
+      <Img
+        src={founder.photo}
+        alt="Pooja Ranjan"
+        w={520}
+        loading="eager"
+        fetchpriority="high"
+        style="--d: 1"
+        class="enter-pop mx-auto w-full max-w-[32rem] self-end"
+      />
+    </div>
+  </section>
+
+  <!-- Journey -->
+  <section class="container-page mt-24 grid gap-14 lg:grid-cols-[1fr_1.4fr]">
+    <div class="lg:sticky lg:top-28 lg:self-start">
+      <SectionHeader
+        eyebrow="The story"
+        title="From learning to <em>building.</em>"
+        lead="Pooja became part of the blockchain community in 2016 by learning about Ethereum. Since then her work has spanned publishing, infrastructure, EIP data and community coordination."
+      />
+    </div>
+    <ol data-reveal-group class="relative border-l border-line pl-8">
+      {journey.map((j) => (
+        <li class="relative pb-12 last:pb-0">
+          <span class="absolute -left-[2.45rem] top-1 size-4 rounded-full border-[1.5px] border-ink bg-lagoon-200"></span>
+          <p class="font-mono text-sm text-lagoon-800">{j.year}</p>
+          <h3 class="display mt-1 text-3xl">{j.title}</h3>
+          <p class="mt-2 text-ink-2">{j.body}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <!-- Before Ethereum -->
+  <section class="container-page mt-24">
+    <div data-reveal class="grid gap-10 rounded-[1.75rem] border border-line bg-paper-2/60 p-8 sm:p-10 md:grid-cols-[0.8fr_1.2fr_1fr]">
+      <div>
+        <p class="eyebrow">Before Ethereum</p>
+        <h2 class="display mt-3 text-3xl">Enterprise and engineering roots</h2>
+        <p class="mt-3 text-ink-2">Pooja worked in business development, project management and software engineering before blockchain.</p>
+      </div>
+      <dl class="space-y-4">
+        {earlierCareer.map((c) => (
+          <div class="border-b border-line pb-4 last:border-0 last:pb-0">
+            <dt class="font-semibold">{c.role}</dt>
+            <dd class="mt-0.5 text-sm text-muted">{c.org}{c.place && ` · ${c.place}`} · {c.period}</dd>
+          </div>
+        ))}
+      </dl>
+      <div>
+        <p class="font-mono text-xs uppercase tracking-[0.12em] text-muted">Education</p>
+        <dl class="mt-4 space-y-4">
+          {education.map((e) => (
+            <div>
+              <dt class="font-semibold">{e.degree}</dt>
+              <dd class="mt-0.5 text-sm text-muted">{e.school} · {e.period}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contributions -->
+  <section class="mt-28 border-y border-line bg-surface py-20">
+    <div class="container-page">
+      <SectionHeader
+        eyebrow="Building Ethereum"
+        title="Work across the Ethereum ecosystem"
+      />
+      <div data-reveal-group class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-6 lg:[&>*]:col-span-2 lg:[&>*:nth-child(n+4)]:col-span-3">
+        {contributions.map((c) => (
+          <a href={c.href} target="_blank" rel="noopener" class="card lift group flex flex-col p-6">
+            <Img src={c.image} alt="" w={56} class="size-14 rounded-2xl border border-line bg-white object-contain p-1" />
+            <p class="eyebrow mt-6 !text-[0.68rem]">{c.kicker}</p>
+            <h3 class="display mt-1 text-3xl">{c.title}</h3>
+            <p class="mt-3 text-[0.95rem] text-ink-2">{c.body}</p>
+            <span class="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-medium text-lagoon-800">
+              {c.cta} <Icon name="arrow-up-right" size={16} />
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Talks -->
+  <section class="container-page mt-28">
+    <SectionHeader
+      eyebrow="On stage"
+      title="Talks"
+      lead="Pooja speaks about protocol governance, the EIP process and how network upgrades get coordinated."
+    />
+    <div class="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter talks by year">
+      <button type="button" data-year="all" aria-pressed="true" class="rounded-full border border-line-strong px-4 py-2 text-sm aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper">All</button>
+      {years.map((y) => (
+        <button type="button" data-year={y} aria-pressed="false" class="rounded-full border border-line-strong px-4 py-2 font-mono text-sm aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper">{y}</button>
+      ))}
+    </div>
+    <ul data-reveal-group class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-talks>
+      {talks.map((t) => (
+        <li data-year={t.year}>
+          <a href={t.href} target="_blank" rel="noopener" class="group block">
+            <div class="relative aspect-video overflow-hidden rounded-2xl border border-line bg-paper-2">
+              <Img src={t.image} alt="" w={400} class="size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+              <span class="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 font-mono text-xs">{t.year}</span>
+            </div>
+            <h3 class="mt-3 font-semibold group-hover:text-lagoon-800">{t.title}</h3>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Conversations -->
+  <section class="container-page mt-28">
+    <SectionHeader eyebrow="In conversation" title="Podcasts & interviews" lead="Interviews about Ethereum governance, EIPs and community work." />
+    <ul data-reveal-group class="mt-12 divide-y divide-line border-y border-line">
+      {conversations.map((c, i) => (
+        <li>
+          <a href={c.href} target="_blank" rel="noopener" class="group grid grid-cols-[auto_1fr_auto] items-center gap-4 py-5 sm:grid-cols-[3rem_9rem_1fr_auto] sm:gap-6">
+            <span class="hidden font-mono text-sm text-muted sm:block">0{i + 1}</span>
+            <Img src={c.image} alt="" w={144} class="aspect-video w-24 rounded-lg border border-line object-cover sm:w-36" />
+            <div class="min-w-0">
+              <h3 class="font-serif text-xl leading-tight sm:text-2xl group-hover:text-lagoon-800">{c.title}</h3>
+              <p class="mt-1 text-sm text-muted">{c.host} · {c.length}</p>
+            </div>
+            <Icon name="arrow-up-right" size={20} class="text-muted transition-colors group-hover:text-lagoon-800" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- PEEPanEIP -->
+  <section class="container-page mt-28">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <SectionHeader
+        eyebrow="Hosted by Pooja"
+        title="PEEPanEIP"
+        lead="A video series where EIP authors walk through their own proposals. Over 150 episodes, with guests from client teams and research."
+      />
+      <a href="https://www.youtube.com/playlist?list=PL4cwHXAawZxqu0PKKyMzG_3BJV_xZTi1F" target="_blank" rel="noopener" class="btn btn-primary">
+        <Icon name="youtube" size={18} /> Watch the series
+      </a>
+    </div>
+    <ul data-reveal-group class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {peepanEip.map((e) => (
+        <li>
+          <a href={e.href} target="_blank" rel="noopener" class="card lift group block overflow-hidden">
+            <div class="relative aspect-video overflow-hidden border-b border-line bg-paper-2">
+              <Img src={e.image} alt="" class="size-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" w={320} />
+              <span class="absolute left-3 top-3 rounded-full border border-ink bg-lagoon-100 px-2.5 py-1 font-mono text-xs">#{e.n}</span>
+            </div>
+            <div class="p-5">
+              <p class="font-mono text-xs uppercase tracking-[0.1em] text-lagoon-800">{e.eip}</p>
+              <h3 class="mt-1 font-semibold leading-snug group-hover:underline group-hover:decoration-lagoon-400 group-hover:decoration-2 group-hover:underline-offset-4">{e.topic}</h3>
+              <p class="mt-1 text-sm text-muted">with {e.guest}</p>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Archive -->
+  <section class="container-page mt-28">
+    <SectionHeader eyebrow="The archive" title="Press, writing & appearances" lead="Press coverage, articles, talks and mentions, grouped by type." />
+    <div data-reveal-group class="mt-12 grid gap-5 md:grid-cols-2">
+      {archive.map((group) => (
+        <details class="card group overflow-hidden open:shadow-[0_18px_40px_-28px_rgb(15_35_36/0.4)]">
+          <summary class="flex cursor-pointer list-none items-center gap-4 p-4 [&::-webkit-details-marker]:hidden">
+            <Img src={group.image} alt="" w={112} class="aspect-video w-28 shrink-0 rounded-xl object-cover" />
+            <div class="min-w-0 flex-1">
+              <h3 class="font-serif text-2xl leading-tight">{group.title}</h3>
+              <p class="mt-0.5 text-sm text-muted">{group.items.length} items</p>
+            </div>
+            <span class="grid size-9 shrink-0 place-items-center rounded-full border border-line transition-transform group-open:rotate-45">
+              <Icon name="plus" size={16} />
+            </span>
+          </summary>
+          <ul class="border-t border-line px-4 py-2">
+            {group.items.map((item) => (
+              <li>
+                <a href={item.url} target="_blank" rel="noopener" class="flex items-start gap-3 rounded-lg px-2 py-2.5 text-[0.95rem] text-ink-2 hover:bg-paper hover:text-ink">
+                  <Icon name={item.video ? "play" : "link"} size={14} class="mt-1 shrink-0 text-lagoon-800" />
+                  <span>{item.title}{item.source && <span class="text-muted"> · {item.source}</span>}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <CtaBand title="Invite Pooja to speak" body="For talks, panels, podcasts and interviews on Ethereum governance, EIPs and community coordination, get in touch." />
+</Layout>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>("[data-year]:is(button)");
+  const items = document.querySelectorAll<HTMLElement>("[data-talks] > li");
+  buttons.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const year = btn.dataset.year;
+      buttons.forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+      items.forEach((li) => (li.hidden = year !== "all" && li.dataset.year !== year));
+    }),
+  );
+</script>

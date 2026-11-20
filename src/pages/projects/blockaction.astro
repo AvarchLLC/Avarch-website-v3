@@ -1,0 +1,70 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import CtaBand from "../../components/CtaBand.astro";
+import Icon from "../../components/Icon.astro";
+import Img from "../../components/Img.astro";
+
+const security = [
+  "Wallets were created in the browser. Users could go offline while generating keys.",
+  "BlockAction never stored passwords or private keys, so users kept full control of their funds.",
+  "Worked on desktop, tablet and mobile with nothing to install and no full blockchain download.",
+];
+const simplicity = [
+  "Transaction status updated in real time in the app, with no email confirmations.",
+  "Balance checks one click away, without visiting a separate explorer.",
+  "Send and request ETH or BTC without disclosing your identity.",
+  "All traffic encrypted over TLS; every transaction publicly verifiable on-chain.",
+];
+---
+<Layout title="BlockAction" description="BlockAction was a browser-based wallet and explorer built by Avarch with BitsBeat, later supporting the Beacon Chain multi-client testnet.">
+  <section class="border-b border-line">
+    <div class="container-page grid items-center gap-12 py-16 sm:py-20 md:grid-cols-[1.3fr_1fr]">
+      <div class="enter">
+        <a href="/projects/" class="inline-flex items-center gap-1.5 text-sm text-muted hover:text-ink">
+          <Icon name="arrow-right" size={14} class="rotate-180" /> All projects
+        </a>
+        <p class="eyebrow mt-6">Explorer & Wallet · 2020 · Archived</p>
+        <h1 class="display mt-4 text-6xl sm:text-7xl">BlockAction</h1>
+        <p class="mt-5 max-w-xl text-lg text-ink-2">
+          A browser wallet for sending and receiving ETH and BTC, built by Avarch with BitsBeat. It was later used as an explorer for the Beacon Chain multi-client testnet.
+        </p>
+      </div>
+      <Img src="/img/general/blockaction1.png" alt="BlockAction logo" w={384} loading="eager" style="--d: 2" class="enter-pop mx-auto w-full max-w-sm rounded-[1.5rem] border border-line bg-white" />
+    </div>
+  </section>
+
+  <article class="container-page mt-16 max-w-3xl">
+    <div class="space-y-5 text-lg leading-relaxed text-ink-2">
+      <p>
+        BlockAction brought together two teams: Avarch, already known for EtherWorld's news and technical writing, and
+        BitsBeat, a web-solutions company providing IT consultancy, design and mobile development since 2015. The goal was
+        to make blockchain transactions as easy as using any other web app.
+      </p>
+      <p>
+        Users could create a wallet, send transactions from new or existing wallets, request payments and watch transaction
+        status in real time. The app supported Ethereum and Bitcoin, running on the Kovan and Bitcoin test networks.
+      </p>
+    </div>
+
+    <div data-reveal-group class="mt-14 grid gap-5 sm:grid-cols-2">
+      <div class="card p-7">
+        <h2 class="display text-3xl">Secure by design</h2>
+        <ul class="mt-5 space-y-4">
+          {security.map((s) => <li class="flex gap-3 text-ink-2"><Icon name="check" size={20} class="mt-0.5 shrink-0 text-moss-500" />{s}</li>)}
+        </ul>
+      </div>
+      <div class="card p-7">
+        <h2 class="display text-3xl">Simple to use</h2>
+        <ul class="mt-5 space-y-4">
+          {simplicity.map((s) => <li class="flex gap-3 text-ink-2"><Icon name="check" size={20} class="mt-0.5 shrink-0 text-moss-500" />{s}</li>)}
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 rounded-2xl border border-dashed border-line-strong bg-paper-2/60 p-6 text-ink-2">
+      <p><strong class="text-ink">Status:</strong> BlockAction has been retired. This page is kept as a record of the project.</p>
+    </div>
+  </article>
+
+  <CtaBand />
+</Layout>

@@ -1,0 +1,17 @@
+---
+import Img from "./Img.astro";
+
+interface Props {
+  class?: string;
+  /** "dark" for use on ink backgrounds. */
+  tone?: "light" | "dark";
+}
+const { class: className = "", tone = "light" } = Astro.props;
+---
+<Img
+  src={tone === "dark" ? "/img/brand/mark-light.png" : "/img/brand/mark.png"}
+  alt="Avarch"
+  w={52}
+  loading="eager"
+  class:list={["block h-auto w-[3.25rem] transition-transform duration-300 hover:-rotate-3", className]}
+/>

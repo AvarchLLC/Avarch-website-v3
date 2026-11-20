@@ -1,0 +1,40 @@
+---
+import Icon from "./Icon.astro";
+import { event } from "../data/site";
+---
+<aside aria-label={event.name} data-event-banner data-start={event.start} data-key={event.storageKey} class="event-banner relative bg-ink text-paper">
+  <div class="container-page flex min-h-11 items-center justify-center gap-3 py-2 pr-12 text-sm">
+    <img src={event.logo} alt="" width="55" height="24" class="hidden h-6 w-auto invert sm:block" />
+    <p>
+      <span data-event-lead>We'll be at</span> {event.name} in {event.city}, {event.dates}.
+      <a href={event.href} class="ml-1 whitespace-nowrap font-medium text-lagoon-300 underline decoration-lagoon-300/40 underline-offset-4 hover:decoration-lagoon-300">
+        Meet us there
+      </a>
+    </p>
+  </div>
+  <button
+    type="button"
+    data-event-dismiss
+    aria-label={`Dismiss ${event.name} banner`}
+    class="absolute right-1 top-1/2 grid size-9 -translate-y-1/2 place-items-center rounded-full text-paper/70 hover:text-paper"
+  >
+    <Icon name="close" size={16} />
+  </button>
+</aside>
+
+<script>
+  const banner = document.querySelector<HTMLElement>("[data-event-banner]");
+  if (banner) {
+    if (Date.now() >= Date.parse(banner.dataset.start!)) {
+      banner.querySelector("[data-event-lead]")!.textContent = "We're at";
+    }
+    banner.querySelector("[data-event-dismiss]")?.addEventListener("click", () => {
+      document.documentElement.classList.add("event-banner-hidden");
+      try {
+        localStorage.setItem(banner.dataset.key!, "1");
+      } catch {
+        // Private mode: it just comes back on the next page.
+      }
+    });
+  }
+</script>

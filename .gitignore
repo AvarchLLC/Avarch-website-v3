@@ -1,0 +1,50 @@
+# Build output
+dist/
+build/
+
+# Astro generated types & cache
+.astro/
+.cache/
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# macOS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# IDE & Editor files
+.idea/
+.claude/
+.cursor/
+*.sw?
+*.bak
+
+# VS Code (preserve shared workspace recommendations, ignore local configs)
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json

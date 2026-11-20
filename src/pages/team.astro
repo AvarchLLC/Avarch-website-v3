@@ -1,0 +1,145 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import Icon from "../components/Icon.astro";
+import Img from "../components/Img.astro";
+import { team, hiringEmail } from "../data/team";
+import { academicPartners } from "../data/site";
+import { founder } from "../data/founder";
+
+const [lead, ...core] = team;
+const socialLinks = (m: (typeof team)[number]) =>
+  [
+    m.github && { label: `${m.name} on GitHub`, href: `https://github.com/${m.github}`, icon: "github" },
+    m.twitter && { label: `${m.name} on X`, href: `https://x.com/${m.twitter}`, icon: "x" },
+    m.linkedin && { label: `${m.name} on LinkedIn`, href: m.linkedin, icon: "linkedin" },
+  ].filter(Boolean) as { label: string; href: string; icon: string }[];
+---
+<Layout title="Team" description="Meet the Avarch team: the engineers and operators behind EtherWorld, EIPsInsight and BlobLens, led by founder Pooja Ranjan.">
+  <PageHero
+    eyebrow="Team"
+    title="The people behind <em>Avarch</em>"
+    lead="A small team of engineers and operators, led by Pooja Ranjan, building Ethereum tools and publications. Students join us every year as paid interns."
+  />
+
+  <!-- Founder spotlight -->
+  <section class="container-page mt-16">
+    <div data-reveal class="grid overflow-hidden rounded-[2rem] border-[1.5px] border-ink bg-surface shadow-[6px_6px_0_0_var(--color-ink)] md:grid-cols-[0.85fr_1.15fr]">
+      <div class="relative min-h-80 overflow-hidden bg-lagoon-200">
+        <div class="grain absolute inset-0 opacity-60" aria-hidden="true"></div>
+        <Img
+          src={founder.photo}
+          alt="Pooja Ranjan"
+          w={460}
+          loading="eager"
+          fetchpriority="high"
+          class="absolute bottom-0 left-1/2 h-[92%] w-auto max-w-none -translate-x-1/2"
+        />
+      </div>
+      <div class="p-8 sm:p-12">
+        <p class="eyebrow">Founder</p>
+        <h2 class="display mt-3 text-4xl sm:text-5xl">{lead.name}</h2>
+        <p class="mt-2 text-muted">{founder.role}</p>
+        <p class="mt-6 max-w-xl text-lg text-ink-2">
+          Pooja joined the Ethereum community in 2016 and started Avarch a year later. She led Ethereum Cat Herders for
+          five years, now serves as President of ECH Institute, and hosts PEEPanEIP, where EIP authors explain their
+          proposals.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="/founder" class="btn btn-dark">Read her story <Icon name="arrow-right" size={18} /></a>
+          {socialLinks(lead).map((s) => (
+            <a href={s.href} target="_blank" rel="noopener" aria-label={s.label} class="grid size-11 place-items-center rounded-full border-[1.5px] border-ink transition-colors hover:bg-lagoon-200">
+              <Icon name={s.icon} size={17} />
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core team -->
+  <section class="container-page mt-28">
+    <SectionHeader eyebrow="Core team" title="Who builds the tools" lead="The people who ship EIPsInsight, BlobLens and the rest of Avarch's products." />
+    <ul data-reveal-group class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {core.map((m) => (
+        <li class="card lift group flex flex-col overflow-hidden">
+          <div class="relative aspect-[4/5] overflow-hidden border-b border-line bg-paper-2">
+            <Img
+              src={m.photo}
+              alt={m.name}
+              w={300}
+              sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+              class="size-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+            />
+            <span class="absolute left-3 top-3 rounded-full border border-ink bg-lagoon-100 px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.1em]">
+              {m.role}
+            </span>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <h3 class="font-serif text-2xl font-semibold leading-tight">{m.name}</h3>
+            <p class="mt-2 text-[0.95rem] text-ink-2">{m.focus}</p>
+            <ul class="mt-auto flex gap-2 pt-5">
+              {socialLinks(m).map((s) => (
+                <li>
+                  <a href={s.href} target="_blank" rel="noopener" aria-label={s.label} class="grid size-9 place-items-center rounded-full border border-line text-ink-2 transition-colors hover:border-ink hover:bg-lagoon-200 hover:text-ink">
+                    <Icon name={s.icon} size={15} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Interns -->
+  <section class="mt-28 border-y border-line bg-surface py-20">
+    <div class="container-page grid gap-12 lg:grid-cols-[1fr_1.5fr]">
+      <div data-reveal>
+        <p class="eyebrow">Interns</p>
+        <p class="display mt-4 text-7xl text-lagoon-800 sm:text-8xl"><span data-count>50+</span></p>
+        <h2 class="display mt-2 text-3xl sm:text-4xl">students since 2020</h2>
+        <p class="mt-4 max-w-md text-ink-2">
+          Paid internships in development, technical writing and video. Interns work on live products and articles
+          alongside the core team.
+        </p>
+        <a href="/partners" class="mt-6 inline-flex items-center gap-1.5 font-medium text-lagoon-800 hover:text-ink">
+          Our academic partners <Icon name="arrow-right" size={18} />
+        </a>
+      </div>
+      <div>
+        <p class="font-mono text-xs uppercase tracking-[0.12em] text-muted">They have come from</p>
+        <ul data-reveal-group class="mt-4 flex flex-wrap gap-2">
+          {academicPartners.map((p) => (
+            <li class="rounded-full border border-line-strong bg-paper px-3.5 py-1.5 text-sm text-ink-2">{p.name}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join -->
+  <section class="container-page mt-28">
+    <div data-reveal class="relative overflow-hidden rounded-[2rem] border-[1.5px] border-ink bg-ink px-6 py-14 text-paper sm:px-14 sm:py-16">
+      <Img src="/img/brand/mark-lagoon.png" alt="" w={420} class="pointer-events-none absolute -bottom-16 -right-8 w-[18rem] rotate-[-8deg] opacity-25 sm:w-[24rem]" />
+      <div class="relative max-w-2xl">
+        <p class="font-mono text-xs uppercase tracking-[0.14em] text-lagoon-300">We're hiring</p>
+        <h2 class="display mt-3 text-4xl sm:text-6xl">Work on <em class="!bg-none text-lagoon-300">Ethereum</em> tooling with us</h2>
+        <p class="mt-5 max-w-xl text-lg text-paper/75">
+          We look for builders who care about Ethereum governance, clear writing and shipping useful tools. Students can
+          apply for internships the same way.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href={`mailto:${hiringEmail}?subject=Working%20at%20Avarch`} class="btn btn-primary">
+            <Icon name="mail" size={18} /> {hiringEmail}
+          </a>
+          <a href="https://github.com/AvarchLLC" target="_blank" rel="noopener" class="btn border-paper/40 bg-transparent text-paper hover:bg-paper/10">
+            <Icon name="github" size={18} /> See our code
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
