@@ -240,8 +240,3 @@ export const earlierCareer = [
   { role: "Project Management Officer", org: "Magna Infotech", period: "2007", place: "Mumbai" },
   { role: "Asst. Manager, Business Development", org: "Moody International", period: "2005 to 2007", place: "New Delhi" },
 ];
-
-export const education = [
-  { degree: "M.Com and PGDM (Marketing & HR)", school: "Institute of Management Education", period: "2003 to 2005" },
-  { degree: "B.Sc Computer Science", school: "Magadh University", period: "1998 to 2001" },
-];

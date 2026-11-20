@@ -25,7 +25,7 @@ export const nav = [
   { label: "About", href: "/about/" },
   { label: "Projects", href: "/projects/" },
   { label: "Team", href: "/team" },
-  { label: "Founder", href: "/founder" },
+  { label: "Founder", href: "/pooja" },
   { label: "Partners", href: "/partners" },
   { label: "Contact", href: "/contact/" },
 ];

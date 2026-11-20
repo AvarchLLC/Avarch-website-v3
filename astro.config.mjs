@@ -20,7 +20,8 @@ export default defineConfig({
   // on static hosts and loop forever.
   redirects: {
     '/about.html': '/about/',
-    '/aboutfounder.html': '/founder',
+    '/aboutfounder.html': '/pooja/',
+    '/founder': '/pooja/',
     '/projects.html': '/projects/',
     '/etherworld.html': '/projects/etherworld',
     '/blockaction.html': '/projects/blockaction',

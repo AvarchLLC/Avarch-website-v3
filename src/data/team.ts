@@ -20,13 +20,15 @@ export const team: TeamMember[] = [
     github: "poojaranjan",
     twitter: "poojaranjan19",
     linkedin: "https://www.linkedin.com/in/pooja-r-072899114/",
-    profile: "/founder",
+    profile: "/pooja",
   },
   {
     name: "Yash Kamal Chaturvedi",
     role: "Operations Lead",
     photo: "/img/team/yash.jpg",
     focus: "Coordinates delivery, contributor workflows and regular updates across the platforms.",
+    github: "yashkamalchaturvedi",
+    twitter: "YashKamalChatu1",
     linkedin: "https://www.linkedin.com/in/yash-kamal-chaturvedi/",
   },
   {
@@ -35,6 +37,7 @@ export const team: TeamMember[] = [
     photo: "/img/team/dhanush.png",
     focus: "Builds core systems across proposal indexing, interfaces and APIs.",
     github: "dhanushlnaik",
+    twitter: "iamdhanushlnaik",
     linkedin: "https://www.linkedin.com/in/dhanushlnaik/",
   },
   {
@@ -43,6 +46,7 @@ export const team: TeamMember[] = [
     photo: "/img/team/subhrajeet.jpg",
     focus: "Works across frontend, backend and product improvements.",
     github: "SubhrajeetBhattacharjee",
+    twitter: "subhrajeet005",
     linkedin: "https://www.linkedin.com/in/subhrajeet-bhattacharjee/",
   },
   {
@@ -50,6 +54,8 @@ export const team: TeamMember[] = [
     role: "Full Stack Intern",
     photo: "/img/team/rajdeep.png",
     focus: "Works across frontend, backend and product improvements.",
+    github: "rajdeepchakraborty-rc",
+    twitter: "RajChkDev",
     linkedin: "https://www.linkedin.com/in/rajdeepchakraborty69/",
   },
 ];

@@ -9,10 +9,11 @@ import { academicPartners } from "../data/site";
 import { founder } from "../data/founder";
 
 const [lead, ...core] = team;
+const toUrl = (val: string, base: string) => (val.startsWith("http") ? val : `${base}/${val.replace(/^@/, "")}`);
 const socialLinks = (m: (typeof team)[number]) =>
   [
-    m.github && { label: `${m.name} on GitHub`, href: `https://github.com/${m.github}`, icon: "github" },
-    m.twitter && { label: `${m.name} on X`, href: `https://x.com/${m.twitter}`, icon: "x" },
+    m.github && { label: `${m.name} on GitHub`, href: toUrl(m.github, "https://github.com"), icon: "github" },
+    m.twitter && { label: `${m.name} on X`, href: toUrl(m.twitter, "https://x.com"), icon: "x" },
     m.linkedin && { label: `${m.name} on LinkedIn`, href: m.linkedin, icon: "linkedin" },
   ].filter(Boolean) as { label: string; href: string; icon: string }[];
 ---
@@ -47,7 +48,7 @@ const socialLinks = (m: (typeof team)[number]) =>
           proposals.
         </p>
         <div class="mt-8 flex flex-wrap items-center gap-3">
-          <a href="/founder" class="btn btn-dark">Read her story <Icon name="arrow-right" size={18} /></a>
+          <a href="/pooja" class="btn btn-dark">Read her story <Icon name="arrow-right" size={18} /></a>
           {socialLinks(lead).map((s) => (
             <a href={s.href} target="_blank" rel="noopener" aria-label={s.label} class="grid size-11 place-items-center rounded-full border-[1.5px] border-ink transition-colors hover:bg-lagoon-200">
               <Icon name={s.icon} size={17} />

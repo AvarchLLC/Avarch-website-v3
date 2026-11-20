@@ -4,7 +4,7 @@ export type Faq = { q: string; a: string };
 export const faqs: Faq[] = [
   {
     q: "What is Avarch?",
-    a: 'Avarch LLC is a blockchain software studio founded in 2017 by <a href="/founder">Pooja Ranjan</a>. We run <a href="https://etherworld.co" target="_blank" rel="noopener">EtherWorld</a>, build <a href="https://eipsinsight.com" target="_blank" rel="noopener">EIPsInsight</a> and <a href="https://bloblens.com" target="_blank" rel="noopener">BlobLens</a>, and are launching EthShala for structured Ethereum courses.',
+    a: 'Avarch LLC is a blockchain software studio founded in 2017 by <a href="/pooja">Pooja Ranjan</a>. We run <a href="https://etherworld.co" target="_blank" rel="noopener">EtherWorld</a>, build <a href="https://eipsinsight.com" target="_blank" rel="noopener">EIPsInsight</a> and <a href="https://bloblens.com" target="_blank" rel="noopener">BlobLens</a>, and are launching EthShala for structured Ethereum courses.',
   },
   {
     q: "Who works at Avarch?",

@@ -4,7 +4,7 @@ import SectionHeader from "../components/SectionHeader.astro";
 import Icon from "../components/Icon.astro";
 import Img from "../components/Img.astro";
 import CtaBand from "../components/CtaBand.astro";
-import { founder, journey, contributions, talks, conversations, archive, earlierCareer, education, peepanEip } from "../data/founder";
+import { founder, journey, contributions, talks, conversations, archive, earlierCareer, peepanEip } from "../data/founder";
 
 const years = [...new Set(talks.map((t) => t.year))];
 const profiles = [
@@ -23,7 +23,7 @@ const profiles = [
       "@context": "https://schema.org",
       "@type": "Person",
       name: founder.name,
-      url: "https://avarch.org/founder",
+      url: "https://avarch.org/pooja",
       jobTitle: "Founder",
       worksFor: { "@type": "Organization", name: "Avarch LLC", url: "https://avarch.org" },
       sameAs: [founder.twitter, founder.github, founder.linkedin, founder.farcaster],
@@ -85,7 +85,7 @@ const profiles = [
 
   <!-- Before Ethereum -->
   <section class="container-page mt-24">
-    <div data-reveal class="grid gap-10 rounded-[1.75rem] border border-line bg-paper-2/60 p-8 sm:p-10 md:grid-cols-[0.8fr_1.2fr_1fr]">
+    <div data-reveal class="grid gap-10 rounded-[1.75rem] border border-line bg-paper-2/60 p-8 sm:p-10 md:grid-cols-[1fr_1.4fr]">
       <div>
         <p class="eyebrow">Before Ethereum</p>
         <h2 class="display mt-3 text-3xl">Enterprise and engineering roots</h2>
@@ -99,17 +99,6 @@ const profiles = [
           </div>
         ))}
       </dl>
-      <div>
-        <p class="font-mono text-xs uppercase tracking-[0.12em] text-muted">Education</p>
-        <dl class="mt-4 space-y-4">
-          {education.map((e) => (
-            <div>
-              <dt class="font-semibold">{e.degree}</dt>
-              <dd class="mt-0.5 text-sm text-muted">{e.school} · {e.period}</dd>
-            </div>
-          ))}
-        </dl>
-      </div>
     </div>
   </section>
 
